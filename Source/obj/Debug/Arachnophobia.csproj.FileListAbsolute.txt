@@ -1,0 +1,3 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.csprojResolveAssemblyReference.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rim-of-Madness---Arachnophobia\Assemblies\Arachnophobia.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.dll
