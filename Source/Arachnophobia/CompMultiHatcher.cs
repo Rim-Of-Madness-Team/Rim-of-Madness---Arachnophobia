@@ -52,15 +52,15 @@ namespace Arachnophobia
 
         public override void CompTick()
         {
-            if (!this.TemperatureDamaged)
-            {
+            //if (!this.TemperatureDamaged)
+            //{
                 float num = 1f / (this.Props.hatcherDaystoHatch * 60000f);
                 this.gestateProgress += num;
                 if (this.gestateProgress > 1f)
                 {
                     this.Hatch();
                 }
-            }
+            //}
         }
 
         public void Hatch()
@@ -78,6 +78,7 @@ namespace Arachnophobia
                         {
                             if (this.hatcheeParent != null)
                             {
+                                if (hatcheeParent?.Faction != null) pawn.SetFaction(hatcheeParent.Faction);
                                 if (pawn.playerSettings != null && this.hatcheeParent.playerSettings != null && this.hatcheeParent.Faction == this.hatcheeFaction)
                                 {
                                     pawn.playerSettings.AreaRestriction = this.hatcheeParent.playerSettings.AreaRestriction;

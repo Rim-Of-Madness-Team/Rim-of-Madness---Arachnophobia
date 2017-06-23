@@ -60,7 +60,7 @@ namespace Arachnophobia
         public IntVec3 CocoonPlace()
         {
             var newPosition = TargetB.Cell;
-            var localCocoons = Utility.Cocoons(this.pawn.Map, this.pawn.def);
+            var localCocoons = Utility.CocoonsFor(this.pawn.Map, this.pawn);
             if (!localCocoons.NullOrEmpty())
             {
                 var tempCocoons = new List<Thing>(localCocoons.InRandomOrder());
@@ -137,7 +137,7 @@ namespace Arachnophobia
                             toLoad = Prey;
                             newPosition = Prey.Position;
                         }
-                        if (!toLoad.Spawned) this.EndJobWith(JobCondition.Incompletable);
+                        if (!toLoad.Spawned) { this.EndJobWith(JobCondition.Incompletable); return; }
 
                         toLoad.DeSpawn();
                         toLoad.holdingOwner = null;
@@ -220,13 +220,13 @@ namespace Arachnophobia
             };
 
             yield return Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, onHitAction).JumpIf(() => Prey.Downed || Prey.Dead, prepareToSpin).FailOn(() => Find.TickManager.TicksGame > this.startTick + 5000 && (float)(this.CurJob.GetTarget(TargetIndex.A).Cell - this.pawn.Position).LengthHorizontalSquared > 4f);
-            yield return prepareToSpin.FailOn(() => Prey == null && Corpse == null);
-            yield return gotoBody.FailOn(() => Prey == null && Corpse == null);
-            yield return spinDelay.FailOn(() => Prey == null && Corpse == null);
-            yield return spinBody.FailOn(() => Prey == null && Corpse == null);
-            yield return pickupCocoon.FailOn(() => Prey == null && Corpse == null);
-            yield return relocateCocoon.FailOn(() => Prey == null && Corpse == null);
-            yield return dropCocoon.FailOn(() => Prey == null && Corpse == null);
+            yield return prepareToSpin.FailOn(() => Prey == null);
+            yield return gotoBody.FailOn(() => Prey == null);
+            yield return spinDelay.FailOn(() => Prey == null);
+            yield return spinBody.FailOn(() => Prey == null);
+            yield return pickupCocoon;
+            yield return relocateCocoon;
+            yield return dropCocoon;
 
             //float durationMultiplier = 1f / this.pawn.GetStatValue(StatDefOf.EatingSpeed, true);
             //yield return Toils_Ingest.ChewIngestible(this.pawn, durationMultiplier, TargetIndex.A, TargetIndex.None).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);

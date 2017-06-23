@@ -65,10 +65,13 @@
     <Compile Include="Arachnophobia\JobDriver_ConsumeCocoon.cs" />
     <Compile Include="Arachnophobia\JobDriver_SpinPrey.cs" />
     <Compile Include="Arachnophobia\JobGiver_GetFoodSpider.cs" />
+    <Compile Include="Arachnophobia\ModInfo.cs" />
+    <Compile Include="Arachnophobia\ModMain.cs" />
     <Compile Include="Arachnophobia\PawnWebSpinner.cs" />
     <Compile Include="Arachnophobia\ROMADefOf.cs" />
     <Compile Include="Arachnophobia\JobDriver_SpinWeb.cs" />
     <Compile Include="Arachnophobia\Utility.cs" />
+    <Compile Include="Arachnophobia\WorldComponent_ModSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

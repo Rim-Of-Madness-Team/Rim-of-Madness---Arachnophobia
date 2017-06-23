@@ -29,6 +29,7 @@
     <tickerType>Normal</tickerType>
     <building>
       <claimable>false</claimable>
+      <isEdifice>False</isEdifice>
     </building>
     <statBases>
       <MaxHitPoints>10</MaxHitPoints>
@@ -96,8 +97,11 @@
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <rotatable>false</rotatable>
     <tickerType>Rare</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <designateHaulable>true</designateHaulable>
     <building>
       <claimable>false</claimable>
+      <isEdifice>False</isEdifice>
     </building>
     <statBases>
       <MaxHitPoints>10</MaxHitPoints>
@@ -108,6 +112,12 @@
     <comps>
       <li Class="CompProperties_Lifespan">
         <lifespanTicks>400000</lifespanTicks>
+      </li>
+      <li Class="CompProperties_SpawnerFilth">
+        <filthDef>ROM_FilthCobwebs</filthDef>
+        <spawnCountOnSpawn>3</spawnCountOnSpawn>
+        <spawnMtbHours>8</spawnMtbHours>
+        <spawnRadius>1</spawnRadius>
       </li>
     </comps>
     <graphicData>
@@ -120,7 +130,11 @@
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
     </graphicData>
+    <thingCategories>
+      <li>ROMA_Cocoons</li>
+    </thingCategories>
     <killedLeavings>
       <ROM_SpiderSilk>5</ROM_SpiderSilk>
     </killedLeavings>
@@ -143,11 +157,18 @@
       <damageData>
         <rect>(0.2,0.2,0.6,0.6)</rect>
       </damageData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
     </graphicData>
     <killedLeavings>
       <ROM_SpiderSilk>15</ROM_SpiderSilk>
     </killedLeavings>
   </ThingDef>
+
+  <ThingCategoryDef>
+    <defName>ROMA_Cocoons</defName>
+    <label>cocoons</label>
+    <parent>Root</parent>
+  </ThingCategoryDef>
 
 
 </ThingDefs>

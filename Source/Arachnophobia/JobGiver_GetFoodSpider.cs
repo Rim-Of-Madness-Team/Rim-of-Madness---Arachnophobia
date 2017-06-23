@@ -63,6 +63,20 @@ namespace Arachnophobia
             {
                 return null;
             }
+            var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
+            if (!localCocoons.NullOrEmpty())
+            {
+                foreach (Building_Cocoon cocoon in localCocoons.InRandomOrder())
+                {
+                    if (cocoon.isConsumableBy(pawn))
+                    {
+                        var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, cocoon);
+                        newJob.locomotionUrgency = ((float)(pawn.Position - cocoon.Position).LengthHorizontalSquared > 10f) ? LocomotionUrgency.Jog : LocomotionUrgency.Walk;
+                        return newJob;
+                    }
+                }
+            }
+
             Pawn pawn2 = thing as Pawn;
             if (pawn2 != null)
             {

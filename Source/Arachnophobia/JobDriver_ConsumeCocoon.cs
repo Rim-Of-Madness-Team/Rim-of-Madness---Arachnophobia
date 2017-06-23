@@ -17,11 +17,13 @@ namespace Arachnophobia
 
         private bool notifiedPlayer = false;
         
-        public Building_Cocoon Cocoon
+        public Building_Cocoon Cocoon 
         {
             get
             {
-                return (Building_Cocoon)TargetA.Thing;
+                Building_Cocoon result = null;
+                if (TargetA.Thing is Building_Cocoon cocoon) result = cocoon;
+                return result;
             }
         }
 
@@ -55,7 +57,7 @@ namespace Arachnophobia
             Toil gotoBody = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             gotoBody.AddPreInitAction(new Action(delegate
             {
-                if (this.pawn.MapHeld.physicalInteractionReservationManager.IsReserved(Cocoon)) this.EndJobWith(JobCondition.Incompletable);
+                if (this.pawn.MapHeld.physicalInteractionReservationManager.IsReserved(Cocoon)) this.pawn.jobs.EndCurrentJob(JobCondition.Incompletable, true);
                 this.pawn.MapHeld.physicalInteractionReservationManager.Reserve(this.pawn, Cocoon);
 
                 if (Victim?.Faction == Faction.OfPlayerSilentFail &&
@@ -74,16 +76,12 @@ namespace Arachnophobia
             yield return Liquify().FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             var durationMultiplier = 1f / this.pawn.GetStatValue(StatDefOf.EatingSpeed, true);
             yield return DrinkCorpse(durationMultiplier).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-            //yield return Toils_Ingest.ChewIngestible(this.pawn, durationMultiplier, TargetIndex.B, TargetIndex.None).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             yield return Toils_Ingest.FinalizeIngest(this.pawn, TargetIndex.B);
             yield return Toils_Jump.JumpIf(gotoBody, () => this.pawn.needs.food.CurLevelPercentage < 0.9f).FailOnDestroyedNullOrForbidden(TargetIndex.B);
         }
 
         public Toil Liquify()
         {
-            //Log.Message("2");
-            if (Victim == null) this.EndJobWith(JobCondition.Incompletable);
-
             //LIQUIFY - Burn all the victim's innards
             Toil liquify = new Toil();
             liquify.initAction = delegate
@@ -129,7 +127,7 @@ namespace Arachnophobia
             };
             liquify.defaultCompleteMode = ToilCompleteMode.Never;
             liquify.WithEffect(EffecterDefOf.Vomit, TargetIndex.A);
-            liquify.PlaySustainerOrSound(() => SoundDef.Named("HissSmall"));
+            liquify.PlaySustainerOrSound(() => ROMADefOf.ROM_MeltingHiss);
             AddIngestionEffects(liquify, this.pawn, TargetIndex.B, TargetIndex.A);
             return liquify;
         }
@@ -186,34 +184,21 @@ namespace Arachnophobia
 
         public Toil DrinkCorpse(float durationMultiplier)
         {
-            if (Victim == null) this.EndJobWith(JobCondition.Incompletable); 
-            //Log.Message("4");
             this.report = "ROM_ConsumeJob2".Translate();
-
-            //Drink Corpse
             Toil drinkCorpse = new Toil();
-            //Log.Message("5");
             drinkCorpse.initAction = delegate
             {
-                //Log.Message("6");
-
                 Thing thing = Victim.Corpse;
-                //Log.Message("7");
 
                 this.pawn.Drawer.rotator.FaceCell(TargetA.Thing.Position);
-                //Log.Message("8");
 
                 if (!thing.IngestibleNow)
                 {
-                    //Log.Message("8a");
-
                     this.pawn.jobs.EndCurrentJob(JobCondition.Incompletable, true);
                     return;
                 }
-                //Log.Message("9");
 
                 this.pawn.jobs.curDriver.ticksLeftThisToil = Mathf.RoundToInt((float)thing.def.ingestible.baseIngestTicks * durationMultiplier);
-                //Log.Message("10");
 
             };
             drinkCorpse.tickAction = delegate

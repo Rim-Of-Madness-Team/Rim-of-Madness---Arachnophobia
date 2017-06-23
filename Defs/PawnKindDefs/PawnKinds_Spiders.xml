@@ -16,7 +16,7 @@
       <MoveSpeed>6.0</MoveSpeed>
       <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-      <ComfyTemperatureMin>0</ComfyTemperatureMin>
+      <ComfyTemperatureMin>-15</ComfyTemperatureMin>
       <MarketValue>5</MarketValue>
       <LeatherAmount>0</LeatherAmount>
     </statBases>
@@ -56,6 +56,8 @@
     </comps>
     <race>
       <body>ROMA_SpiderBody</body>
+      <foodType>CarnivoreAnimalStrict</foodType>
+            <predator>true</predator>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
       <baseBodySize>0.3</baseBodySize>
       <maxPreyBodySize>0.4</maxPreyBodySize>
@@ -66,15 +68,15 @@
       <wildness>0.95</wildness>
       <wildBiomes>
         <!-- Moderate Climates -->
-        <TemperateForest>0.55</TemperateForest>
-        <TropicalRainforest>0.75</TropicalRainforest>
+        <TemperateForest>0.45</TemperateForest>
+        <TropicalRainforest>0.65</TropicalRainforest>
         <!-- Arid Climates -->
-        <AridShrubland>0.35</AridShrubland>
-        <Desert>0.75</Desert>
-        <ExtremeDesert>0.015</ExtremeDesert>
+        <AridShrubland>0.25</AridShrubland>
+        <Desert>0.65</Desert>
+        <ExtremeDesert>0.005</ExtremeDesert>
         <!-- Cold Biomes -->
-        <BorealForest>0.35</BorealForest>
-        <Tundra>0.075</Tundra>
+        <BorealForest>0.25</BorealForest>
+        <Tundra>0.065</Tundra>
         <IceSheet>0</IceSheet>
         <SeaIce>0</SeaIce>
       </wildBiomes>
@@ -111,7 +113,7 @@
     <label>spider</label>
     <race>ROMA_SpiderRace</race>
     <combatPower>2</combatPower>
-    <wildSpawn_EcoSystemWeight>0.20</wildSpawn_EcoSystemWeight>
+    <wildSpawn_EcoSystemWeight>0.15</wildSpawn_EcoSystemWeight>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
     <lifeStages>
       <li>
@@ -173,12 +175,11 @@
     <description>This monstrous muffalo-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite.</description>
     <thingClass>Arachnophobia.PawnWebSpinner</thingClass>
     <statBases>
-      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <ComfyTemperatureMin>-20</ComfyTemperatureMin>
       <MarketValue>700</MarketValue>
       <MoveSpeed>5.0</MoveSpeed>
       <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
-      <ComfyTemperatureMin>0</ComfyTemperatureMin>
       <LeatherAmount>10</LeatherAmount>
     </statBases>
     <verbs>
@@ -224,10 +225,12 @@
     <race>
       <body>ROMA_SpiderBody</body>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
+      <foodType>CarnivoreAnimalStrict</foodType>
+            <predator>true</predator>
       <baseBodySize>2.1</baseBodySize>
       <baseHealthScale>1.75</baseHealthScale>
       <baseHungerRate>0.85</baseHungerRate>
-      <useMeatFrom>Megaspider</useMeatFrom>
+      <meatLabel>arachnid meat</meatLabel>
       <mateMtbHours>8</mateMtbHours>
       <leatherColor>(120,120,120)</leatherColor>
       <leatherInsulation>1</leatherInsulation>
@@ -244,15 +247,15 @@
       <wildness>0.95</wildness>
       <wildBiomes>
         <!-- Moderate Climates -->
-        <TemperateForest>0.25</TemperateForest>
-        <TropicalRainforest>0.35</TropicalRainforest>
+        <TemperateForest>0.17</TemperateForest>
+        <TropicalRainforest>0.27</TropicalRainforest>
         <!-- Arid Climates -->
-        <AridShrubland>0.15</AridShrubland>
-        <Desert>0.35</Desert>
-        <ExtremeDesert>0.01</ExtremeDesert>
+        <AridShrubland>0.07</AridShrubland>
+        <Desert>0.27</Desert>
+        <ExtremeDesert>0.02</ExtremeDesert>
         <!-- Cold Biomes -->
-        <BorealForest>0.17</BorealForest>
-        <Tundra>0.035</Tundra>
+        <BorealForest>0.1</BorealForest>
+        <Tundra>0.027</Tundra>
         <IceSheet>0</IceSheet>
         <SeaIce>0</SeaIce>
       </wildBiomes>
@@ -289,7 +292,7 @@
     <label>giant spider</label>
     <race>ROMA_SpiderRaceGiant</race>
     <combatPower>160</combatPower>
-    <wildSpawn_EcoSystemWeight>0.20</wildSpawn_EcoSystemWeight>
+    <wildSpawn_EcoSystemWeight>0.15</wildSpawn_EcoSystemWeight>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
     <lifeStages>
       <li>
@@ -395,8 +398,8 @@
         <eggLayFemaleOnly>false</eggLayFemaleOnly>
         <eggFertilizedDef>ROMA_SpiderEggGiant</eggFertilizedDef>
         <eggUnfertilizedDef>ROMA_SpiderEggGiant</eggUnfertilizedDef>
-        <eggFertilizationCountMax>10</eggFertilizationCountMax>
-        <eggLayIntervalDays>0.1</eggLayIntervalDays>
+        <eggFertilizationCountMax>1</eggFertilizationCountMax>
+        <eggLayIntervalDays>4</eggLayIntervalDays>
         <eggProgressUnfertilizedMax>1.0</eggProgressUnfertilizedMax>
         <eggCountRange>1</eggCountRange>
       </li>
@@ -404,12 +407,13 @@
     <race>
       <body>ROMA_SpiderBody</body>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
-     <deathActionWorkerClass>Arachnophobia.DeathActionWorker_QueenDeath</deathActionWorkerClass>
+      <foodType>CarnivoreAnimalStrict</foodType>
+      <deathActionWorkerClass>Arachnophobia.DeathActionWorker_QueenDeath</deathActionWorkerClass>
       <hasGenders>false</hasGenders>
       <baseBodySize>3.1</baseBodySize>
       <baseHealthScale>2.75</baseHealthScale>
       <baseHungerRate>0.85</baseHungerRate>
-      <useMeatFrom>Megaspider</useMeatFrom>
+      <useMeatFrom>ROMA_SpiderRaceGiant</useMeatFrom>
       <mateMtbHours>8</mateMtbHours>
       <trainableIntelligence>None</trainableIntelligence>
       <wildness>1.0</wildness>
@@ -698,19 +702,28 @@
          =======================================================================
     -->
 
-    <ThingDef ParentName="EggFertBase">
+    <ThingDef ParentName="ROM_EggFertBase">
         <defName>ROMA_SpiderEgg</defName>
         <label>spider egg sack</label>
         <description>An egg sack filled with baby spiders.</description>
         <graphicData>
-          <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+          <texPath>Things/Item/Resource/AnimalProductRaw/EggSack</texPath>
           <color>(245,245,245)</color>
           <drawSize>1</drawSize>
         </graphicData>
+        <tickerType>Normal</tickerType>
         <statBases>
           <MarketValue>15.0</MarketValue>
         </statBases>
         <comps>
+      			<li Class="CompProperties_FoodPoisoningChance">
+      				<humanlikeOnly>true</humanlikeOnly>
+      			</li>
+      			<li Class="CompProperties_TemperatureRuinable">
+      				<minSafeTemperature>-20</minSafeTemperature>
+      				<maxSafeTemperature>50</maxSafeTemperature>
+      				<progressPerDegreePerTick>0.00003</progressPerDegreePerTick>
+      			</li>
           <li Class="Arachnophobia.CompProperties_MultiHatcher">
             <hatcherDaysToHatch>7</hatcherDaysToHatch>
             <hatcherPawn>ROMA_SpiderKind</hatcherPawn>
@@ -723,19 +736,28 @@
       </ThingDef>
 
 
-            <ThingDef ParentName="EggFertBase">
+            <ThingDef ParentName="ROM_EggFertBase">
                 <defName>ROMA_SpiderEggGiant</defName>
                 <label>giant spider egg sack</label>
                 <description>An egg sack filled with baby giant spiders.</description>
                 <graphicData>
-                  <texPath>Things/Item/Resource/AnimalProductRaw/EggRound</texPath>
+                  <texPath>Things/Item/Resource/AnimalProductRaw/EggSack</texPath>
                   <color>(245,245,245)</color>
-                  <drawSize>3</drawSize>
+                  <drawSize>2</drawSize>
                 </graphicData>
+                <tickerType>Normal</tickerType>
                 <statBases>
                   <MarketValue>5.0</MarketValue>
                 </statBases>
                 <comps>
+              			<li Class="CompProperties_FoodPoisoningChance">
+              				<humanlikeOnly>true</humanlikeOnly>
+              			</li>
+              			<li Class="CompProperties_TemperatureRuinable">
+              				<minSafeTemperature>-20</minSafeTemperature>
+              				<maxSafeTemperature>50</maxSafeTemperature>
+              				<progressPerDegreePerTick>0.00003</progressPerDegreePerTick>
+              			</li>
                   <li Class="Arachnophobia.CompProperties_MultiHatcher">
                     <hatcherDaysToHatch>7</hatcherDaysToHatch>
                     <hatcherPawn>ROMA_SpiderKindGiant</hatcherPawn>
@@ -753,26 +775,7 @@
       ==========================================================================
       -->
 
-
-        <ThingDef Abstract="True" Name="EggUnfertBase" ParentName="EggBase" >
-          <ingestible>
-            <preferability>RawBad</preferability>
-          </ingestible>
-          <thingCategories>
-            <li>EggsUnfertilized</li>
-          </thingCategories>
-          <comps>
-            <li Class="CompProperties_Rottable">
-              <daysToRotStart>15</daysToRotStart>
-      				<rotDestroys>true</rotDestroys>
-      			</li>
-      			<li Class="CompProperties_FoodPoisoningChance">
-      				<humanlikeOnly>true</humanlikeOnly>
-      			</li>
-          </comps>
-        </ThingDef>
-
-        <ThingDef Abstract="True" Name="EggFertBase" ParentName="EggBase" >
+        <ThingDef Abstract="True" Name="ROM_EggFertBase" ParentName="EggBase" >
           <tickerType>Normal</tickerType>
           <ingestible>
             <preferability>DesperateOnly</preferability>
@@ -780,16 +783,6 @@
           <thingCategories>
             <li>EggsFertilized</li>
           </thingCategories>
-      		<comps>
-      			<li Class="CompProperties_FoodPoisoningChance">
-      				<humanlikeOnly>true</humanlikeOnly>
-      			</li>
-      			<li Class="CompProperties_TemperatureRuinable">
-      				<minSafeTemperature>0</minSafeTemperature>
-      				<maxSafeTemperature>50</maxSafeTemperature>
-      				<progressPerDegreePerTick>0.00003</progressPerDegreePerTick>
-      			</li>
-      		</comps>
         </ThingDef>
 
       <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="BaseInsect">

@@ -15,15 +15,17 @@ namespace Arachnophobia
 
         public void WebEffect(Pawn p)
         {
+
             float num = 20f;
             float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
             num *= num2;
             p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
-            spinner.Notify_WebTouched(p);
-            if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), MessageSound.Standard);
-            spinner.Web = null;
             if (Rand.Value > 0.9) this.Destroy(DestroyMode.KillFinalize);
             else this.Destroy(DestroyMode.Vanish);
+
+            if (spinner != null) spinner.Notify_WebTouched(p);
+            if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), MessageSound.Standard);
+            spinner.Web = null;
         }
 
         public override void Tick()
@@ -56,6 +58,24 @@ namespace Arachnophobia
                 }
             }
             catch (Exception) { }
+        }
+
+        public override string GetInspectString()
+        {
+            var str2 = "None".Translate();
+            var compDisappearsStr = this.GetComp<CompLifespan>()?.CompInspectStringExtra()?.TrimEndNewlines() ?? "";
+            var result = new StringBuilder();
+
+            if (Spinner != null)
+            {
+                str2 = (spinner.Faction != Faction.OfPlayerSilentFail) ? "ROM_Wild".Translate(spinner.Label) : spinner.Name.ToStringFull;
+                if (spinner.Dead) str2 = "DeadLabel".Translate(str2);
+            }
+
+            result.AppendLine("ROM_Spinner".Translate() + ": " + str2);
+            result.AppendLine(compDisappearsStr);
+
+            return result.ToString().TrimEndNewlines();
         }
 
         public override void ExposeData()

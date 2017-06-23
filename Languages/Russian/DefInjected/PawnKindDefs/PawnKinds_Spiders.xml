@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+
+  <ROMA_SpiderRace.Label>Паук</ROMA_SpiderRace.Label>
+  <ROMA_SpiderRace.Description>Этот генетически модифицированный хищник размером с кролика имеет восемь ног, твердый панцирь и ядовитый укус.</ROMA_SpiderRace.Description>
+  <ROMA_SpiderKind.Label>Паук</ROMA_SpiderKind.Label>
+  <ROMA_SpiderKind.Label>Паучек</ROMA_SpiderKind.Label>
+  <ROMA_SpiderKind.Label>Юный паук</ROMA_SpiderKind.Label>
+  <ROMA_SpiderRaceGiant.Label>Гиганский паук</ROMA_SpiderRaceGiant.Label>
+  <ROMA_SpiderRaceGiant.Description>Этот чудовищный генетически модифицированный хищник размером с муффало имеет восемь ног, твердый панцирь и ядовитый укус.</ROMA_SpiderRaceGiant.Description>
+  <ROMA_SpiderRaceGiant.leatherLabel>Хитин арахнида</ROMA_SpiderRaceGiant.leatherLabel>
+  <ROMA_SpiderKindGiant.Label>Гиганский паук</ROMA_SpiderKindGiant.Label>
+    <ROMA_SpiderKindGiant.Label>Гиганский паучек</ROMA_SpiderKindGiant.Label>
+  <ROMA_SpiderKindGiant.Label>Юный гиганский паук</ROMA_SpiderKindGiant.Label>
+
+  ==========================================================
+                        GIANT SPIDER QUEEN
+  ==========================================================
+
+  <ROMA_SpiderRaceGiantQueen.Label>Гиганская паучья королева</ROMA_SpiderRaceGiantQueen.Label>
+  <ROMA_SpiderRaceGiantQueen.Description>В половину трумбо, гигантская паучья королева - яркий пример генетической инженерии, который был ужасной ошибкой. У разновидностей королев также есть крылья, что дает способность летать на короткие расстояния.</ROMA_SpiderRaceGiantQueen.Description>
+  <ROMA_SpiderKindGiantQueen.Label>Гиганская паучья королева</ROMA_SpiderKindGiantQueen.Label>
+  <ROMA_SpiderKindGiantQueen.Label>паучек гигантской паучьей королевы</ROMA_SpiderKindGiantQueen.Label>
+  <ROMA_SpiderKindGiantQueen.Label>Юная паучья королева</ROMA_SpiderKindGiantQueen.Label>
+
+</LanguageData>

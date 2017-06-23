@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+<!-- 6/23/17 === UPDATE STRINGS ============ -->
+
+<ROM_Wild>Wild {0}</ROM_Wild>
+<ROM_Spinner>Spinner</ROM_Spinner>
+
+<!-- ======== INITIAL MOD STRINGS ========== -->
+
 <ROM_EscapedFromCocoon>{0} has escaped from a cocoon.</ROM_EscapedFromCocoon>
 <ROM_SpiderWebsCrossed>{0} crossed into a spider's web.</ROM_SpiderWebsCrossed>
 <ROM_SpiderEatingColonist>A {0} is attempting to consume {1}.</ROM_SpiderEatingColonist>
@@ -13,5 +20,7 @@
 <ROM_SpidersArrived>Giant spiders have arrived. A queen is among them.</ROM_SpidersArrived>
 
 <ROM_SpiderQueenDeath>From the spider queen's corpse, hundreds of spiders scurry loose.</ROM_SpiderQueenDeath>
+
+<ROM_SettingsSpiderMultiplier>Spider spawn rate multiplier</ROM_SettingsSpiderMultiplier>
 
 </LanguageData>

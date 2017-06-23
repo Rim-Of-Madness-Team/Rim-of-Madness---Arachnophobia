@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -14,17 +15,46 @@ namespace Arachnophobia
     {
         private PawnWebSpinner spinner;
         public PawnWebSpinner Spinner { get { return spinner; } set { spinner = value; } }
-        public bool CanConsume
+        public bool isConsumableBy(Pawn pawn)
+        {
+                return  (spinner?.kindDef == pawn?.kindDef || pawn?.kindDef == ROMADefOf.ROMA_SpiderKindGiantQueen) &&
+                        pawn is PawnWebSpinner webSpinner &&
+                        webSpinner.Spawned &&
+                        !webSpinner.Dead &&
+                        !webSpinner.IsBusy &&
+                        webSpinner?.needs?.food?.CurLevelPercentage <= 0.4 &&
+                        isConsumable;
+        }
+
+        public bool isConsumable
         {
             get
             {
-                return spinner != null &&
-                        spinner.Spawned &&
-                        !spinner.Dead &&
-                        !spinner.IsBusy &&
-                        spinner?.needs?.food?.CurLevelPercentage <= 0.4 &&
-                        Victim != null;
+                return Victim != null &&
+                        this.Spawned &&
+                        !this.Destroyed &&
+                        !this.MapHeld.physicalInteractionReservationManager.IsReserved(this);
             }
+        }
+
+        public override string GetInspectString()
+        {
+            var str = this.innerContainer.ContentsString;
+            var str2 = "None".Translate();
+            var compDisappearsStr = this.GetComp<CompLifespan>()?.CompInspectStringExtra()?.TrimEndNewlines() ?? "";
+            var result = new StringBuilder();
+
+            if (Spinner != null)
+            {
+                str2 = (spinner.Faction != Faction.OfPlayerSilentFail) ? "ROM_Wild".Translate(spinner.Label) : spinner.Name.ToStringFull;
+                if (spinner.Dead) str2 = "DeadLabel".Translate(str2);
+            }
+            result.AppendLine("ROM_Spinner".Translate() + ": " + str2);
+
+            result.AppendLine("CasketContains".Translate() + ": " + str.CapitalizeFirst());
+            result.AppendLine(compDisappearsStr);
+
+            return result.ToString().TrimEndNewlines();
         }
 
         public Pawn Victim
@@ -49,7 +79,7 @@ namespace Arachnophobia
             {
                 if (allowSpecialEffects)
                 {
-                    sound.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
+                    //sound.PlayOneShot(new TargetInfo(base.Position, base.Map, false));
                 }
                 return true;
             }
@@ -62,6 +92,10 @@ namespace Arachnophobia
         {
             base.TickRare();
             if (lastEscapeAttempt == 0) lastEscapeAttempt = Find.TickManager.TicksGame;
+            if (this.holdingOwner?.Owner is Pawn holder)
+            {
+                Log.Message("1");
+            }
             if (Victim is Pawn p && !p.Dead &&
                 p.Faction == Faction.OfPlayerSilentFail &&
                 lastEscapeAttempt + GenDate.TicksPerHour > Find.TickManager.TicksGame)
@@ -71,19 +105,12 @@ namespace Arachnophobia
                 {
                     Messages.Message("ROM_EscapedFromCocoon".Translate(p), MessageSound.Benefit);
                     this.EjectContents();
-                    this.Destroy(DestroyMode.KillFinalize);
                 }
             }
 
-            if (CanConsume)
-            {
-                //Log.Message("JobStarted");
-                var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, this);
-                newJob.locomotionUrgency = ((float)(this.Position - this.Position).LengthHorizontalSquared > 10f) ? LocomotionUrgency.Jog : LocomotionUrgency.Walk;
-                Spinner.jobs?.TryTakeOrderedJob(newJob);
-            }
-        }
 
+        }
+        
 
         [DebuggerHidden]
         public override IEnumerable<Gizmo> GetGizmos()
@@ -92,38 +119,24 @@ namespace Arachnophobia
             {
                 yield return c;
             }
-            if (base.Faction == Faction.OfPlayer && this.innerContainer.Count > 0 && this.def.building.isPlayerEjectable)
-            {
-                Command_Action eject = new Command_Action();
-                eject.action = new Action(this.EjectContents);
-                eject.defaultLabel = "CommandPodEject".Translate();
-                eject.defaultDesc = "CommandPodEjectDesc".Translate();
-                if (this.innerContainer.Count == 0)
-                {
-                    eject.Disable("CommandPodEjectFailEmpty".Translate());
-                }
-                eject.hotKey = KeyBindingDefOf.Misc1;
-                eject.icon = ContentFinder<Texture2D>.Get("UI/Commands/PodEject", true);
-                yield return eject;
-            }
         }
         
         public override void EjectContents()
         {
-            ThingDef filthSlime = ThingDefOf.FilthSlime;
+            ThingDef filthCobwebs = ROMADefOf.ROM_FilthCobwebs;
             foreach (Thing current in ((IEnumerable<Thing>)this.innerContainer))
             {
                 if (current is Pawn pawn)
                 {
                     PawnComponentsUtility.AddComponentsForSpawn(pawn);
-                    pawn.filth.GainFilth(filthSlime);
+                    pawn.filth.GainFilth(filthCobwebs);
                     //pawn.health.AddHediff(HediffDefOf.ToxicBuildup, null, null);
-                    HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, 0.7f);
+                    HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, 0.3f);
                 }
             }
             if (!base.Destroyed)
             {
-                sound.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map, false), MaintenanceType.None));
+                //sound.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map, false), MaintenanceType.None));
             }
             base.EjectContents();
             if (!this.Destroyed) this.Destroy(DestroyMode.KillFinalize);

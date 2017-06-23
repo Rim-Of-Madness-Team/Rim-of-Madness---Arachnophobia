@@ -66,7 +66,9 @@ namespace Arachnophobia
                 var hungryNow = this?.needs?.food?.CurCategory <= HungerCategory.Hungry;
                 var canPreyUpon = (toucher?.RaceProps?.canBePredatorPrey ?? false) && (toucher?.RaceProps?.baseBodySize ?? 1) <= (this?.RaceProps?.maxPreyBodySize ?? 0);
                 var attackAnyway = Rand.Value > 0.95; //5% chance to attack regardless
-                if (hungryNow && canPreyUpon || attackAnyway)
+                var friendly = this?.Faction != null && (toucher?.Faction == this?.Faction || (!toucher.RaceProps.Animal && !toucher.Faction.HostileTo(this?.Faction) && !toucher.IsPrisonerOfColony));
+
+                if (!friendly && (hungryNow && canPreyUpon || attackAnyway))
                 {
                     Job spinPrey = new Job(ROMADefOf.ROMA_SpinPrey, toucher);
                     spinPrey.count = 1;
@@ -81,7 +83,7 @@ namespace Arachnophobia
             base.Tick();
             if (Find.TickManager.TicksGame % WebPeriod == 0)
             {
-                if (Utility.Cocoons(this.Map, this.def) is List<Thing> localCocoons &&
+                if (Utility.CocoonsFor(this.Map, this) is List<Thing> localCocoons &&
                     !localCocoons.NullOrEmpty() && localCocoons.FirstOrDefault(x => x is Building_Cocoon y && y.Victim != null) is
                     Building_Cocoon localCocoon &&
                     (this?.needs?.food?.CurLevelPercentage ?? 0) < 0.35)
