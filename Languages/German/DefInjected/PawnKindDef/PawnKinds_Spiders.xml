@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderKind.label>Spinne</ROMA_SpiderKind.label>
+  <ROMA_SpiderKind.labelPlural>Spinnen</ROMA_SpiderKind.labelPlural>
+  <ROMA_SpiderKind.labelMale>männliche Spinne </ROMA_SpiderKind.labelMale>
+  <ROMA_SpiderKind.labelMalePlural>männliche Spinnen</ROMA_SpiderKind.labelMalePlural>
+  <ROMA_SpiderKind.labelFemale>weibliche Spinne</ROMA_SpiderKind.labelFemale>
+  <ROMA_SpiderKind.labelFemalePlural>weibliche Spinnen</ROMA_SpiderKind.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.0.label>Spinnchen</ROMA_SpiderKind.lifeStages.0.label>
+  <ROMA_SpiderKind.lifeStages.0.labelPlural>Spinnchen</ROMA_SpiderKind.lifeStages.0.labelPlural>
+  <ROMA_SpiderKind.lifeStages.0.labelMale>männliches Spinnchen</ROMA_SpiderKind.lifeStages.0.labelMale>
+  <ROMA_SpiderKind.lifeStages.0.labelMalePlural>männliche Spinnchen</ROMA_SpiderKind.lifeStages.0.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.0.labelFemale>weibliches Spinnchen</ROMA_SpiderKind.lifeStages.0.labelFemale>
+  <ROMA_SpiderKind.lifeStages.0.labelFemalePlural>weibliche Spinnchen</ROMA_SpiderKind.lifeStages.0.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.1.label>jugendliche Spinne</ROMA_SpiderKind.lifeStages.1.label>
+  <ROMA_SpiderKind.lifeStages.1.labelPlural>jugendliche Spinnen</ROMA_SpiderKind.lifeStages.1.labelPlural>
+  <ROMA_SpiderKind.lifeStages.1.labelMale>männliche jugendliche Spinne</ROMA_SpiderKind.lifeStages.1.labelMale>
+  <ROMA_SpiderKind.lifeStages.1.labelMalePlural>männliche jugendliche Spinnen</ROMA_SpiderKind.lifeStages.1.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.1.labelFemale>weibliche jugendliche Spinne</ROMA_SpiderKind.lifeStages.1.labelFemale>
+  <ROMA_SpiderKind.lifeStages.1.labelFemalePlural>weibliche jugendliche Spinnen</ROMA_SpiderKind.lifeStages.1.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.2.label>Spinne</ROMA_SpiderKind.lifeStages.2.label>
+  <ROMA_SpiderKind.lifeStages.2.labelPlural>Spinne</ROMA_SpiderKind.lifeStages.2.labelPlural>
+  <ROMA_SpiderKind.lifeStages.2.labelMale>männliche Spinne</ROMA_SpiderKind.lifeStages.2.labelMale>
+  <ROMA_SpiderKind.lifeStages.2.labelMalePlural>männliche Spinnen</ROMA_SpiderKind.lifeStages.2.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.2.labelFemale>weibliche Spinne</ROMA_SpiderKind.lifeStages.2.labelFemale>
+  <ROMA_SpiderKind.lifeStages.2.labelFemalePlural>weibliche Spinnen</ROMA_SpiderKind.lifeStages.2.labelFemalePlural>
+
+
+  <!-- RiesenspinneS -->
+
+  <ROMA_SpiderKindGiant.label>Riesenspinne</ROMA_SpiderKindGiant.label>
+  <ROMA_SpiderKindGiant.labelPlural>Riesenspinne</ROMA_SpiderKindGiant.labelPlural>
+  <ROMA_SpiderKindGiant.labelMale>männliche Riesenspinne</ROMA_SpiderKindGiant.labelMale>
+  <ROMA_SpiderKindGiant.labelMalePlural>männliche Riesenspinnen</ROMA_SpiderKindGiant.labelMalePlural>
+  <ROMA_SpiderKindGiant.labelFemale>weibliche Riesenspinne</ROMA_SpiderKindGiant.labelFemale>
+  <ROMA_SpiderKindGiant.labelFemalePlural>weibliche Riesenspinne</ROMA_SpiderKindGiant.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.label>Riesenspinnchen</ROMA_SpiderKindGiant.lifeStages.0.label>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelPlural>Riesenspinnchen</ROMA_SpiderKindGiant.lifeStages.0.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelMale>männliche Riesenspinnchen</ROMA_SpiderKindGiant.lifeStages.0.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelMalePlural>männliche Riesenspinnchen</ROMA_SpiderKindGiant.lifeStages.0.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelFemale>weibliche Riesenspinnchen</ROMA_SpiderKindGiant.lifeStages.0.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelFemalePlural>weibliche Riesenspinnchen</ROMA_SpiderKindGiant.lifeStages.0.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.label>jugendliche Riesenspinne</ROMA_SpiderKindGiant.lifeStages.1.label>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelPlural>jugendliche Riesenspinnen</ROMA_SpiderKindGiant.lifeStages.1.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelMale>männliche jugendliche Riesenspinne</ROMA_SpiderKindGiant.lifeStages.1.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelMalePlural>männliche jugendliche Riesenspinnen</ROMA_SpiderKindGiant.lifeStages.1.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelFemale>weibliche jugendliche Riesenspinne</ROMA_SpiderKindGiant.lifeStages.1.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelFemalePlural>weibliche jugendliche Riesenspinnen</ROMA_SpiderKindGiant.lifeStages.1.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.label>Riesenspinne</ROMA_SpiderKindGiant.lifeStages.2.label>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelPlural>Riesenspinne</ROMA_SpiderKindGiant.lifeStages.2.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelMale>männliche Riesenspinne</ROMA_SpiderKindGiant.lifeStages.2.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelMalePlural>männliche Riesenspinnen</ROMA_SpiderKindGiant.lifeStages.2.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelFemale>weibliche Riesenspinne</ROMA_SpiderKindGiant.lifeStages.2.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelFemalePlural>weibliche Riesenspinnen</ROMA_SpiderKindGiant.lifeStages.2.labelFemalePlural>
+
+
+  <!-- Riesenspinne QUEEN -->
+
+  <ROMA_SpiderKindGiantQueen.label>Riesenspinnen Königin</ROMA_SpiderKindGiantQueen.label>
+  <ROMA_SpiderKindGiantQueen.labelPlural>Riesenspinne Königinnen</ROMA_SpiderKindGiantQueen.labelPlural>
+  <ROMA_SpiderKindGiantQueen.lifeStages.0.label>Riesenspinnen Königin Spinnchen</ROMA_SpiderKindGiantQueen.lifeStages.0.label>
+  <ROMA_SpiderKindGiantQueen.lifeStages.0.labelPlural>Riesenspinnen Königin Spinnchen</ROMA_SpiderKindGiantQueen.lifeStages.0.labelPlural>
+  <ROMA_SpiderKindGiantQueen.lifeStages.1.label>jugendliche Riesenspinnen Königin</ROMA_SpiderKindGiantQueen.lifeStages.1.label>
+  <ROMA_SpiderKindGiantQueen.lifeStages.1.labelPlural>jugendliche Riesenspinnen Königin</ROMA_SpiderKindGiantQueen.lifeStages.1.labelPlural>
+  <ROMA_SpiderKindGiantQueen.lifeStages.2.label>Riesenspinnen Königin</ROMA_SpiderKindGiantQueen.lifeStages.2.label>
+  <ROMA_SpiderKindGiantQueen.lifeStages.2.labelPlural>Riesenspinnen Königinnen</ROMA_SpiderKindGiantQueen.lifeStages.2.labelPlural>
+
+
+</LanguageData>

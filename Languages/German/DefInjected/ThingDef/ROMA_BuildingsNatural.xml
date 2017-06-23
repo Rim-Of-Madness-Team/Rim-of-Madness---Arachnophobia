@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- WEBS -->
+
+  <ROMA_Web.label>Netz</ROMA_Web.label>
+  <ROMA_Web.description>Ein Spinnenseidennetz zum Fangen von Beute.</ROMA_Web.description>
+
+  <ROMA_WebGiant.label>Riesennetz</ROMA_WebGiant.label>
+  <ROMA_WebGiant.description>Ein riesiges Spinnenseidennetz zum Fangen von größerer Beute..</ROMA_WebGiant.description>
+
+
+  <!-- COCOONS -->
+
+  <ROMA_Cocoon.label>Kokon</ROMA_Cocoon.label>
+  <ROMA_Cocoon.description>Ein Spinnenseidenkokon zum frischhalten von Beute - tot oder lebendig.</ROMA_Cocoon.description>
+
+  <ROMA_CocoonGiant.label>Riesenkokon</ROMA_CocoonGiant.label>
+  <ROMA_CocoonGiant.description>Ein Spinnenseidenkokon zum frischhalten von größerer Beute </ROMA_CocoonGiant.description>
+
+
+</LanguageData>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderRace.label>Spinne</ROMA_SpiderRace.label>
+  <ROMA_SpiderRace.description>Dieser hasengroße, genetisch veränderte Jäger besitzt 8 Beine, einen harten Panzer und gifte Zähne.</ROMA_SpiderRace.description>
+  <!-- Leather Amount: 0 -->
+  <!-- Use Meat From: Megaspider -->
+  <ROMA_SpiderRace_Corpse.label>Spinnenleiche</ROMA_SpiderRace_Corpse.label>
+  <ROMA_SpiderRace_Corpse.description>Spinnenleiche</ROMA_SpiderRace_Corpse.description>
+
+
+  <!-- GIANT SPIDERS -->
+
+  <ROMA_SpiderRaceGiant.label>Riesenspinne</ROMA_SpiderRaceGiant.label>
+  <ROMA_SpiderRaceGiant.description>Dieser muffalogroße, genetisch veränderte Jäger besitzt 8 Beine, einen harten Panzer und gifte Zähne.</ROMA_SpiderRaceGiant.description>
+  <ROMA_SpiderRaceGiant_Leather.label>Arachnidchitin</ROMA_SpiderRaceGiant_Leather.label>
+  <ROMA_SpiderRaceGiant_Leather.description>Arachnidchitin</ROMA_SpiderRaceGiant_Leather.description>
+  <ROMA_SpiderRaceGiant_Leather.stuffProps.stuffAdjective>Arachnidchitin</ROMA_SpiderRaceGiant_Leather.stuffProps.stuffAdjective>
+  <ROMA_SpiderRaceGiant_Meat.label>Arachnid Fleisch</ROMA_SpiderRaceGiant_Meat.label>
+  <ROMA_SpiderRaceGiant_Meat.description>Arachnid Fleisch</ROMA_SpiderRaceGiant_Meat.description>
+  <ROMA_SpiderRaceGiant_Corpse.label>Riesenspinnenleiche</ROMA_SpiderRaceGiant_Corpse.label>
+  <ROMA_SpiderRaceGiant_Corpse.description>Riesenspinnenleiche</ROMA_SpiderRaceGiant_Corpse.description>
+
+
+  <!-- GIANT SPIDER QUEEN -->
+
+  <ROMA_SpiderRaceGiantQueen.label>Riesenspinnen Königin<ROMA_SpiderRaceGiantQueen.label>
+  <ROMA_SpiderRaceGiantQueen.description>Halb so groß wie ein Thrumbo, ist die Riesenspinnen Königin ein Paradebeispiel für fehlgeschlagene genetische Veränderung. Die Königinnenarten haben sogar Flügel, mitdenen sie kurze Strecken überfliegen können.</ROMA_SpiderRaceGiantQueen.description>
+  <!-- Leather Amount: 0 -->
+  <!-- Use Meat From: ROMA_SpiderRaceGiant -->
+  <ROMA_SpiderRaceGiantQueen_Corpse.label>Riesenspinnen Königin Leiche</ROMA_SpiderRaceGiantQueen_Corpse.label>
+  <ROMA_SpiderRaceGiantQueen_Corpse.description>Riesenspinnen Königin Leiche</ROMA_SpiderRaceGiantQueen_Corpse.description>
+
+
+  <!-- EGGS -->
+
+  <ROMA_SpiderEgg.label>Spinnen Eiersack</ROMA_SpiderEgg.label>
+  <ROMA_SpiderEgg.description>Ein Eiersack voller kleiner Babyspinnchen.</ROMA_SpiderEgg.description>
+
+  <ROMA_SpiderEggGiant.label>Riesenspinnen Eiersack</ROMA_SpiderEggGiant.label>
+  <ROMA_SpiderEggGiant.description>Ein Eiersack voller kleiner Babyriesenspinnchen.</ROMA_SpiderEggGiant.description>
+
+
+</LanguageData>

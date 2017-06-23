@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- BODY PARTS -->
+
+  <ROMA_Cephalothorax.label>Caphalothorax</ROMA_Cephalothorax.label>
+  <ROMA_LeftPedipalp.label>linke Kieferzange</ROMA_LeftPedipalp.label>
+  <ROMA_RightPedipalp.label>rechte Kieferzange</ROMA_RightPedipalp.label>
+  <ROMA_SecondMiddleLeftInsectLeg.label>zweites mittleres linkes Bein</ROMA_SecondMiddleLeftInsectLeg.label>
+  <ROMA_SecondMiddleRightInsectLeg.label>zweites mittleres rechtes Bein</ROMA_SecondMiddleRightInsectLeg.label>
+
+
+</LanguageData>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 6/23/17 === UPDATE STRINGS ============ -->
+
+  <ROM_Wild>Wild {0}</ROM_Wild>
+  <ROM_Spinner>Spinner</ROM_Spinner>
+
+  <!-- ======== INITIAL MOD STRINGS ========== -->
+  
+  <ROM_EscapedFromCocoon>{0} ist aus einem Kokon ausgebrochen.</ROM_EscapedFromCocoon>
+  <ROM_SpiderWebsCrossed>{0} ist einer Spinne ins Netz gelaufen.</ROM_SpiderWebsCrossed>
+  <ROM_SpiderEatingColonist>Eine {0} versucht {1} zu verspeisen.</ROM_SpiderEatingColonist>
+  <ROM_SpinPreyJob1>geht zu Opfer</ROM_SpinPreyJob1>
+  <ROM_SpinPreyJob2>spinnt Opfer ein </ROM_SpinPreyJob2>
+  <ROM_ConsumeJob1>verflüßigt das Innere seines Opfers</ROM_ConsumeJob1>
+  <ROM_ConsumeJob2>saugt sein Opfer aus</ROM_ConsumeJob2>
+
+  <ROM_LetterLabelSpidersArrived>Riesenspinnen</ROM_LetterLabelSpidersArrived>
+  <ROM_SpidersArrived>Riesenspinnen sind aufgetaucht. Eine Königin ist unter ihnen.</ROM_SpidersArrived>
+
+  <ROM_SpiderQueenDeath>Aus der Leiche der Spinnenkönigin krabbeln hunderte kleiner Spinnen.</ROM_SpiderQueenDeath>
+
+  <ROM_SettingsSpiderMultiplier>Spinnen Spawnmengen Multiplizierer</ROM_SettingsSpiderMultiplier>
+
+</LanguageData>
