@@ -2,6 +2,7 @@
 using Verse;
 using Verse.AI;
 using RimWorld;
+using System.Linq;
 
 namespace Arachnophobia
 {
@@ -55,6 +56,39 @@ namespace Arachnophobia
                 Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Malnutrition, false);
                 flag = (firstHediffOfDef != null && firstHediffOfDef.Severity > 0.4f);
             }
+            var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
+            if (!localCocoons.NullOrEmpty())
+            {
+                Building_Cocoon closestCocoon = null;
+                var shortestDistance = 9999f;
+                foreach (Building_Cocoon cocoon in localCocoons)
+                {
+                    //Log.Message("1");
+                    if (cocoon.isConsumableBy(pawn))
+                    {
+                        //Log.Message("2");
+                        if (closestCocoon == null)
+                        {
+                            closestCocoon = cocoon;
+                            continue;
+                        }
+                        var thisDistance = (float)(cocoon.Position - pawn.Position).LengthHorizontalSquared;
+                        if (thisDistance < shortestDistance)
+                        {
+                            shortestDistance = thisDistance;
+                            closestCocoon = cocoon;
+                        }
+                    }
+                }
+                if (closestCocoon != null)
+                {
+                    //Log.Message("3");
+                    var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, closestCocoon);
+                    return newJob;
+                }
+            }
+
+
             bool desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
             bool allowCorpse = flag;
             Thing thing;
@@ -63,20 +97,7 @@ namespace Arachnophobia
             {
                 return null;
             }
-            var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
-            if (!localCocoons.NullOrEmpty())
-            {
-                foreach (Building_Cocoon cocoon in localCocoons.InRandomOrder())
-                {
-                    if (cocoon.isConsumableBy(pawn))
-                    {
-                        var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, cocoon);
-                        newJob.locomotionUrgency = ((float)(pawn.Position - cocoon.Position).LengthHorizontalSquared > 10f) ? LocomotionUrgency.Jog : LocomotionUrgency.Walk;
-                        return newJob;
-                    }
-                }
-            }
-
+            
             Pawn pawn2 = thing as Pawn;
             if (pawn2 != null)
             {

@@ -9,6 +9,14 @@
 		<scatterableOnMapGen>false</scatterableOnMapGen>
 	</ThingDef>
 
+  <ThingDef Name="BuildingCocoonBase" Abstract="True">
+    <category>Building</category>
+    <selectable>true</selectable>
+    <drawerType>RealtimeOnly</drawerType>
+    <filthLeaving>RockRubble</filthLeaving>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
+  </ThingDef>
+
   <!--
   ==============================================================================
                                    WEBS
@@ -56,6 +64,7 @@
     <killedLeavings>
       <ROM_SpiderSilk>5</ROM_SpiderSilk>
     </killedLeavings>
+    <filthLeaving>ROM_FilthCobwebs</filthLeaving>
   </ThingDef>
 
   <ThingDef ParentName="ROM_BaseWeb">
@@ -78,6 +87,7 @@
     <killedLeavings>
       <ROM_SpiderSilk>15</ROM_SpiderSilk>
     </killedLeavings>
+    <filthLeaving>ROM_FilthCobwebs</filthLeaving>
   </ThingDef>
 
   <!--
@@ -85,7 +95,7 @@
                                       COCOONS
   ==============================================================================
   -->
-  <ThingDef ParentName="BuildingNaturalBase" Name="ROM_BaseCocoon">
+  <ThingDef ParentName="BuildingCocoonBase" Name="ROM_BaseCocoon">
     <defName>ROMA_Cocoon</defName>
     <label>cocoon</label>
     <description>A silk spun cocoon for holding subdued prey both alive or dead.</description>
@@ -96,16 +106,28 @@
     <fillPercent>0.50</fillPercent>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <rotatable>false</rotatable>
-    <tickerType>Rare</tickerType>
+    <tickerType>Normal</tickerType>
     <alwaysHaulable>true</alwaysHaulable>
     <designateHaulable>true</designateHaulable>
     <building>
       <claimable>false</claimable>
       <isEdifice>False</isEdifice>
+      <fullGraveGraphicData>
+        <texPath>Things/Building/Natural/ROMCocoon/ROM__Cocoon</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <shadowData>
+          <volume>(0.3, 0.6, 0.3)</volume>
+          <offset>(0,0,-0.1)</offset>
+        </shadowData>
+        <damageData>
+          <rect>(0.2,0.2,0.6,0.6)</rect>
+        </damageData>
+        <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      </fullGraveGraphicData>
     </building>
     <statBases>
       <MaxHitPoints>10</MaxHitPoints>
-      <Mass>0.05</Mass>
+      <Mass>5.0</Mass>
       <WorkToBuild>170</WorkToBuild>
       <Flammability>2.0</Flammability>
     </statBases>
@@ -121,7 +143,7 @@
       </li>
     </comps>
     <graphicData>
-      <texPath>Things/Building/Natural/Cocoon/ROM_cocoon</texPath>
+      <texPath>Things/Building/Natural/ROMCocoonEmpty/ROM__CocoonEmpty</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
@@ -138,18 +160,42 @@
     <killedLeavings>
       <ROM_SpiderSilk>5</ROM_SpiderSilk>
     </killedLeavings>
+    <filthLeaving>ROM_FilthCobwebs</filthLeaving>
   </ThingDef>
 
 
   <ThingDef ParentName="ROM_BaseCocoon">
     <defName>ROMA_CocoonGiant</defName>
-    <label>giant cocoon</label>
+    <label>large cocoon</label>
     <description>A huge silk spun web for holding larger prey.</description>
     <size>(1,1)</size>
+    <building>
+      <claimable>false</claimable>
+      <isEdifice>False</isEdifice>
+      <fullGraveGraphicData>
+        <texPath>Things/Building/Natural/ROMCocoonGiant/ROM__CocoonGiant</texPath>
+        <drawSize>(1.5)</drawSize>
+        <graphicClass>Graphic_Single</graphicClass>
+        <shadowData>
+          <volume>(0.3, 0.6, 0.3)</volume>
+          <offset>(0,0,-0.1)</offset>
+        </shadowData>
+        <damageData>
+          <rect>(0.2,0.2,0.6,0.6)</rect>
+        </damageData>
+        <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      </fullGraveGraphicData>
+    </building>
+    <statBases>
+      <MaxHitPoints>10</MaxHitPoints>
+      <Mass>45.0</Mass>
+      <WorkToBuild>170</WorkToBuild>
+      <Flammability>2.0</Flammability>
+    </statBases>
     <graphicData>
-      <texPath>Things/Building/Natural/Cocoon/ROM_cocoon</texPath>
+      <texPath>Things/Building/Natural/ROMCocoonGiantEmpty/ROM__CocoonGiantEmpty</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.7,1.7)</drawSize>
+      <drawSize>(1.5)</drawSize>
       <shadowData>
         <volume>(0.3, 0.6, 0.3)</volume>
         <offset>(0,0,-0.1)</offset>
@@ -162,6 +208,7 @@
     <killedLeavings>
       <ROM_SpiderSilk>15</ROM_SpiderSilk>
     </killedLeavings>
+    <filthLeaving>ROM_FilthCobwebs</filthLeaving>
   </ThingDef>
 
   <ThingCategoryDef>

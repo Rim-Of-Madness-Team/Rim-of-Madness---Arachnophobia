@@ -36,7 +36,11 @@ namespace Arachnophobia
                         this.pawn.CurJob.SetTarget(TargetIndex.A, RCellFinder.RandomWanderDestFor(this.pawn, this.pawn.Position, 5f, null, Danger.Some));
                         if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, this.pawn.Map).Accepted)
                         {
-                            break;
+                            if (this.pawn?.Faction == null || this.pawn?.Faction != Faction.OfPlayerSilentFail) break;
+                            else if (this.pawn?.Faction == Faction.OfPlayerSilentFail && !TargetA.Cell.IsForbidden(this.pawn))
+                            {
+                                break;
+                            }
                         }
                         i--;
                     }

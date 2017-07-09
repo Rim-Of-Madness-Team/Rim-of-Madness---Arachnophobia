@@ -37,6 +37,7 @@ namespace Arachnophobia
                        this?.CurJob?.def == JobDefOf.LayDown ||
                        this?.CurJob?.def == JobDefOf.Mate ||
                        this?.CurJob?.def == JobDefOf.LayEgg ||
+                       this?.CurJob?.def == JobDefOf.AttackMelee ||
                        this?.CurJob?.def == ROMADefOf.ROMA_SpinPrey ||
                        this?.CurJob?.def == ROMADefOf.ROMA_ConsumeCocoon;
             }
@@ -83,15 +84,15 @@ namespace Arachnophobia
             base.Tick();
             if (Find.TickManager.TicksGame % WebPeriod == 0)
             {
-                if (Utility.CocoonsFor(this.Map, this) is List<Thing> localCocoons &&
-                    !localCocoons.NullOrEmpty() && localCocoons.FirstOrDefault(x => x is Building_Cocoon y && y.Victim != null) is
-                    Building_Cocoon localCocoon &&
-                    (this?.needs?.food?.CurLevelPercentage ?? 0) < 0.35)
-                {
-                    var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, localCocoon);
-                    newJob.locomotionUrgency = ((float)(localCocoon.Position - this.Position).LengthHorizontalSquared > 10f) ? LocomotionUrgency.Jog : LocomotionUrgency.Walk;
-                    this.jobs?.TryTakeOrderedJob(newJob);
-                }
+                //if (Utility.CocoonsFor(this.Map, this) is List<Thing> localCocoons &&
+                //    !localCocoons.NullOrEmpty() && localCocoons.FirstOrDefault(x => x is Building_Cocoon y && y.Victim != null) is
+                //    Building_Cocoon localCocoon &&
+                //    (this?.needs?.food?.CurLevelPercentage ?? 0) < 0.35)
+                //{
+                //    var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, localCocoon);
+                //    newJob.locomotionUrgency = ((float)(localCocoon.Position - this.Position).LengthHorizontalSquared > 10f) ? LocomotionUrgency.Jog : LocomotionUrgency.Walk;
+                //    this.jobs?.TryTakeOrderedJob(newJob);
+                //}
                 MakeWeb();
             }
         }

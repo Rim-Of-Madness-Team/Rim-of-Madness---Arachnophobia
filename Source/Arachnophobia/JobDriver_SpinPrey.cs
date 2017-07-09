@@ -20,7 +20,7 @@ namespace Arachnophobia
             get
             {
                 var result = ROMADefOf.ROMA_Cocoon;
-                if ((Prey?.RaceProps?.baseBodySize ?? 0) > 2) result = ROMADefOf.ROMA_CocoonGiant;
+                if ((Prey?.RaceProps?.baseBodySize ?? 0) > 0.99) result = ROMADefOf.ROMA_CocoonGiant;
                 return result;
             }
         }
@@ -57,20 +57,29 @@ namespace Arachnophobia
             return currentActivity;
         }
 
-        public IntVec3 CocoonPlace()
+        public IntVec3 CocoonPlace(Building_Cocoon exception = null)
         {
             var newPosition = TargetB.Cell;
-            var localCocoons = Utility.CocoonsFor(this.pawn.Map, this.pawn);
-            if (!localCocoons.NullOrEmpty())
+            var localCocoons = Utility.CocoonsFor(this.pawn.Map, this.pawn, exception);
+            //Log.Message("1");
+            if (localCocoons != null && localCocoons.Count > 0)
             {
+                //Log.Message("2");
+
                 var tempCocoons = new List<Thing>(localCocoons.InRandomOrder());
                 foreach (Building_Cocoon cocoon in tempCocoons)
                 {
+                    //Log.Message("3");
+
                     var cells = GenAdj.CellsAdjacent8Way(new TargetInfo(cocoon.Position, this.pawn.Map));
                     foreach (IntVec3 cell in cells)
                     {
+                        //Log.Message("4");
+
                         if (GenConstruct.CanPlaceBlueprintAt(CocoonDef, cell, Rot4.North, this.Map).Accepted)
                         {
+                            //Log.Message("5");
+
                             newPosition = cell;
                             break;
                         }
@@ -102,6 +111,8 @@ namespace Arachnophobia
             Toil gotoBody = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             gotoBody.AddPreInitAction(new Action(delegate
                 {
+                    this.Map.physicalInteractionReservationManager.ReleaseAllForTarget(TargetA);
+                    this.Map.physicalInteractionReservationManager.Reserve(this.GetActor(), TargetA);
                     currentActivity = "ROM_SpinPreyJob1".Translate();
                 }));
 
@@ -174,7 +185,7 @@ namespace Arachnophobia
             Toil relocateCocoon = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
             pickupCocoon.AddPreInitAction(new Action(delegate
             {
-                this.pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace());
+                this.pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace((Building_Cocoon)TargetB.Thing));
             }));
             Toil dropCocoon = Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, relocateCocoon, false).FailOn(() => !GenConstruct.CanPlaceBlueprintAt(CocoonDef, TargetC.Cell, Rot4.North, this.Map).Accepted);
             this.AddFinishAction(new Action(delegate

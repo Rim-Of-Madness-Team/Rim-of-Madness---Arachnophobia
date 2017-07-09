@@ -15,15 +15,78 @@ namespace Arachnophobia
     {
         private PawnWebSpinner spinner;
         public PawnWebSpinner Spinner { get { return spinner; } set { spinner = value; } }
+        public Pawn Victim
+        {
+            get
+            {
+                Pawn result = null;
+                if (this.innerContainer.Count > 0)
+                {
+                    if (this.innerContainer[0] is Pawn p) result = p;
+                    if (this.innerContainer[0] is Corpse y) result = y.InnerPawn;
+                }
+                return result;
+            }
+        }
+
+        public bool isPathableBy(Pawn p)
+        {
+            bool result = false;
+            using (PawnPath pawnPath = p.Map.pathFinder.FindPath(p.Position, this.Position, TraverseParms.For(p, Danger.Deadly, TraverseMode.PassDoors, false), PathEndMode.OnCell))
+            {
+                if (!pawnPath.Found)
+                {
+                    return result;
+                }
+            }
+            result = true;
+            return result;
+        }
+
         public bool isConsumableBy(Pawn pawn)
         {
-                return  (spinner?.kindDef == pawn?.kindDef || pawn?.kindDef == ROMADefOf.ROMA_SpiderKindGiantQueen) &&
-                        pawn is PawnWebSpinner webSpinner &&
-                        webSpinner.Spawned &&
-                        !webSpinner.Dead &&
-                        !webSpinner.IsBusy &&
-                        webSpinner?.needs?.food?.CurLevelPercentage <= 0.4 &&
-                        isConsumable;
+            return pawn is PawnWebSpinner webSpinner &&
+                    webSpinner.Spawned &&
+                    !webSpinner.Dead &&
+                    !webSpinner.IsBusy &&
+                    webSpinner?.needs?.food?.CurLevelPercentage <= 0.4 &&
+                    isConsumable &&
+                    playerFactionExceptions(webSpinner) && 
+                    isPathableBy(pawn);
+        }
+
+        //Wild spiders || Faction spiders && player spiders must have access to cocoons
+        public bool playerFactionExceptions(PawnWebSpinner y) => 
+            (y?.Faction == null || 
+            (Victim?.Faction != y?.Faction) && (y.Faction == Faction.OfPlayerSilentFail && this.PositionHeld.InAllowedArea(y)));
+
+        // RimWorld.Building_Grave code repurposed for Cocoons
+        private Graphic cachedGraphicFull;
+        private Graphic cachedGraphicEmpty;
+        public override Graphic Graphic
+        {
+            get
+            {
+                if (this.def.building.fullGraveGraphicData == null)
+                {
+                    return base.Graphic;
+                }
+
+                if (Victim == null)
+                {
+                    if (this.cachedGraphicEmpty == null)
+                    {
+                        this.cachedGraphicEmpty = GraphicDatabase.Get<Graphic_Single>(this.def.graphicData.texPath, ShaderDatabase.Cutout, this.def.graphicData.drawSize, this.DrawColor, this.DrawColorTwo, this.def.graphicData);
+                    }
+                    return this.cachedGraphicEmpty;
+                }
+
+                if (this.cachedGraphicFull == null)
+                {
+                    this.cachedGraphicFull = GraphicDatabase.Get<Graphic_Single>(this.def.building.fullGraveGraphicData.texPath, ShaderDatabase.Cutout, this.def.building.fullGraveGraphicData.drawSize, this.DrawColor, this.DrawColorTwo, this.def.building.fullGraveGraphicData);
+                }
+                return this.cachedGraphicFull;
+            }
         }
 
         public bool isConsumable
@@ -31,6 +94,7 @@ namespace Arachnophobia
             get
             {
                 return Victim != null &&
+                        //Victim.IngestibleNow &&
                         this.Spawned &&
                         !this.Destroyed &&
                         !this.MapHeld.physicalInteractionReservationManager.IsReserved(this);
@@ -57,20 +121,6 @@ namespace Arachnophobia
             return result.ToString().TrimEndNewlines();
         }
 
-        public Pawn Victim
-        {
-            get
-            {
-                Pawn result = null;
-                if (this.innerContainer.Count > 0)
-                {
-                    if(this.innerContainer[0] is Pawn p) result = p;
-                    if (this.innerContainer[0] is Corpse y) result = y.InnerPawn;
-                }
-                return result;
-            }
-        }
-
         private SoundDef sound = SoundDef.Named("HissSmall");
 
         public override bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
@@ -88,27 +138,38 @@ namespace Arachnophobia
 
         public int lastEscapeAttempt = 0;
 
-        public override void TickRare()
+        public override void Tick()
         {
-            base.TickRare();
-            if (lastEscapeAttempt == 0) lastEscapeAttempt = Find.TickManager.TicksGame;
-            if (this.holdingOwner?.Owner is Pawn holder)
+            base.Tick();
+            if (Find.TickManager.TicksGame % 250 == 0)
             {
-                Log.Message("1");
-            }
-            if (Victim is Pawn p && !p.Dead &&
-                p.Faction == Faction.OfPlayerSilentFail &&
-                lastEscapeAttempt + GenDate.TicksPerHour > Find.TickManager.TicksGame)
-            {
-                lastEscapeAttempt = Find.TickManager.TicksGame;
-                if (Rand.Value > 0.95f && !this.Destroyed)
+                var nonSpinnerCarrier = (this?.ParentHolder is Pawn_CarryTracker c && c?.pawn is Pawn cp && !(cp is PawnWebSpinner)) && cp.Faction != Spinner.Faction ? cp : null;
+                var isSpinnerAvailable = Spinner != null && Spinner.Spawned && !Spinner.IsBusy && Spinner.Map == nonSpinnerCarrier?.MapHeld;
+                if (isSpinnerAvailable)
                 {
-                    Messages.Message("ROM_EscapedFromCocoon".Translate(p), MessageSound.Benefit);
-                    this.EjectContents();
+                    var isInSpinnerLOS = GenSight.LineOfSight(Spinner.Position, nonSpinnerCarrier.Position, nonSpinnerCarrier.Map);
+                    if (nonSpinnerCarrier != null && isInSpinnerLOS)
+                    {
+                        var attackJob = new Job(JobDefOf.AttackMelee, nonSpinnerCarrier);
+                        attackJob.count = 1;
+                        attackJob.killIncappedTarget = false;
+                        Spinner.jobs.TryTakeOrderedJob(attackJob);
+                    }
+                }
+                if (lastEscapeAttempt == 0) lastEscapeAttempt = Find.TickManager.TicksGame;
+
+                if (Victim is Pawn p && !p.Dead &&
+                    p.Faction == Faction.OfPlayerSilentFail &&
+                    lastEscapeAttempt + GenDate.TicksPerHour > Find.TickManager.TicksGame)
+                {
+                    lastEscapeAttempt = Find.TickManager.TicksGame;
+                    if (Rand.Value > 0.95f && !this.Destroyed)
+                    {
+                        Messages.Message("ROM_EscapedFromCocoon".Translate(p), MessageSound.Benefit);
+                        this.EjectContents();
+                    }
                 }
             }
-
-
         }
         
 

@@ -128,6 +128,15 @@ namespace Arachnophobia
             liquify.defaultCompleteMode = ToilCompleteMode.Never;
             liquify.WithEffect(EffecterDefOf.Vomit, TargetIndex.A);
             liquify.PlaySustainerOrSound(() => ROMADefOf.ROM_MeltingHiss);
+            liquify.WithProgressBar(TargetIndex.A, delegate
+            {
+                var thing = this.pawn?.CurJob?.GetTarget(TargetIndex.B).Thing;
+                if (thing == null)
+                {
+                    return 1f;
+                }
+                return 1f - (float)this.pawn.jobs.curDriver.ticksLeftThisToil / Mathf.Round((float)thing.def.ingestible.baseIngestTicks);
+            }, false, -0.5f);
             AddIngestionEffects(liquify, this.pawn, TargetIndex.B, TargetIndex.A);
             return liquify;
         }
@@ -216,7 +225,9 @@ namespace Arachnophobia
                 return 1f - (float)this.pawn.jobs.curDriver.ticksLeftThisToil / Mathf.Round((float)thing.def.ingestible.baseIngestTicks * durationMultiplier);
             }, false, -0.5f);
             drinkCorpse.defaultCompleteMode = ToilCompleteMode.Delay;
+            drinkCorpse.WithEffect(EffecterDefOf.EatMeat, TargetIndex.A);
             drinkCorpse.FailOnDestroyedOrNull(TargetIndex.B);
+            drinkCorpse.PlaySustainerOrSound(() => SoundDefOf.RawMeat_Eat);
             drinkCorpse.AddFinishAction(delegate
             {
                 //Log.Message("11");

@@ -78,7 +78,7 @@ namespace Arachnophobia
                         {
                             if (this.hatcheeParent != null)
                             {
-                                if (hatcheeParent?.Faction != null) pawn.SetFaction(hatcheeParent.Faction);
+                                if (hatcheeParent.Faction != null) pawn.SetFaction(hatcheeParent.Faction);
                                 if (pawn.playerSettings != null && this.hatcheeParent.playerSettings != null && this.hatcheeParent.Faction == this.hatcheeFaction)
                                 {
                                     pawn.playerSettings.AreaRestriction = this.hatcheeParent.playerSettings.AreaRestriction;
@@ -107,6 +107,7 @@ namespace Arachnophobia
             }
             this.parent.Destroy(DestroyMode.Vanish);
         }
+        
 
         public override void PreAbsorbStack(Thing otherStack, int count)
         {

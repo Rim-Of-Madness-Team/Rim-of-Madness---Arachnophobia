@@ -5,7 +5,6 @@ namespace Arachnophobia
     [StaticConstructorOnStartup]
     public static class ModInfo
     {
-        public static int romSpiderFactor = 1;
-
+        public static float romSpiderFactor = 1;
     }
 }

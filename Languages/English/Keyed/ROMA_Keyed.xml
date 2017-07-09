@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+<!-- 6/29/17 == UPDATE ===================== -->
+
+<ROM_SettingsSpiderMultiplier_Num>Spider spawn rate multiplier ({0}x)</ROM_SettingsSpiderMultiplier_Num>
+
+<ROM_SettingsSpiderMultiplier_None>Spider spawn rate multiplier (None)</ROM_SettingsSpiderMultiplier_None>
+
+
 <!-- 6/23/17 === UPDATE STRINGS ============ -->
 
 <ROM_Wild>Wild {0}</ROM_Wild>

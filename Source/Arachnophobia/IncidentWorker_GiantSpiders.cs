@@ -16,6 +16,7 @@ namespace Arachnophobia
             {
                 return false;
             }
+            float points = parms.points;
             int num = Rand.RangeInclusive(3, 6);
             IntVec3 loc = CellFinder.RandomClosewalkCellNear(intVec, map, 10, null);
             for (int i = 0; i < num; i++)
@@ -23,10 +24,14 @@ namespace Arachnophobia
                 Pawn newThing = PawnGenerator.GeneratePawn(giantSpider, null);
                 loc = CellFinder.RandomClosewalkCellNear(intVec, map, 10, null);
                 GenSpawn.Spawn(newThing, loc, map);
+                points -= giantSpider.combatPower;
             }
             loc = CellFinder.RandomClosewalkCellNear(intVec, map, 10, null);
-            Pawn spiderQueen = PawnGenerator.GeneratePawn(giantSpiderQueen);
-            GenSpawn.Spawn(spiderQueen, loc, map);
+            if (points > giantSpiderQueen.combatPower)
+            {
+                Pawn spiderQueen = PawnGenerator.GeneratePawn(giantSpiderQueen);
+                GenSpawn.Spawn(spiderQueen, loc, map);
+            }
             Find.LetterStack.ReceiveLetter("ROM_LetterLabelSpidersArrived".Translate(), "ROM_SpidersArrived".Translate(), LetterDefOf.BadNonUrgent, new TargetInfo(intVec, map, false), null);
             return true;
         }

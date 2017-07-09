@@ -18,11 +18,19 @@ namespace Arachnophobia
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            Widgets.TextFieldNumericLabeled<int>(inRect.TopHalf().TopHalf().TopHalf(), "ROM_SettingsSpiderMultiplier".Translate(), ref this.settings.romSpiderFactor, ref this.settings.romSpiderFactorBuffer, 0, 999999);
+            var label = "";
+            if (this.settings.romSpiderFactor < 0.25f)
+            {
+                label = "ROM_SettingsSpiderMultiplier_None".Translate();
+            }
+            else
+            {
+                label = "ROM_SettingsSpiderMultiplier_Num".Translate(this.settings.romSpiderFactor);
+            }
+            this.settings.romSpiderFactor = Widgets.HorizontalSlider(inRect.TopHalf().TopHalf().TopHalf(), this.settings.romSpiderFactor, 0.0f, 10f, false, label, null, null, 0.25f);
 
             this.WriteSettings();
 
-            //this.settings.Write();
         }
 
         public override void WriteSettings()
@@ -39,7 +47,7 @@ namespace Arachnophobia
 
     public class Settings : ModSettings
     {
-        public int romSpiderFactor = 1;
+        public float romSpiderFactor = 1;
         public string romSpiderFactorBuffer;
 
         public override void ExposeData()

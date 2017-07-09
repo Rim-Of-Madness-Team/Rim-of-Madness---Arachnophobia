@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+<!-- 6/23/17 === UPDATE STRINGS ============ -->
+
+<ROM_Wild>Дикий {0}</ROM_Wild>
+<ROM_Spinner>Прядильщик</ROM_Spinner>
+
+<!-- ======== INITIAL MOD STRINGS ========== -->
+
 <ROM_EscapedFromCocoon>{0} сбежал из кокона.</ROM_EscapedFromCocoon>
 <ROM_SpiderWebsCrossed>{0} Попал в паутину.</ROM_SpiderWebsCrossed>
 <ROM_SpiderEatingColonist>{0} пытается съесть {1}.</ROM_SpiderEatingColonist>
@@ -13,5 +20,7 @@
 <ROM_SpidersArrived>Появились гигантские пауки. Среди них королева.</ROM_SpidersArrived>
 
 <ROM_SpiderQueenDeath>Из трупа королевы пауков, высвободились сотни пауков.</ROM_SpiderQueenDeath>
+
+<ROM_SettingsSpiderMultiplier>Множитель скорости рождения пауков</ROM_SettingsSpiderMultiplier>
 
 </LanguageData>

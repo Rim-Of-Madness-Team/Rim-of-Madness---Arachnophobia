@@ -56,8 +56,9 @@
     </comps>
     <race>
       <body>ROMA_SpiderBody</body>
-      <foodType>CarnivoreAnimalStrict</foodType>
-            <predator>true</predator>
+      <foodType>CarnivoreAnimal, Kibble, Fluid</foodType>
+      <predator>true</predator>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
       <baseBodySize>0.3</baseBodySize>
       <maxPreyBodySize>0.4</maxPreyBodySize>
@@ -65,7 +66,7 @@
       <baseHealthScale>0.4</baseHealthScale>
       <useMeatFrom>Megaspider</useMeatFrom>
       <mateMtbHours>8</mateMtbHours>
-      <wildness>0.95</wildness>
+      <wildness>0.75</wildness>
       <wildBiomes>
         <!-- Moderate Climates -->
         <TemperateForest>0.45</TemperateForest>
@@ -113,7 +114,7 @@
     <label>spider</label>
     <race>ROMA_SpiderRace</race>
     <combatPower>2</combatPower>
-    <wildSpawn_EcoSystemWeight>0.15</wildSpawn_EcoSystemWeight>
+    <wildSpawn_EcoSystemWeight>0.09</wildSpawn_EcoSystemWeight>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
     <lifeStages>
       <li>
@@ -225,8 +226,9 @@
     <race>
       <body>ROMA_SpiderBody</body>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
-      <foodType>CarnivoreAnimalStrict</foodType>
-            <predator>true</predator>
+      <foodType>CarnivoreAnimal, Kibble, Fluid</foodType>
+      <predator>true</predator>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <baseBodySize>2.1</baseBodySize>
       <baseHealthScale>1.75</baseHealthScale>
       <baseHungerRate>0.85</baseHungerRate>
@@ -244,7 +246,7 @@
         <ArmorRating_Electric>2.0</ArmorRating_Electric>
       </leatherStatFactors>
       <trainableIntelligence>Advanced</trainableIntelligence>
-      <wildness>0.95</wildness>
+      <wildness>0.75</wildness>
       <wildBiomes>
         <!-- Moderate Climates -->
         <TemperateForest>0.17</TemperateForest>
@@ -292,14 +294,14 @@
     <label>giant spider</label>
     <race>ROMA_SpiderRaceGiant</race>
     <combatPower>160</combatPower>
-    <wildSpawn_EcoSystemWeight>0.15</wildSpawn_EcoSystemWeight>
+    <wildSpawn_EcoSystemWeight>0.09</wildSpawn_EcoSystemWeight>
     <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
     <lifeStages>
       <li>
         <label>giant spiderling</label>
         <bodyGraphicData>
           <texPath>Things/Pawn/Animal/Spider/ROM_Spider</texPath>
-          <drawSize>1.0</drawSize>
+          <drawSize>1.3</drawSize>
           <color>(120,120,120)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
@@ -311,7 +313,7 @@
         <label>juvenile giant spider</label>
         <bodyGraphicData>
           <texPath>Things/Pawn/Animal/Spider/ROM_Spider</texPath>
-          <drawSize>1.5</drawSize>
+          <drawSize>1.7</drawSize>
           <color>(120,120,120)</color>
         </bodyGraphicData>
         <dessicatedBodyGraphicData>
@@ -407,7 +409,9 @@
     <race>
       <body>ROMA_SpiderBody</body>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
-      <foodType>CarnivoreAnimalStrict</foodType>
+      <foodType>CarnivoreAnimal, Kibble, Fluid</foodType>
+      <predator>true</predator>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
       <deathActionWorkerClass>Arachnophobia.DeathActionWorker_QueenDeath</deathActionWorkerClass>
       <hasGenders>false</hasGenders>
       <baseBodySize>3.1</baseBodySize>
@@ -416,7 +420,7 @@
       <useMeatFrom>ROMA_SpiderRaceGiant</useMeatFrom>
       <mateMtbHours>8</mateMtbHours>
       <trainableIntelligence>None</trainableIntelligence>
-      <wildness>1.0</wildness>
+      <wildness>0.9</wildness>
       <lifeExpectancy>200</lifeExpectancy>
       <lifeStageAges>
         <li>
@@ -449,7 +453,7 @@
     <defName>ROMA_SpiderKindGiantQueen</defName>
     <label>giant spider queen</label>
     <race>ROMA_SpiderRaceGiantQueen</race>
-    <combatPower>320</combatPower>
+    <combatPower>600</combatPower>
     <lifeStages>
       <li>
         <label>giant queen spiderling</label>
@@ -713,7 +717,7 @@
         </graphicData>
         <tickerType>Normal</tickerType>
         <statBases>
-          <MarketValue>15.0</MarketValue>
+          <MarketValue>0.7</MarketValue>
         </statBases>
         <comps>
       			<li Class="CompProperties_FoodPoisoningChance">
@@ -747,7 +751,7 @@
                 </graphicData>
                 <tickerType>Normal</tickerType>
                 <statBases>
-                  <MarketValue>5.0</MarketValue>
+                  <MarketValue>0.9</MarketValue>
                 </statBases>
                 <comps>
               			<li Class="CompProperties_FoodPoisoningChance">

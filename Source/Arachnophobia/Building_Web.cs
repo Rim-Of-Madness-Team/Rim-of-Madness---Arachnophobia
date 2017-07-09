@@ -20,11 +20,29 @@ namespace Arachnophobia
             float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
             num *= num2;
             p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
-            if (Rand.Value > 0.9) this.Destroy(DestroyMode.KillFinalize);
-            else this.Destroy(DestroyMode.Vanish);
+            if (!Destroyed)
+            {
+                var leavingsRect = new CellRect(this.OccupiedRect().minX, this.OccupiedRect().minZ, this.OccupiedRect().Width, this.OccupiedRect().Height);
+                if (Rand.Value > 0.9)
+                {
+                    this.Destroy(DestroyMode.KillFinalize);
+                }
+                else
+                {
+                    for (int i = leavingsRect.minZ; i <= leavingsRect.maxZ; i++)
+                    {
+                        for (int j = leavingsRect.minX; j <= leavingsRect.maxX; j++)
+                        {
+                            IntVec3 c = new IntVec3(j, 0, i);
+                            if (Rand.Value > 0.5f) FilthMaker.MakeFilth(c, this.Map, this.def.filthLeaving, Rand.RangeInclusive(1, 3));
+                        }
+                    }
+                    this.Destroy(DestroyMode.Vanish);
+                }
+            }
 
             if (spinner != null) spinner.Notify_WebTouched(p);
-            if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), MessageSound.Standard);
+            if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageSound.Standard);
             spinner.Web = null;
         }
 
