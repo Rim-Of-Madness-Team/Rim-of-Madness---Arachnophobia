@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderKind.label>aranha</ROMA_SpiderKind.label>
+  <ROMA_SpiderKind.labelPlural>aranhas</ROMA_SpiderKind.labelPlural>
+  <ROMA_SpiderKind.lifeStages.0.label>bebê aranha</ROMA_SpiderKind.lifeStages.0.label>
+  <ROMA_SpiderKind.lifeStages.0.labelPlural>aranhas bebês</ROMA_SpiderKind.lifeStages.0.labelPlural>
+  <ROMA_SpiderKind.lifeStages.0.labelMale>bebê aranha macho</ROMA_SpiderKind.lifeStages.0.labelMale>
+  <ROMA_SpiderKind.lifeStages.0.labelMalePlural>bebês aranha machos</ROMA_SpiderKind.lifeStages.0.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.0.labelFemale>bebê aranha fêmea</ROMA_SpiderKind.lifeStages.0.labelFemale>
+  <ROMA_SpiderKind.lifeStages.0.labelFemalePlural>bebês aranha fêmeas</ROMA_SpiderKind.lifeStages.0.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.1.label>aranha juvenil</ROMA_SpiderKind.lifeStages.1.label>
+  <ROMA_SpiderKind.lifeStages.1.labelPlural>aranhas juvenis</ROMA_SpiderKind.lifeStages.1.labelPlural>
+  <ROMA_SpiderKind.lifeStages.1.labelMale>aranha juvenil macho</ROMA_SpiderKind.lifeStages.1.labelMale>
+  <ROMA_SpiderKind.lifeStages.1.labelMalePlural>aranhas juvenis machos</ROMA_SpiderKind.lifeStages.1.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.1.labelFemale>aranha juvenil fêmea</ROMA_SpiderKind.lifeStages.1.labelFemale>
+  <ROMA_SpiderKind.lifeStages.1.labelFemalePlural>aranhas juvenis fêmeas</ROMA_SpiderKind.lifeStages.1.labelFemalePlural>
+  <ROMA_SpiderKind.lifeStages.2.label>aranha</ROMA_SpiderKind.lifeStages.2.label>
+  <ROMA_SpiderKind.lifeStages.2.labelPlural>aranhas</ROMA_SpiderKind.lifeStages.2.labelPlural>
+  <ROMA_SpiderKind.lifeStages.2.labelMale>aranha macho</ROMA_SpiderKind.lifeStages.2.labelMale>
+  <ROMA_SpiderKind.lifeStages.2.labelMalePlural>aranhas machos</ROMA_SpiderKind.lifeStages.2.labelMalePlural>
+  <ROMA_SpiderKind.lifeStages.2.labelFemale>aranha fêmea</ROMA_SpiderKind.lifeStages.2.labelFemale>
+  <ROMA_SpiderKind.lifeStages.2.labelFemalePlural>aranhas fêmeas</ROMA_SpiderKind.lifeStages.2.labelFemalePlural>
+  <ROMA_SpiderKind.labelMale>aranha macho</ROMA_SpiderKind.labelMale>
+  <ROMA_SpiderKind.labelMalePlural>aranhas machos</ROMA_SpiderKind.labelMalePlural>
+  <ROMA_SpiderKind.labelFemale>aranha fêmea</ROMA_SpiderKind.labelFemale>
+  <ROMA_SpiderKind.labelFemalePlural>aranhas fêmeas</ROMA_SpiderKind.labelFemalePlural>
+
+  <!-- GIANT SPIDERS -->
+
+  <ROMA_SpiderKindGiant.label>aranha gigante</ROMA_SpiderKindGiant.label>
+  <ROMA_SpiderKindGiant.labelPlural>aranhas gigantes</ROMA_SpiderKindGiant.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.label>aranha gigante bebê</ROMA_SpiderKindGiant.lifeStages.0.label>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelPlural>aranhas gigantes bebês</ROMA_SpiderKindGiant.lifeStages.0.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelMale>aranha gigante bebê macho</ROMA_SpiderKindGiant.lifeStages.0.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelMalePlural>aranhas gigantes bebês machos</ROMA_SpiderKindGiant.lifeStages.0.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelFemale>aranha gigant bebê fêmea</ROMA_SpiderKindGiant.lifeStages.0.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.0.labelFemalePlural>aranhas gigantes bebês fêmeas</ROMA_SpiderKindGiant.lifeStages.0.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.label>aranha gigante juvenil</ROMA_SpiderKindGiant.lifeStages.1.label>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelPlural>aranhas gigantes juvenis</ROMA_SpiderKindGiant.lifeStages.1.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelMale>aranha gigante juvenil macho</ROMA_SpiderKindGiant.lifeStages.1.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelMalePlural>aranhas gigantes juvenis machos</ROMA_SpiderKindGiant.lifeStages.1.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelFemale>aranha gigante juvenil fêmea</ROMA_SpiderKindGiant.lifeStages.1.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.1.labelFemalePlural>aranhas gigantes juvenis fêmeas</ROMA_SpiderKindGiant.lifeStages.1.labelFemalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.label>aranha gigante</ROMA_SpiderKindGiant.lifeStages.2.label>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelPlural>aranhas gigantes</ROMA_SpiderKindGiant.lifeStages.2.labelPlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelMale>aranha gigante macho</ROMA_SpiderKindGiant.lifeStages.2.labelMale>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelMalePlural>aranhas gigantes machos</ROMA_SpiderKindGiant.lifeStages.2.labelMalePlural>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelFemale>aranha gigante fêmea</ROMA_SpiderKindGiant.lifeStages.2.labelFemale>
+  <ROMA_SpiderKindGiant.lifeStages.2.labelFemalePlural>aranhas gigantes fêmeas</ROMA_SpiderKindGiant.lifeStages.2.labelFemalePlural>
+  <ROMA_SpiderKindGiant.labelMale>aranha gigante macho</ROMA_SpiderKindGiant.labelMale>
+  <ROMA_SpiderKindGiant.labelMalePlural>aranhas gigantes machos</ROMA_SpiderKindGiant.labelMalePlural>
+  <ROMA_SpiderKindGiant.labelFemale>aranha gigante fêmea</ROMA_SpiderKindGiant.labelFemale>
+  <ROMA_SpiderKindGiant.labelFemalePlural>aranhas gigantes fêmeas</ROMA_SpiderKindGiant.labelFemalePlural>
+
+
+  <!-- GIANT SPIDER QUEEN -->
+
+  <ROMA_SpiderKindGiantQueen.label>aranha gigante rainha</ROMA_SpiderKindGiantQueen.label>
+  <ROMA_SpiderKindGiantQueen.labelPlural>rainhas das aranhas gigantes</ROMA_SpiderKindGiantQueen.labelPlural>
+  <ROMA_SpiderKindGiantQueen.lifeStages.0.label>bebê de aranha gigante rainha</ROMA_SpiderKindGiantQueen.lifeStages.0.label>
+  <ROMA_SpiderKindGiantQueen.lifeStages.0.labelPlural>bebês de aranhas gigantes rainha</ROMA_SpiderKindGiantQueen.lifeStages.0.labelPlural>
+  <ROMA_SpiderKindGiantQueen.lifeStages.1.label>aranha gigante rainha juvenil</ROMA_SpiderKindGiantQueen.lifeStages.1.label>
+  <ROMA_SpiderKindGiantQueen.lifeStages.1.labelPlural>rainhas das aranhas gigantes juvenis</ROMA_SpiderKindGiantQueen.lifeStages.1.labelPlural>
+  <ROMA_SpiderKindGiantQueen.lifeStages.2.label>aranha gigante rainha</ROMA_SpiderKindGiantQueen.lifeStages.2.label>
+  <ROMA_SpiderKindGiantQueen.lifeStages.2.labelPlural>rainhas das aranhas gigantes</ROMA_SpiderKindGiantQueen.lifeStages.2.labelPlural>
+
+
+</LanguageData>

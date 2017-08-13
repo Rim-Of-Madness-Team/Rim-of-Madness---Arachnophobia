@@ -11,6 +11,8 @@ namespace Arachnophobia
             Map map = (Map)parms.target;
             var giantSpider = ROMADefOf.ROMA_SpiderKindGiant;
             var giantSpiderQueen = ROMADefOf.ROMA_SpiderKindGiantQueen;
+            bool queenSpawned = false;
+            string desc = "ROM_SpidersArrivedNoQueen";
             IntVec3 intVec;
             if (!RCellFinder.TryFindRandomPawnEntryCell(out intVec, map, CellFinder.EdgeRoadChance_Animal, null))
             {
@@ -29,10 +31,13 @@ namespace Arachnophobia
             loc = CellFinder.RandomClosewalkCellNear(intVec, map, 10, null);
             if (points > giantSpiderQueen.combatPower)
             {
+                queenSpawned = true;
                 Pawn spiderQueen = PawnGenerator.GeneratePawn(giantSpiderQueen);
                 GenSpawn.Spawn(spiderQueen, loc, map);
             }
-            Find.LetterStack.ReceiveLetter("ROM_LetterLabelSpidersArrived".Translate(), "ROM_SpidersArrived".Translate(), LetterDefOf.BadNonUrgent, new TargetInfo(intVec, map, false), null);
+            //ROM_SpidersArrived
+            if (queenSpawned) desc = "ROM_SpidersArrived";
+            Find.LetterStack.ReceiveLetter("ROM_LetterLabelSpidersArrived".Translate(), desc.Translate(), LetterDefOf.BadNonUrgent, new TargetInfo(intVec, map, false), null);
             return true;
         }
     }

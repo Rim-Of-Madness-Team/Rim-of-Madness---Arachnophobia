@@ -15,7 +15,6 @@ namespace Arachnophobia
 
         public void WebEffect(Pawn p)
         {
-
             float num = 20f;
             float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
             num *= num2;
@@ -46,36 +45,54 @@ namespace Arachnophobia
             spinner.Web = null;
         }
 
+        private List<Pawn> touchingPawns = new List<Pawn>();
         public override void Tick()
         {
-            base.Tick();
-            try
+            List<Thing> thingList = base.Position.GetThingList(base.Map);
+            for (int i = 0; i < thingList.Count; i++)
             {
-
-                if (!this.Destroyed && this.Spawned && Find.TickManager.TicksGame % 20 == 0)
+                Pawn pawn = thingList[i] as Pawn;
+                if (pawn != null && (!(pawn is PawnWebSpinner)) && !this.touchingPawns.Contains(pawn))
                 {
-                    var mapHeld = this.MapHeld;
-                    if (mapHeld != null)
-                    {
-                        var cells = new List<IntVec3>(this?.OccupiedRect().Cells?.ToList() ?? null);
-                        var cellCount = (!cells.NullOrEmpty()) ? cells.Count : 0;
-                        for (int j = 0; j < cellCount; j++)
-                        {
-                            var thingList = (!cells.NullOrEmpty()) ? cells[j].GetThingList(mapHeld) : null;
-                            var thingCount = (!thingList.NullOrEmpty()) ? thingList.Count : 0;
-                            for (int i = 0; i < thingCount; i++)
-                            {
-                                if (thingList[i] is Pawn p && !(thingList[i] is PawnWebSpinner))
-                                {
-                                    WebEffect(p);
-                                }
-                            }
-                        }
-                        cells = null;
-                    }
+                    this.touchingPawns.Add(pawn);
+                    this.WebEffect(pawn);
                 }
             }
-            catch (Exception) { }
+            for (int j = 0; j < this.touchingPawns.Count; j++)
+            {
+                Pawn pawn2 = this.touchingPawns[j];
+                if (!pawn2.Spawned || pawn2.Position != base.Position)
+                {
+                    this.touchingPawns.Remove(pawn2);
+                }
+            }
+            base.Tick();
+            //try
+            //{
+            //    if (!this.Destroyed && this.Spawned && Find.TickManager.TicksGame % 20 == 0)
+            //    {
+            //        var mapHeld = this.MapHeld;
+            //        if (mapHeld != null)
+            //        {
+            //            var cells = new List<IntVec3>(this?.OccupiedRect().Cells?.ToList() ?? null);
+            //            var cellCount = (!cells.NullOrEmpty()) ? cells.Count : 0;
+            //            for (int j = 0; j < cellCount; j++)
+            //            {
+            //                var thingList = (!cells.NullOrEmpty()) ? cells[j].GetThingList(mapHeld) : null;
+            //                var thingCount = (!thingList.NullOrEmpty()) ? thingList.Count : 0;
+            //                for (int i = 0; i < thingCount; i++)
+            //                {
+            //                    if (thingList[i] is Pawn p && !(thingList[i] is PawnWebSpinner))
+            //                    {
+            //                        WebEffect(p);
+            //                    }
+            //                }
+            //            }
+            //            cells = null;
+            //        }
+            //    }
+            //}
+            //catch (Exception) { }
         }
 
         public override string GetInspectString()
@@ -100,6 +117,7 @@ namespace Arachnophobia
         {
             base.ExposeData();
             Scribe_References.Look<PawnWebSpinner>(ref this.spinner, "spinner");
+            Scribe_Collections.Look<Pawn>(ref this.touchingPawns, "touchingPawns", LookMode.Reference, new object[0]);
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderKind.label>aranha</ROMA_SpiderKind.label>
+  <ROMA_SpiderKind.labelPlural>aranhas</ROMA_SpiderKind.labelPlural>
+
+  <!-- GIANT SPIDERS -->
+
+  <ROMA_SpiderKindGiant.label>aranha gigante</ROMA_SpiderKindGiant.label>
+
+  <!-- GIANT SPIDER QUEEN -->
+
+  <ROMA_SpiderKindGiantQueen.label>aranha gigante rainha</ROMA_SpiderKindGiantQueen.label>
+  <ROMA_SpiderKindGiantQueen.labelPlural>rainhas das aranhas gigantes</ROMA_SpiderKindGiantQueen.labelPlural>
+
+</LanguageData>

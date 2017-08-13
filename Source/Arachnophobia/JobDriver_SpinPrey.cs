@@ -76,10 +76,11 @@ namespace Arachnophobia
                     {
                         //Log.Message("4");
 
-                        if (GenConstruct.CanPlaceBlueprintAt(CocoonDef, cell, Rot4.North, this.Map).Accepted)
+                        if (cell.Walkable(this.pawn.Map) &&
+                            cell.GetThingList(this.pawn.Map).FirstOrDefault(x => x is Building_Cocoon) == null &&
+                            GenConstruct.CanPlaceBlueprintAt(CocoonDef, cell, Rot4.North, this.Map).Accepted)
                         {
                             //Log.Message("5");
-
                             newPosition = cell;
                             break;
                         }

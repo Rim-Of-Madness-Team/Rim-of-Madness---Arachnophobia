@@ -29,7 +29,7 @@ namespace Arachnophobia
             if (domesticCocoons != null && domesticCocoons.Count > 0 && t.Faction == Faction.OfPlayerSilentFail) return domesticCocoons;
 
             //Other cases should not exist.
-            Log.Message("Arachophobia :: No cocoons exist");
+            //("Arachophobia :: No cocoons exist");
             return allCocoons;
         }
 

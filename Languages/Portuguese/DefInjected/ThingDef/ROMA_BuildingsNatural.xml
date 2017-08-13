@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- WEBS -->
+
+  <ROMA_Web.label>teia</ROMA_Web.label>
+  <ROMA_Web.description>Uma teia de seda feita para capturar presas.</ROMA_Web.description>
+
+  <ROMA_WebGiant.label>teia gigante</ROMA_WebGiant.label>
+  <ROMA_WebGiant.description>Uma teia de seda gigante feita para capturar grandes presas.</ROMA_WebGiant.description>
+
+
+  <!-- COCOONS -->
+
+  <ROMA_Cocoon.label>casulo</ROMA_Cocoon.label>
+  <ROMA_Cocoon.description>Uma casulo de seda feita para manter aprisionada uma presa, viva ou morta.</ROMA_Cocoon.description>
+
+  <ROMA_CocoonGiant.label>casulo gigante</ROMA_CocoonGiant.label>
+  <ROMA_CocoonGiant.description>Um casulo enorme feito para manter aprisionado uma presa, viva ou morta.</ROMA_CocoonGiant.description>
+
+
+</LanguageData>

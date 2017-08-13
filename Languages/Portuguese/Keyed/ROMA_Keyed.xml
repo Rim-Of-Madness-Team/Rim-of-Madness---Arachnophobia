@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<!-- 6/29/17 == UPDATE ===================== -->
+
+<ROM_SettingsSpiderMultiplier_Num>Taxa de aparição de aranhas ({0}x)</ROM_SettingsSpiderMultiplier_Num>
+<ROM_SettingsSpiderMultiplier_None>Taxa de aparição de aranhas (Aucun)</ROM_SettingsSpiderMultiplier_None>
+
+<!-- 6/23/17 === UPDATE STRINGS ============ -->
+
+<ROM_Wild>Selvagem {0}</ROM_Wild>
+<ROM_Spinner>Enrolando</ROM_Spinner>
+
+<!-- ======== INITIAL MOD STRINGS ========== -->
+
+<ROM_EscapedFromCocoon>{0} escapou de um casulo.</ROM_EscapedFromCocoon>
+<ROM_SpiderWebsCrossed>{0} atravessou uma teia de aranha.</ROM_SpiderWebsCrossed>
+<ROM_SpiderEatingColonist>Uma {0} está consumindo {1}.</ROM_SpiderEatingColonist>
+<ROM_SpinPreyJob1>caçando {0}</ROM_SpinPreyJob1>
+<ROM_SpinPreyJob2>enrolando a sua vítima</ROM_SpinPreyJob2>
+<ROM_ConsumeJob1>liquefazendo os órgãos vitais de sua vítima</ROM_ConsumeJob1>
+<ROM_ConsumeJob2>aspirando a sua vítima</ROM_ConsumeJob2>
+
+<ROM_LetterLabelSpidersArrived>Aranhas gigantes</ROM_LetterLabelSpidersArrived>
+<ROM_SpidersArrived>Aranhas gigantes chegara. Uma rainha está entre elas.</ROM_SpidersArrived>
+
+<ROM_SpiderQueenDeath>Centenas de aranhas juvenis pulam do corpo da rainha.</ROM_SpiderQueenDeath>
+
+<ROM_SettingsSpiderMultiplier>Taxa de aparição de aranhas</ROM_SettingsSpiderMultiplier>
+
+</LanguageData>

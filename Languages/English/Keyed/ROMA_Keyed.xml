@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
+<!-- 8/4/17 == UPDATE ===================== -->
+<ROM_SpidersArrivedNoQueen>Giant spiders have arrived.</ROM_SpidersArrivedNoQueen>
+
+
 <!-- 6/29/17 == UPDATE ===================== -->
 
 <ROM_SettingsSpiderMultiplier_Num>Spider spawn rate multiplier ({0}x)</ROM_SettingsSpiderMultiplier_Num>
@@ -18,7 +22,7 @@
 <ROM_EscapedFromCocoon>{0} has escaped from a cocoon.</ROM_EscapedFromCocoon>
 <ROM_SpiderWebsCrossed>{0} crossed into a spider's web.</ROM_SpiderWebsCrossed>
 <ROM_SpiderEatingColonist>A {0} is attempting to consume {1}.</ROM_SpiderEatingColonist>
-<ROM_SpinPreyJob1>going to victim</ROM_SpinPreyJob1>
+<ROM_SpinPreyJob1>hunting {0}</ROM_SpinPreyJob1>
 <ROM_SpinPreyJob2>spinning victim</ROM_SpinPreyJob2>
 <ROM_ConsumeJob1>melting victim's innards</ROM_ConsumeJob1>
 <ROM_ConsumeJob2>drinking victim</ROM_ConsumeJob2>

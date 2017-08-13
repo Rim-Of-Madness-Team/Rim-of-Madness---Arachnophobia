@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderRace.label>aranha</ROMA_SpiderRace.label>
+  <ROMA_SpiderRace.description>Um predador genéticamente modificado, do tamnho de um lobo, com oito patas, uma carapaça sólida, e um veneno mortal.</ROMA_SpiderRace.description>
+  <!-- Leather Amount: 0 -->
+  <!-- Use Meat From: Megaspider -->
+  <ROMA_SpiderRace_Corpse.label>cadáver de aranha</ROMA_SpiderRace_Corpse.label>
+  <ROMA_SpiderRace_Corpse.description>cadáveres de aranhas</ROMA_SpiderRace_Corpse.description>
+
+
+  <!-- GIANT SPIDERS -->
+
+  <ROMA_SpiderRaceGiant.label>aranhas gigantes</ROMA_SpiderRaceGiant.label>
+  <ROMA_SpiderRaceGiant.description>Essa monstruosidade geneticamente modificada possui oito patas, uma carapaça sólida, e um veneno mortal.</ROMA_SpiderRaceGiant.description>
+  <ROMA_SpiderRaceGiant_Leather.label>carapaça de aranha</ROMA_SpiderRaceGiant_Leather.label>
+  <ROMA_SpiderRaceGiant_Leather.description>Da carapaça de aranhas</ROMA_SpiderRaceGiant_Leather.description>
+  <ROMA_SpiderRaceGiant_Leather.stuffProps.stuffAdjective>carapaça de aranha</ROMA_SpiderRaceGiant_Leather.stuffProps.stuffAdjective>
+  <ROMA_SpiderRaceGiant_Meat.label>carne de aranha</ROMA_SpiderRaceGiant_Meat.label>
+  <ROMA_SpiderRaceGiant_Meat.description>Da carne de aranhas</ROMA_SpiderRaceGiant_Meat.description>
+  <ROMA_SpiderRaceGiant_Corpse.label>cadáver de aranha gigante</ROMA_SpiderRaceGiant_Corpse.label>
+  <ROMA_SpiderRaceGiant_Corpse.description>cadáveres de aranhas gigantes</ROMA_SpiderRaceGiant_Corpse.description>
+
+
+  <!-- GIANT SPIDER QUEEN -->
+
+  <ROMA_SpiderRaceGiantQueen.label>aranha gigante rainha</ROMA_SpiderRaceGiantQueen.label>
+  <ROMA_SpiderRaceGiantQueen.description>Do tamanho de um Thrumbo, a aranha gigante rainha é um belo exemplo de como a engenharia genética pode acabar incrivelmente mal. Esta variedade de rainha também tem asas capazes de voar curtas distâncias.</ROMA_SpiderRaceGiantQueen.description>
+  <!-- Leather Amount: 0 -->
+  <!-- Use Meat From: ROMA_SpiderRaceGiant -->
+  <ROMA_SpiderRaceGiantQueen_Corpse.label>cadáver de aranha gigante rainha</ROMA_SpiderRaceGiantQueen_Corpse.label>
+  <ROMA_SpiderRaceGiantQueen_Corpse.description>O cadáver de uma aranha gigante rainha</ROMA_SpiderRaceGiantQueen_Corpse.description>
+
+
+  <!-- EGGS -->
+
+  <ROMA_SpiderEgg.label>saco de ovos de aranha</ROMA_SpiderEgg.label>
+  <ROMA_SpiderEgg.description>Um saco de ovos cheio de aranhas bebês.</ROMA_SpiderEgg.description>
+
+  <ROMA_SpiderEggGiant.label>saco de ovos de aranha gigante</ROMA_SpiderEggGiant.label>
+  <ROMA_SpiderEggGiant.description>Um saco de ovos cheio de aranhas gigantes bebês.</ROMA_SpiderEggGiant.description>
+
+
+</LanguageData>

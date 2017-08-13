@@ -31,17 +31,30 @@ namespace Arachnophobia
                 initAction = delegate
                 {
                     int i = 999;
+                    bool breakNow = false;
                     while (i > 0)
                     {
                         this.pawn.CurJob.SetTarget(TargetIndex.A, RCellFinder.RandomWanderDestFor(this.pawn, this.pawn.Position, 5f, null, Danger.Some));
+                        CellRect cellRect = GenAdj.OccupiedRect(TargetLocA, Rot4.North, WebDef.Size);
+                        CellRect.CellRectIterator iterator = cellRect.GetIterator();
+                        while (!iterator.Done())
+                        {
+                            IntVec3 current = iterator.Current;
+                            if (current.Walkable(Map))
+                                breakNow = true;
+                            iterator.MoveNext();
+                        }
                         if (GenConstruct.CanPlaceBlueprintAt(WebDef, TargetLocA, Rot4.North, this.pawn.Map).Accepted)
                         {
                             if (this.pawn?.Faction == null || this.pawn?.Faction != Faction.OfPlayerSilentFail) break;
                             else if (this.pawn?.Faction == Faction.OfPlayerSilentFail && !TargetA.Cell.IsForbidden(this.pawn))
                             {
-                                break;
+                                breakNow = true;
                             }
                         }
+                        else breakNow = false;
+
+                        if (breakNow) break;
                         i--;
                     }
                 }
