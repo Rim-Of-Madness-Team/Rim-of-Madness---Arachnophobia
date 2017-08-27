@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderRace.label>araignée</ROMA_SpiderRace.label>
+  <ROMA_SpiderRace.description>Ce prédateur génétiquement modifié de la taille d'un lapin possède huit pattes, une solide carapace, et une morsure venimeuse.</ROMA_SpiderRace.description>
+  <!-- Leather Amount: 0 -->
+  <!-- Use Meat From: Megaspider -->
+  <ROMA_SpiderRace_Corpse.label>cadavre d'araignée</ROMA_SpiderRace_Corpse.label>
+  <ROMA_SpiderRace_Corpse.description>cadavre d'araignée</ROMA_SpiderRace_Corpse.description>
+
+
+  <!-- GIANT SPIDERS -->
+
+  <ROMA_SpiderRaceGiant.label>araignée géante</ROMA_SpiderRaceGiant.label>
+  <ROMA_SpiderRaceGiant.description>Cette monstruosité génétiquement modifié de la taille d'un muffle possède huit pattes, une solide carapace, et une morsure venimeuse.</ROMA_SpiderRaceGiant.description>
+  <ROMA_SpiderRaceGiant_Leather.label>chitine d'araignée</ROMA_SpiderRaceGiant_Leather.label>
+  <ROMA_SpiderRaceGiant_Leather.description>De la chitine d'araignée</ROMA_SpiderRaceGiant_Leather.description>
+  <ROMA_SpiderRaceGiant_Leather.stuffProps.stuffAdjective>chitine d'araignée</ROMA_SpiderRaceGiant_Leather.stuffProps.stuffAdjective>
+  <ROMA_SpiderRaceGiant_Meat.label>viande d'araignée</ROMA_SpiderRaceGiant_Meat.label>
+  <ROMA_SpiderRaceGiant_Meat.description>De la viande d'araignée</ROMA_SpiderRaceGiant_Meat.description>
+  <ROMA_SpiderRaceGiant_Corpse.label>cadavre d'araignée géante</ROMA_SpiderRaceGiant_Corpse.label>
+  <ROMA_SpiderRaceGiant_Corpse.description>Un cadavre d'araignée géante</ROMA_SpiderRaceGiant_Corpse.description>
+
+
+  <!-- GIANT SPIDER QUEEN -->
+
+  <ROMA_SpiderRaceGiantQueen.label>reine araignée géante</ROMA_SpiderRaceGiantQueen.label>
+  <ROMA_SpiderRaceGiantQueen.description>De la taille d'un demi thrumbo, la reine araignée est un bel exemple d'ingénierie génétique ayant horriblement mal tournée. Cette variété de reine possède des ailes lui permettant de voler sur de courte distance.</ROMA_SpiderRaceGiantQueen.description>
+  <!-- Leather Amount: 0 -->
+  <!-- Use Meat From: ROMA_SpiderRaceGiant -->
+  <ROMA_SpiderRaceGiantQueen_Corpse.label>cadavre de reine araignée géante</ROMA_SpiderRaceGiantQueen_Corpse.label>
+  <ROMA_SpiderRaceGiantQueen_Corpse.description>Le cadavre d'une reine araignée géante</ROMA_SpiderRaceGiantQueen_Corpse.description>
+
+
+  <!-- EGGS -->
+
+  <ROMA_SpiderEgg.label>sac d'oeuf d'araignée</ROMA_SpiderEgg.label>
+  <ROMA_SpiderEgg.description>Un sac d'oeuf rempli de bébé araignée.</ROMA_SpiderEgg.description>
+
+  <ROMA_SpiderEggGiant.label>sac d'oeuf d'araignée géante</ROMA_SpiderEggGiant.label>
+  <ROMA_SpiderEggGiant.description>Un sac d'oeuf rempli de bébé araignée géante.</ROMA_SpiderEggGiant.description>
+
+
+</LanguageData>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- SPIDERS (STANDARD) -->
+
+  <ROMA_SpiderKind.label>araignée</ROMA_SpiderKind.label>
+
+  <!-- GIANT SPIDERS -->
+
+  <ROMA_SpiderKindGiant.label>araignée géante</ROMA_SpiderKindGiant.label>
+
+  <!-- GIANT SPIDER QUEEN -->
+
+  <ROMA_SpiderKindGiantQueen.label>reine araignée géante</ROMA_SpiderKindGiantQueen.label>
+
+</LanguageData>

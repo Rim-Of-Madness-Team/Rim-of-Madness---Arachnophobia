@@ -81,7 +81,7 @@
         <IceSheet>0</IceSheet>
         <SeaIce>0</SeaIce>
       </wildBiomes>
-      <lifeExpectancy>2</lifeExpectancy>
+      <lifeExpectancy>10</lifeExpectancy>
       <lifeStageAges>
         <li>
           <def>EusocialInsectLarva</def>

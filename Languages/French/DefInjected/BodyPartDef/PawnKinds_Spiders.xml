@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- BODY PARTS -->
+
+  <ROMA_Cephalothorax.label>céphalothorax</ROMA_Cephalothorax.label>
+  <ROMA_LeftPedipalp.label>pédipalpe gauche</ROMA_LeftPedipalp.label>
+  <ROMA_RightPedipalp.label>pédipalpe droite</ROMA_RightPedipalp.label>
+  <ROMA_SecondMiddleLeftInsectLeg.label>deuxième patte du milieu gauche</ROMA_SecondMiddleLeftInsectLeg.label>
+  <ROMA_SecondMiddleRightInsectLeg.label>deuxième patte du milieu droite</ROMA_SecondMiddleRightInsectLeg.label>
+
+
+</LanguageData>

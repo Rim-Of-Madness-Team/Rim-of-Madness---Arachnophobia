@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<!-- 8/4/17 == UPDATE ===================== -->
+<ROM_SpidersArrivedNoQueen>Des araignées géantes sont arrivées.</ROM_SpidersArrivedNoQueen>
+
+<!-- 6/29/17 == UPDATE ===================== -->
+
+<ROM_SettingsSpiderMultiplier_Num>Multiplicateur du taux d'apparition des araignées ({0}x)</ROM_SettingsSpiderMultiplier_Num>
+<ROM_SettingsSpiderMultiplier_None>Multiplicateur du taux d'apparition des araignées (Aucun)</ROM_SettingsSpiderMultiplier_None>
+
+<!-- 6/23/17 === UPDATE STRINGS ============ -->
+
+<ROM_Wild>{0} sauvage</ROM_Wild>
+<ROM_Spinner>Emmailloteuse </ROM_Spinner>
+
+<!-- ======== INITIAL MOD STRINGS ========== -->
+
+<ROM_EscapedFromCocoon>{0} s'est échappé d'un cocon.</ROM_EscapedFromCocoon>
+<ROM_SpiderWebsCrossed>{0} s'est englué dans une toile d'araignée.</ROM_SpiderWebsCrossed>
+<ROM_SpiderEatingColonist>Une {0} tente de se nourrir de {1}.</ROM_SpiderEatingColonist>
+<!-- <ROM_SpinPreyJob1>chasse {0}</ROM_SpinPreyJob1> -->
+<ROM_SpinPreyJob2>emmaillote sa victime</ROM_SpinPreyJob2>
+<ROM_ConsumeJob1>liquéfie les organes de sa victime</ROM_ConsumeJob1>
+<ROM_ConsumeJob2>aspire sa victime</ROM_ConsumeJob2>
+
+<ROM_LetterLabelSpidersArrived>Araignées géantes</ROM_LetterLabelSpidersArrived>
+<ROM_SpidersArrived>Des araignées géantes sont arrivées. Une reine est parmis elles.</ROM_SpidersArrived>
+
+<ROM_SpiderQueenDeath>Des centaines de jeunes araignées détalent du cadavre de la reine.</ROM_SpiderQueenDeath>
+
+<ROM_SettingsSpiderMultiplier>Multiplicateur du taux d'apparition des araignées</ROM_SettingsSpiderMultiplier>
+
+</LanguageData>

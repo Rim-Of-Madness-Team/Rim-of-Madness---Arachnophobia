@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- WEBS -->
+
+  <ROMA_Web.label>toile</ROMA_Web.label>
+  <ROMA_Web.description>Une toile de soie tissé pour capturer une proie.</ROMA_Web.description>
+
+  <ROMA_WebGiant.label>toile géante</ROMA_WebGiant.label>
+  <ROMA_WebGiant.description>Une énorme toile de soie tissé pour capturer de plus grosse proie.</ROMA_WebGiant.description>
+
+
+  <!-- COCOONS -->
+
+  <ROMA_Cocoon.label>cocon</ROMA_Cocoon.label>
+  <ROMA_Cocoon.description>Une toile de soie tissé pour maintenir emprisonné une proie morte ou vive.</ROMA_Cocoon.description>
+
+  <ROMA_CocoonGiant.label>grand cocon</ROMA_CocoonGiant.label>
+  <ROMA_CocoonGiant.description>Une énorme toile de soie tissé pour maintenir emprisonné de plus grosse proie.</ROMA_CocoonGiant.description>
+
+
+</LanguageData>
