@@ -55,10 +55,132 @@ namespace Arachnophobia
                     isPathableBy(pawn);
         }
 
+        private IntVec3 nextValidPlacementSpot;
+        public IntVec3 NextValidPlacementSpot
+        {
+            get
+            {
+                if (nextValidPlacementSpot == default(IntVec3) || nextValidPlacementSpot == IntVec3.Invalid)
+                {
+                    HashSet<Building_Cocoon> cocoonsToUpdate = new HashSet<Building_Cocoon>();
+                    var cells = GenAdj.CellsAdjacent8Way(new TargetInfo(this.PositionHeld, this.MapHeld));
+                    foreach (IntVec3 cell in cells)
+                    {
+                        if (cell.Walkable(this.MapHeld))
+                        {
+                            if (cell.GetThingList(this.Map).FirstOrDefault(x => x is Building_Cocoon) is Building_Cocoon c)
+                            {
+                                cocoonsToUpdate.Add(c);
+                            }
+                            else if (cell.GetThingList(this.Map).FirstOrDefault(x => x is Building_Cocoon) == null)
+                            {
+                                if (GenConstruct.CanPlaceBlueprintAt(this.def, cell, Rot4.North, this.Map).Accepted)
+                                {
+                                    nextValidPlacementSpot = cell;
+                                    break;
+                                }
+                            }
+                        }
+                         
+                    }
+                    foreach (Building_Cocoon c in cocoonsToUpdate)
+                    {
+                        c.ResolvedNeighborPos();
+                    }
+                }
+                return nextValidPlacementSpot;
+            }
+        }
+        
+        /// <summary>
+        /// Finds a new position for a potential neighboring cocoon.
+        /// </summary>
+        public IntVec3 ResolvedNeighborPos()
+        {
+            IntVec3 result = NextValidPlacementSpot;
+            if (!result.Walkable(this.MapHeld))
+            {
+                nextValidPlacementSpot = default(IntVec3);
+                result = NextValidPlacementSpot;
+                for (int i = 0; i < 9; i++)
+                {
+                    if (result.GetThingList(this.Map).FirstOrDefault(x => x is Building_Cocoon) != null)
+                    {
+                        nextValidPlacementSpot = default(IntVec3);
+                        result = NextValidPlacementSpot;
+                        if (!GenConstruct.CanPlaceBlueprintAt(this.def, result, Rot4.North, this.Map).Accepted)
+                        {
+                            nextValidPlacementSpot = default(IntVec3);
+                            result = NextValidPlacementSpot;
+                        }
+                        else break;
+                    }
+                    else break;
+                }
+            }
+            return result;
+        }
+
         //Wild spiders || Faction spiders && player spiders must have access to cocoons
         public bool playerFactionExceptions(PawnWebSpinner y) => 
             (y?.Faction == null || 
             (Victim?.Faction != y?.Faction) && (y.Faction == Faction.OfPlayerSilentFail && this.PositionHeld.InAllowedArea(y)));
+
+        /// <summary>
+        /// Adds this cocoon to the lists in the MapComponent
+        /// </summary>
+        /// <param name="placer"></param>
+        public void Notify_Placed(Pawn placer)
+        {
+            if (this.Map.GetComponent<MapComponent_CocoonTracker>() is MapComponent_CocoonTracker cocoons)
+            {
+                if (this.Faction == Faction.OfPlayer || placer?.Faction == Faction.OfPlayer)
+                {
+                    if (!cocoons.DomesticCocoons.Contains(this))
+                        cocoons.DomesticCocoons.Add(this);
+                }
+                else
+                {
+                    if (!cocoons.WildCocoons.Contains(this))
+                        cocoons.WildCocoons.Add(this);
+                }
+            }
+            ResolvedNeighborPos();
+        }
+
+        /// <summary>
+        /// Removes this cocoon to the lists in the MapComponent
+        /// </summary>
+        /// <param name="placer"></param>
+        public void Notify_Removed(Pawn placer)
+        {
+            if (this.Map.GetComponent<MapComponent_CocoonTracker>() is MapComponent_CocoonTracker cocoons)
+            {
+                if (this.Faction == Faction.OfPlayer || placer?.Faction == Faction.OfPlayer)
+                {
+                    if (cocoons.DomesticCocoons.Contains(this))
+                        cocoons.DomesticCocoons.Remove(this);
+                }
+                else
+                {
+                    if (cocoons.WildCocoons.Contains(this))
+                        cocoons.WildCocoons.Remove(this);
+                }
+            }
+            nextValidPlacementSpot = default(IntVec3);
+        }
+
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
+        {
+            base.SpawnSetup(map, respawningAfterLoad);
+            Notify_Placed(null);
+        }
+
+        public override void DeSpawn()
+        {
+            Notify_Removed(null);
+            base.DeSpawn();
+        }
 
         // RimWorld.Building_Grave code repurposed for Cocoons
         private Graphic cachedGraphicFull;
@@ -171,17 +293,35 @@ namespace Arachnophobia
                 }
             }
         }
-        
 
-        [DebuggerHidden]
-        public override IEnumerable<Gizmo> GetGizmos()
+        // RimWorld.Building_Casket
+        public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
-            foreach (Gizmo c in base.GetGizmos())
+            if (this.innerContainer.Count > 0 && (mode == DestroyMode.Deconstruct || mode == DestroyMode.KillFinalize))
             {
-                yield return c;
+                if (mode != DestroyMode.Deconstruct)
+                {
+                    List<Pawn> list = new List<Pawn>();
+                    foreach (Thing current in ((IEnumerable<Thing>)this.innerContainer))
+                    {
+                        Pawn pawn = current as Pawn;
+                        if (pawn != null)
+                        {
+                            list.Add(pawn);
+                        }
+                    }
+                    foreach (Pawn current2 in list)
+                    {
+                        HealthUtility.DamageUntilDowned(current2);
+                    }
+                }
+                this.EjectContents();
             }
+            this.innerContainer.ClearAndDestroyContents(DestroyMode.Vanish);
+            if (!this.Destroyed) base.Destroy(mode);
         }
-        
+
+
         public override void EjectContents()
         {
             ThingDef filthCobwebs = ROMADefOf.ROM_FilthCobwebs;
@@ -195,11 +335,8 @@ namespace Arachnophobia
                     HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, 0.3f);
                 }
             }
-            if (!base.Destroyed)
-            {
-                //sound.PlayOneShot(SoundInfo.InMap(new TargetInfo(base.Position, base.Map, false), MaintenanceType.None));
-            }
-            base.EjectContents();
+            this.innerContainer.TryDropAll(this.PositionHeld, base.Map, ThingPlaceMode.Near);
+            this.contentsKnown = true;
             if (!this.Destroyed) this.Destroy(DestroyMode.KillFinalize);
         }
 
@@ -207,6 +344,7 @@ namespace Arachnophobia
         {
             base.ExposeData();
             Scribe_References.Look<PawnWebSpinner>(ref this.spinner, "spinner");
+            Scribe_Values.Look<IntVec3>(ref this.nextValidPlacementSpot, "nextValidPlacementSpot", default(IntVec3));
         }
     }
 }

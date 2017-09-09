@@ -53,37 +53,27 @@ namespace Arachnophobia
 
         public override string GetReport()
         {
-            if (currentActivity == "") currentActivity = base.ReportStringProcessed(JobDefOf.Ingest.reportString);
+            if (currentActivity == "") currentActivity = base.ReportStringProcessed(JobDefOf.Hunt.reportString);
             return currentActivity;
         }
 
         public IntVec3 CocoonPlace(Building_Cocoon exception = null)
         {
             var newPosition = TargetB.Cell;
-            var localCocoons = Utility.CocoonsFor(this.pawn.Map, this.pawn, exception);
+            var localCocoons = Utility.CocoonsFor(this.pawn.Map, this.pawn);
+            if (exception != null) localCocoons.Remove(exception);
             //Log.Message("1");
             if (localCocoons != null && localCocoons.Count > 0)
             {
                 //Log.Message("2");
 
-                var tempCocoons = new List<Thing>(localCocoons.InRandomOrder());
+                var tempCocoons = new HashSet<Thing>(localCocoons.InRandomOrder());
                 foreach (Building_Cocoon cocoon in tempCocoons)
                 {
                     //Log.Message("3");
-
-                    var cells = GenAdj.CellsAdjacent8Way(new TargetInfo(cocoon.Position, this.pawn.Map));
-                    foreach (IntVec3 cell in cells)
+                    if (cocoon.NextValidPlacementSpot is IntVec3 vec && vec != default(IntVec3))
                     {
-                        //Log.Message("4");
-
-                        if (cell.Walkable(this.pawn.Map) &&
-                            cell.GetThingList(this.pawn.Map).FirstOrDefault(x => x is Building_Cocoon) == null &&
-                            GenConstruct.CanPlaceBlueprintAt(CocoonDef, cell, Rot4.North, this.Map).Accepted)
-                        {
-                            //Log.Message("5");
-                            newPosition = cell;
-                            break;
-                        }
+                        newPosition = vec;
                     }
                 }
             }
@@ -114,7 +104,7 @@ namespace Arachnophobia
                 {
                     this.Map.physicalInteractionReservationManager.ReleaseAllForTarget(TargetA);
                     this.Map.physicalInteractionReservationManager.Reserve(this.GetActor(), TargetA);
-                    currentActivity = "ROM_SpinPreyJob1".Translate();
+                    currentActivity = "ROM_SpinPreyJob1".Translate(TargetA.Thing?.LabelShort ?? "");
                 }));
 
             Toil spinDelay = new Toil
@@ -180,14 +170,11 @@ namespace Arachnophobia
             Toil pickupCocoon = Toils_Haul.StartCarryThing(TargetIndex.B);
             pickupCocoon.AddPreInitAction(new Action(delegate
             {
-                this.pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace());
+                //this.TargetB.Thing.DeSpawn();
+                this.pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace((Building_Cocoon)TargetB.Thing));
                 this.pawn.Map.physicalInteractionReservationManager.Reserve(this.pawn, TargetC);
             }));
             Toil relocateCocoon = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
-            pickupCocoon.AddPreInitAction(new Action(delegate
-            {
-                this.pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace((Building_Cocoon)TargetB.Thing));
-            }));
             Toil dropCocoon = Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, relocateCocoon, false).FailOn(() => !GenConstruct.CanPlaceBlueprintAt(CocoonDef, TargetC.Cell, Rot4.North, this.Map).Accepted);
             this.AddFinishAction(new Action(delegate
             {

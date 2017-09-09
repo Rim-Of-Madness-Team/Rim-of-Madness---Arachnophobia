@@ -57,7 +57,7 @@ namespace Arachnophobia
                 flag = (firstHediffOfDef != null && firstHediffOfDef.Severity > 0.4f);
             }
             var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
-            if (!localCocoons.NullOrEmpty())
+            if (localCocoons != null || localCocoons.Count > 0)
             {
                 Building_Cocoon closestCocoon = null;
                 var shortestDistance = 9999f;

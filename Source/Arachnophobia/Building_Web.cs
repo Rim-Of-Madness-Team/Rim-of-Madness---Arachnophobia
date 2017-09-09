@@ -15,55 +15,60 @@ namespace Arachnophobia
 
         public void WebEffect(Pawn p)
         {
-            float num = 20f;
-            float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
-            num *= num2;
-            p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
-            if (!Destroyed)
+            if (Spinner?.Faction == Faction.OfPlayer && (p.Faction.HostileTo(Spinner.Faction) || (p.RaceProps.Animal && p?.Faction != Faction.OfPlayer)) ||
+                Spinner?.Faction != Faction.OfPlayer)
             {
-                var leavingsRect = new CellRect(this.OccupiedRect().minX, this.OccupiedRect().minZ, this.OccupiedRect().Width, this.OccupiedRect().Height);
-                if (Rand.Value > 0.9)
+                float num = 20f;
+                float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
+                num *= num2;
+                p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
+                if (!Destroyed)
                 {
-                    this.Destroy(DestroyMode.KillFinalize);
-                }
-                else
-                {
-                    for (int i = leavingsRect.minZ; i <= leavingsRect.maxZ; i++)
+                    var leavingsRect = new CellRect(this.OccupiedRect().minX, this.OccupiedRect().minZ, this.OccupiedRect().Width, this.OccupiedRect().Height);
+                    if (Rand.Value > 0.9)
                     {
-                        for (int j = leavingsRect.minX; j <= leavingsRect.maxX; j++)
-                        {
-                            IntVec3 c = new IntVec3(j, 0, i);
-                            if (Rand.Value > 0.5f) FilthMaker.MakeFilth(c, this.Map, this.def.filthLeaving, Rand.RangeInclusive(1, 3));
-                        }
+                        this.Destroy(DestroyMode.KillFinalize);
                     }
-                    this.Destroy(DestroyMode.Vanish);
+                    else
+                    {
+                        for (int i = leavingsRect.minZ; i <= leavingsRect.maxZ; i++)
+                        {
+                            for (int j = leavingsRect.minX; j <= leavingsRect.maxX; j++)
+                            {
+                                IntVec3 c = new IntVec3(j, 0, i);
+                                if (Rand.Value > 0.5f) FilthMaker.MakeFilth(c, this.Map, this.def.filthLeaving, Rand.RangeInclusive(1, 3));
+                            }
+                        }
+                        this.Destroy(DestroyMode.Vanish);
+                    }
                 }
+
+                if (spinner != null) spinner.Notify_WebTouched(p);
+                if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageSound.Standard);
+                spinner.Web = null;
             }
 
-            if (spinner != null) spinner.Notify_WebTouched(p);
-            if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageSound.Standard);
-            spinner.Web = null;
         }
 
-        private List<Pawn> touchingPawns = new List<Pawn>();
+        private HashSet<Pawn> touchingPawns = new HashSet<Pawn>();
         public override void Tick()
         {
-            List<Thing> thingList = base.Position.GetThingList(base.Map);
-            for (int i = 0; i < thingList.Count; i++)
+            HashSet<Thing> thingList = new HashSet<Thing>(base.Position.GetThingList(base.Map));
+            foreach (Thing t in thingList)
             {
-                Pawn pawn = thingList[i] as Pawn;
+                Pawn pawn = t as Pawn;
                 if (pawn != null && (!(pawn is PawnWebSpinner)) && !this.touchingPawns.Contains(pawn))
                 {
                     this.touchingPawns.Add(pawn);
                     this.WebEffect(pawn);
                 }
             }
-            for (int j = 0; j < this.touchingPawns.Count; j++)
+            HashSet<Pawn> temp = new HashSet<Pawn>(touchingPawns);
+            foreach (Pawn p in temp)
             {
-                Pawn pawn2 = this.touchingPawns[j];
-                if (!pawn2.Spawned || pawn2.Position != base.Position)
+                if (!p.Spawned || p.Position != base.Position)
                 {
-                    this.touchingPawns.Remove(pawn2);
+                    this.touchingPawns.Remove(p);
                 }
             }
             base.Tick();
@@ -117,7 +122,6 @@ namespace Arachnophobia
         {
             base.ExposeData();
             Scribe_References.Look<PawnWebSpinner>(ref this.spinner, "spinner");
-            Scribe_Collections.Look<Pawn>(ref this.touchingPawns, "touchingPawns", LookMode.Reference, new object[0]);
         }
     }
 }
