@@ -14,6 +14,8 @@ namespace Arachnophobia
     public class Building_Cocoon : Building_Casket
     {
         private PawnWebSpinner spinner;
+        private bool resolvingCurrently = false;
+
         public PawnWebSpinner Spinner { get { return spinner; } set { spinner = value; } }
         public Pawn Victim
         {
@@ -70,6 +72,7 @@ namespace Arachnophobia
                         {
                             if (cell.GetThingList(this.Map).FirstOrDefault(x => x is Building_Cocoon) is Building_Cocoon c)
                             {
+                                
                                 cocoonsToUpdate.Add(c);
                             }
                             else if (cell.GetThingList(this.Map).FirstOrDefault(x => x is Building_Cocoon) == null)
@@ -85,18 +88,21 @@ namespace Arachnophobia
                     }
                     foreach (Building_Cocoon c in cocoonsToUpdate)
                     {
-                        c.ResolvedNeighborPos();
+                        if (!c.resolvingCurrently)
+                            c.ResolvedNeighborPos();
                     }
                 }
                 return nextValidPlacementSpot;
             }
         }
         
+
         /// <summary>
         /// Finds a new position for a potential neighboring cocoon.
         /// </summary>
         public IntVec3 ResolvedNeighborPos()
         {
+            resolvingCurrently = true;
             IntVec3 result = NextValidPlacementSpot;
             if (!result.Walkable(this.MapHeld))
             {
@@ -118,6 +124,7 @@ namespace Arachnophobia
                     else break;
                 }
             }
+            resolvingCurrently = false;
             return result;
         }
 
