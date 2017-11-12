@@ -33,14 +33,14 @@ namespace Arachnophobia
                 {
                     return corpse.InnerPawn;
                 }
-                return (Pawn)base.CurJob.GetTarget(TargetIndex.A).Thing;
+                return (Pawn)base.job.GetTarget(TargetIndex.A).Thing;
             }
         }
         private Corpse Corpse
         {
             get
             {
-                return base.CurJob.GetTarget(TargetIndex.A).Thing as Corpse;
+                return base.job.GetTarget(TargetIndex.A).Thing as Corpse;
             }
         }
         string currentActivity = "";
@@ -102,8 +102,10 @@ namespace Arachnophobia
             Toil gotoBody = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             gotoBody.AddPreInitAction(new Action(delegate
                 {
-                    this.Map.physicalInteractionReservationManager.ReleaseAllForTarget(TargetA);
-                    this.Map.physicalInteractionReservationManager.Reserve(this.GetActor(), TargetA);
+                    this.pawn.ClearAllReservations();
+                    this.pawn.Reserve(TargetA, this.job);
+                    //this.Map.physicalInteractionReservationManager.ReleaseAllForTarget(TargetA);
+                    //this.Map.physicalInteractionReservationManager.Reserve(this.GetActor(), TargetA);
                     currentActivity = "ROM_SpinPreyJob1".Translate(TargetA.Thing?.LabelShort ?? "");
                 }));
 
@@ -172,7 +174,8 @@ namespace Arachnophobia
             {
                 //this.TargetB.Thing.DeSpawn();
                 this.pawn.CurJob.SetTarget(TargetIndex.C, CocoonPlace((Building_Cocoon)TargetB.Thing));
-                this.pawn.Map.physicalInteractionReservationManager.Reserve(this.pawn, TargetC);
+                this.pawn.Reserve(TargetC, this.job);
+                //this.pawn.Map.physicalInteractionReservationManager.Reserve(this.pawn, TargetC);
             }));
             Toil relocateCocoon = Toils_Haul.CarryHauledThingToCell(TargetIndex.C);
             Toil dropCocoon = Toils_Haul.PlaceHauledThingInCell(TargetIndex.C, relocateCocoon, false).FailOn(() => !GenConstruct.CanPlaceBlueprintAt(CocoonDef, TargetC.Cell, Rot4.North, this.Map).Accepted);
@@ -202,7 +205,7 @@ namespace Arachnophobia
             {
                 Pawn prey = this.Prey;
                 bool surpriseAttack = this.firstHit && !prey.IsColonist;
-                if (this.pawn.meleeVerbs.TryMeleeAttack(prey, this.CurJob.verbToUse, surpriseAttack))
+                if (this.pawn.meleeVerbs.TryMeleeAttack(prey, this.job.verbToUse, surpriseAttack))
                 {
                     if (!this.notifiedPlayer && PawnUtility.ShouldSendNotificationAbout(prey))
                     {
@@ -211,14 +214,14 @@ namespace Arachnophobia
                         {
                             prey.LabelShort,
                             this.pawn.LabelIndefinite()
-                        }).CapitalizeFirst(), prey, MessageSound.SeriousAlert);
+                        }).CapitalizeFirst(), prey, MessageTypeDefOf.ThreatBig);// MessageSound.SeriousAlert);
                     }
                     this.Map.attackTargetsCache.UpdateTarget(this.pawn);
                 }
                 this.firstHit = false;
             };
 
-            yield return Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, onHitAction).JumpIf(() => Prey.Downed || Prey.Dead, prepareToSpin).FailOn(() => Find.TickManager.TicksGame > this.startTick + 5000 && (float)(this.CurJob.GetTarget(TargetIndex.A).Cell - this.pawn.Position).LengthHorizontalSquared > 4f);
+            yield return Toils_Combat.FollowAndMeleeAttack(TargetIndex.A, onHitAction).JumpIf(() => Prey.Downed || Prey.Dead, prepareToSpin).FailOn(() => Find.TickManager.TicksGame > this.startTick + 5000 && (float)(this.job.GetTarget(TargetIndex.A).Cell - this.pawn.Position).LengthHorizontalSquared > 4f);
             yield return prepareToSpin.FailOn(() => Prey == null);
             yield return gotoBody.FailOn(() => Prey == null);
             yield return spinDelay.FailOn(() => Prey == null);
@@ -232,6 +235,10 @@ namespace Arachnophobia
             //yield return Toils_Ingest.FinalizeIngest(this.pawn, TargetIndex.A);
             //yield return Toils_Jump.JumpIf(gotoCorpse, () => this.pawn.needs.food.CurLevelPercentage < 0.9f);
         }
-        
+
+        public override bool TryMakePreToilReservations()
+        {
+            return true;
+        }
     }
 }

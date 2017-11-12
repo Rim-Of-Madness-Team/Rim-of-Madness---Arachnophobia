@@ -44,7 +44,7 @@ namespace Arachnophobia
                 }
 
                 if (spinner != null) spinner.Notify_WebTouched(p);
-                if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageSound.Standard);
+                if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageTypeDefOf.NeutralEvent);
                 spinner.Web = null;
             }
 

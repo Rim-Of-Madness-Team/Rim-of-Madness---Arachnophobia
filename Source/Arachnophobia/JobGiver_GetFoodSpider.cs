@@ -57,19 +57,20 @@ namespace Arachnophobia
                 flag = (firstHediffOfDef != null && firstHediffOfDef.Severity > 0.4f);
             }
             var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
-            if (localCocoons != null || localCocoons.Count > 0)
+            if (localCocoons != null && localCocoons.Count > 0)
             {
                 Building_Cocoon closestCocoon = null;
                 var shortestDistance = 9999f;
                 foreach (Building_Cocoon cocoon in localCocoons)
                 {
                     //Log.Message("1");
-                    if (cocoon.isConsumableBy(pawn))
+                    if (cocoon?.isConsumableBy(pawn) == true &&
+                        cocoon.CurrentDrinker == null)
                     {
                         //Log.Message("2");
                         if (closestCocoon == null)
                         {
-                            closestCocoon = cocoon;
+                            closestCocoon = cocoon; 
                             continue;
                         }
                         var thisDistance = (float)(cocoon.Position - pawn.Position).LengthHorizontalSquared;
@@ -83,7 +84,9 @@ namespace Arachnophobia
                 if (closestCocoon != null)
                 {
                     //Log.Message("3");
+                    closestCocoon.CurrentDrinker = pawn as PawnWebSpinner;
                     var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, closestCocoon);
+                    //pawn.Reserve(closestCocoon, newJob);
                     return newJob;
                 }
             }
@@ -118,12 +121,13 @@ namespace Arachnophobia
                         return job;
                     }
                 }
-                thing = FoodUtility.BestFoodSourceOnMap(pawn, pawn, desperate, FoodPreferability.MealLavish, false, !pawn.IsTeetotaler(), false, false, false, false, false);
+                ThingDef thingDef;
+                thing = FoodUtility.BestFoodSourceOnMap(pawn, pawn, desperate, out thingDef, FoodPreferability.MealLavish, false, !pawn.IsTeetotaler(), false, false, false, false, false);
                 if (thing == null)
                 {
                     return null;
                 }
-                def = thing.def;
+                def = thingDef;
             }
             return new Job(JobDefOf.Ingest, thing)
             {

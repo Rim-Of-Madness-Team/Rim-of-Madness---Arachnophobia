@@ -5,7 +5,7 @@
 		<defName>ROM_GiantSpiders</defName>
 		<label>giant spiders</label>
 		<category>Misc</category>
-		<targetType>MapPlayerHome</targetType>
+		<targetTypes><li>MapPlayerHome</li></targetTypes>
 		<workerClass>Arachnophobia.IncidentWorker_GiantSpiders</workerClass>
 		<baseChance>0.5</baseChance>
 		<pointsScaleable>true</pointsScaleable>

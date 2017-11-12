@@ -18,7 +18,7 @@ namespace Arachnophobia
                     var newThing = GenSpawn.Spawn(newPawn, corpse.Position, corpse.Map);
                     if (hostFaction != null) newThing.SetFaction(hostFaction);
                 }
-                Messages.Message("ROM_SpiderQueenDeath", MessageSound.SeriousAlert);
+                Messages.Message("ROM_SpiderQueenDeath", MessageTypeDefOf.ThreatBig);//MessageSound.SeriousAlert);
             }
         }
     }

@@ -21,6 +21,11 @@ namespace Arachnophobia
             }
         }
 
+        public override bool TryMakePreToilReservations()
+        {
+            return true;
+        }
+
         [DebuggerHidden]
         protected override IEnumerable<Toil> MakeNewToils()
         {

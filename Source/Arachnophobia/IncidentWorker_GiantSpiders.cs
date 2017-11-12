@@ -6,7 +6,7 @@ namespace Arachnophobia
 {
     internal class IncidentWorker_GiantSpiders : IncidentWorker
     {
-        public override bool TryExecute(IncidentParms parms)
+        protected override bool TryExecuteWorker(IncidentParms parms)
         {
             Map map = (Map)parms.target;
             var giantSpider = ROMADefOf.ROMA_SpiderKindGiant;
@@ -37,7 +37,7 @@ namespace Arachnophobia
             }
             //ROM_SpidersArrived
             if (queenSpawned) desc = "ROM_SpidersArrived";
-            Find.LetterStack.ReceiveLetter("ROM_LetterLabelSpidersArrived".Translate(), desc.Translate(), LetterDefOf.BadNonUrgent, new TargetInfo(intVec, map, false), null);
+            Find.LetterStack.ReceiveLetter("ROM_LetterLabelSpidersArrived".Translate(), desc.Translate(), LetterDefOf.ThreatSmall, new TargetInfo(intVec, map, false), null);
             return true;
         }
     }

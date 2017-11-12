@@ -15,7 +15,22 @@ namespace Arachnophobia
     {
         private PawnWebSpinner spinner;
         private bool resolvingCurrently = false;
+        private PawnWebSpinner currentDrinker = null;
 
+        public PawnWebSpinner CurrentDrinker
+        {
+            get
+            {
+                if (currentDrinker != null)
+                {
+                    if (!currentDrinker.Spawned || currentDrinker.Downed || currentDrinker.Dead ||
+                        currentDrinker?.CurJob?.def != ROMADefOf.ROMA_ConsumeCocoon)
+                        currentDrinker = null;
+                }
+                return currentDrinker;
+            }
+            set => currentDrinker = value;
+        }
         public PawnWebSpinner Spinner { get { return spinner; } set { spinner = value; } }
         public Pawn Victim
         {
@@ -48,13 +63,19 @@ namespace Arachnophobia
         public bool isConsumableBy(Pawn pawn)
         {
             return pawn is PawnWebSpinner webSpinner &&
+                    this.Spawned &&
+                    !this.IsForbidden(pawn) &&
                     webSpinner.Spawned &&
                     !webSpinner.Dead &&
                     !webSpinner.IsBusy &&
                     webSpinner?.needs?.food?.CurLevelPercentage <= 0.4 &&
                     isConsumable &&
                     playerFactionExceptions(webSpinner) && 
-                    isPathableBy(pawn);
+                    isPathableBy(pawn) &&
+                    pawn.CanReserve(this) &&
+                    pawn.MapHeld.reservationManager.CanReserve(pawn, this) &&
+                    !pawn.MapHeld.physicalInteractionReservationManager.IsReserved(this) &&
+                    CurrentDrinker == null;
         }
 
         private IntVec3 nextValidPlacementSpot;
@@ -294,7 +315,7 @@ namespace Arachnophobia
                     lastEscapeAttempt = Find.TickManager.TicksGame;
                     if (Rand.Value > 0.95f && !this.Destroyed)
                     {
-                        Messages.Message("ROM_EscapedFromCocoon".Translate(p), MessageSound.Benefit);
+                        Messages.Message("ROM_EscapedFromCocoon".Translate(p), MessageTypeDefOf.NeutralEvent);
                         this.EjectContents();
                     }
                 }
@@ -351,6 +372,7 @@ namespace Arachnophobia
         {
             base.ExposeData();
             Scribe_References.Look<PawnWebSpinner>(ref this.spinner, "spinner");
+            Scribe_References.Look<PawnWebSpinner>(ref this.currentDrinker, "currentDrinker");
             Scribe_Values.Look<IntVec3>(ref this.nextValidPlacementSpot, "nextValidPlacementSpot", default(IntVec3));
         }
     }

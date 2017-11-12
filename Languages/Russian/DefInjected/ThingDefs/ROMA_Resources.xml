@@ -3,7 +3,6 @@
 <LanguageData>
 
   <ROM_SpiderSilk.Label>Паучий шелк</ROM_SpiderSilk.Label>
-  <ROM_SpiderSilk.Description>Ткань спряденная из волокон, извлеченных из пауков. Это очень сложно, но изолирует не лучше, чем ткань.</ROM_SpiderSilk.Description>
-  <ROM_SpiderSilk.stuffProps.stuffAdjective>Паучий шелк</ROM_SpiderSilk.stuffProps.stuffAdjective>
+  <ROM_SpiderSilk.Description>Ткань спряденная из волокон, извлеченных из пауков. Она очень грубая, но изолирует не лучше, чем ткань.</ROM_SpiderSilk.Description>
 
 </LanguageData>

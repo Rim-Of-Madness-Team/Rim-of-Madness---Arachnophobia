@@ -2,9 +2,12 @@
 
 <LanguageData>
 
-  <ROMA_SpiderEgg.Label>Кладка паучих яиц</ROMA_SpiderEgg.Label>
-  <ROMA_SpiderEgg.Description>Кладка паучих яиц, заполненная маленькими пауками.</ROMA_SpiderEgg.Description>
-  <ROMA_SpiderEggGiant.Label>Кладка яиц гиганских пауков</ROMA_SpiderEggGiant.Label>
-  <ROMA_SpiderEggGiant.Description>Кладка яиц, заполненная маленькими гиганскими пауками</ROMA_SpiderEggGiant.Description>
+  <!-- EGGS -->
+
+  <ROMA_SpiderEgg.label>Кладка паучих яиц</ROMA_SpiderEgg.label>
+  <ROMA_SpiderEgg.description>Кладка паучих яиц, заполненная маленькими пауками.</ROMA_SpiderEgg.description>
+
+  <ROMA_SpiderEggGiant.label>Кладка яиц гиганских пауков</ROMA_SpiderEggGiant.label>
+  <ROMA_SpiderEggGiant.description>Кладка яиц, заполненная маленькими гиганскими пауками</ROMA_SpiderEggGiant.description>
 
 </LanguageData>

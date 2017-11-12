@@ -54,28 +54,34 @@ namespace Arachnophobia
         protected override IEnumerable<Toil> MakeNewToils()
         {
             //Toil definitions
+
+            this.AddFinishAction(new Action(delegate
+            {
+                if (Cocoon != null)
+                    Cocoon.CurrentDrinker = null;
+            }));
+
             Toil gotoBody = Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             gotoBody.AddPreInitAction(new Action(delegate
             {
-                if (this.pawn.MapHeld.physicalInteractionReservationManager.IsReserved(Cocoon)) this.pawn.jobs.EndCurrentJob(JobCondition.Incompletable, true);
-                this.pawn.MapHeld.physicalInteractionReservationManager.Reserve(this.pawn, Cocoon);
+                Cocoon.CurrentDrinker = this.pawn as PawnWebSpinner;
 
                 if (Victim?.Faction == Faction.OfPlayerSilentFail &&
                     !Victim.Dead && 
                     !notifiedPlayer)
                 {
                     notifiedPlayer = true;
-                    var sound = (Victim?.Dead ?? false) ? MessageSound.Standard : MessageSound.SeriousAlert; 
+                    var sound = (Victim?.Dead ?? false) ? MessageTypeDefOf.NeutralEvent : MessageTypeDefOf.ThreatBig; 
                     Messages.Message("ROM_SpiderEatingColonist".Translate(new object[] { this.pawn.Label, Victim.Label }), sound);
                 }
 
             }));
 
             //Toil executions
-            yield return gotoBody.FailOnDespawnedOrNull(TargetIndex.A).FailOn(() => Victim == null || Cocoon == null || !Cocoon.Spawned || Cocoon.Destroyed);
-            yield return Liquify().FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+            yield return gotoBody;
+            yield return Liquify();
             var durationMultiplier = 1f / this.pawn.GetStatValue(StatDefOf.EatingSpeed, true);
-            yield return DrinkCorpse(durationMultiplier).FailOnDespawnedOrNull(TargetIndex.A).FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+            yield return DrinkCorpse(durationMultiplier);
             yield return Toils_Ingest.FinalizeIngest(this.pawn, TargetIndex.B);
             yield return Toils_Jump.JumpIf(gotoBody, () => this.pawn.needs.food.CurLevelPercentage < 0.9f).FailOnDestroyedNullOrForbidden(TargetIndex.B);
         }
@@ -87,8 +93,8 @@ namespace Arachnophobia
             liquify.initAction = delegate
             {
                 this.ticksLeft = Rand.Range(300, 900);
-                this.pawn.Drawer.rotator.FaceCell(Cocoon.Position);
-                this.CurJob.SetTarget(TargetIndex.B, Victim.Corpse);
+                this.pawn.rotationTracker.FaceCell(Cocoon.Position);
+                this.job.SetTarget(TargetIndex.B, Victim.Corpse);
                 this.notifiedPlayer = false;
                 this.report = "ROM_ConsumeJob1".Translate();
 
@@ -119,7 +125,7 @@ namespace Arachnophobia
                 {
                     if (Victim.Dead || Victim.RaceProps.IsMechanoid)
                     {
-                        if (Victim.Dead) this.CurJob.SetTarget(TargetIndex.B, Victim.Corpse);
+                        if (Victim.Dead) this.job.SetTarget(TargetIndex.B, Victim.Corpse);
                         this.ReadyForNextToil();
                     }
                     else ticksLeft = Rand.Range(300, 900);
@@ -199,7 +205,7 @@ namespace Arachnophobia
             {
                 Thing thing = Victim.Corpse;
 
-                this.pawn.Drawer.rotator.FaceCell(TargetA.Thing.Position);
+                this.pawn.rotationTracker.FaceCell(TargetA.Thing.Position);
 
                 if (!thing.IngestibleNow)
                 {
@@ -244,17 +250,19 @@ namespace Arachnophobia
                 {
                     return;
                 }
-                Thing thing = this.pawn.CurJob.GetTarget(TargetIndex.B).Thing;
+                Thing thing = this.job.GetTarget(TargetIndex.B).Thing;
                 if (thing == null)
                 {
                     return;
                 }
-                if (this.pawn.Map.physicalInteractionReservationManager.IsReservedBy(this.pawn, TargetA.Thing))
-                {
-                    this.pawn.Map.physicalInteractionReservationManager.Release(this.pawn, TargetA);
-                }
+                this.pawn.ClearAllReservations();
             });
             return drinkCorpse;
+        }
+
+        public override bool TryMakePreToilReservations()
+        {
+			return this.pawn.Reserve(this.Cocoon, this.job, 1, -1, null);
         }
     }
 }
