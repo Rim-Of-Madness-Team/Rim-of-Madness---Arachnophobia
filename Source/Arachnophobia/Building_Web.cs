@@ -15,38 +15,46 @@ namespace Arachnophobia
 
         public void WebEffect(Pawn p)
         {
-            if (Spinner?.Faction == Faction.OfPlayer && (p.Faction.HostileTo(Spinner.Faction) || (p.RaceProps.Animal && p?.Faction != Faction.OfPlayer)) ||
-                Spinner?.Faction != Faction.OfPlayer)
+            try
             {
-                float num = 20f;
-                float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
-                num *= num2;
-                p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
-                if (!Destroyed)
+                if (p != null)
                 {
-                    var leavingsRect = new CellRect(this.OccupiedRect().minX, this.OccupiedRect().minZ, this.OccupiedRect().Width, this.OccupiedRect().Height);
-                    if (Rand.Value > 0.9)
+                    if (Spinner?.Faction == Faction.OfPlayer && (p.Faction.HostileTo(Spinner.Faction) || (p.RaceProps.Animal && p?.Faction != Faction.OfPlayer)) ||
+                        Spinner?.Faction != Faction.OfPlayer)
                     {
-                        this.Destroy(DestroyMode.KillFinalize);
-                    }
-                    else
-                    {
-                        for (int i = leavingsRect.minZ; i <= leavingsRect.maxZ; i++)
+                        float num = 20f;
+                        float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
+                        num *= num2;
+                        p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
+                        if (!Destroyed)
                         {
-                            for (int j = leavingsRect.minX; j <= leavingsRect.maxX; j++)
+                            var leavingsRect = new CellRect(this.OccupiedRect().minX, this.OccupiedRect().minZ, this.OccupiedRect().Width, this.OccupiedRect().Height);
+                            if (Rand.Value > 0.9)
                             {
-                                IntVec3 c = new IntVec3(j, 0, i);
-                                if (Rand.Value > 0.5f) FilthMaker.MakeFilth(c, this.Map, this.def.filthLeaving, Rand.RangeInclusive(1, 3));
+                                this.Destroy(DestroyMode.KillFinalize);
+                            }
+                            else
+                            {
+                                for (int i = leavingsRect.minZ; i <= leavingsRect.maxZ; i++)
+                                {
+                                    for (int j = leavingsRect.minX; j <= leavingsRect.maxX; j++)
+                                    {
+                                        IntVec3 c = new IntVec3(j, 0, i);
+                                        if (Rand.Value > 0.5f) FilthMaker.MakeFilth(c, this.Map, this.def.filthLeaving, Rand.RangeInclusive(1, 3));
+                                    }
+                                }
+                                this.Destroy(DestroyMode.Vanish);
                             }
                         }
-                        this.Destroy(DestroyMode.Vanish);
+
+                        if (spinner != null) spinner.Notify_WebTouched(p);
+                        if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageTypeDefOf.NeutralEvent);
+                        spinner.Web = null;
                     }
                 }
-
-                if (spinner != null) spinner.Notify_WebTouched(p);
-                if (p?.Faction == Faction.OfPlayerSilentFail) Messages.Message("ROM_SpiderWebsCrossed".Translate(p.LabelShort), p, MessageTypeDefOf.NeutralEvent);
-                spinner.Web = null;
             }
+            catch (Exception e) { /* Log.Message(e.ToString()); */ }
+
 
         }
 

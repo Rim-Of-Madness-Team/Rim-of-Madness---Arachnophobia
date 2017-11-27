@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <ROMA_Cocoons.Label>Коконы</ROMA_Cocoons.Label>
+  <!-- COCOONS -->
+
+  <ROMA_Cocoons.label>Коконы</ROMA_Cocoons.label>
+
 
 </LanguageData>

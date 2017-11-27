@@ -4,24 +4,24 @@
   <ThingDef ParentName="ResourceBase">
     <defName>ROM_SpiderSilk</defName>
     <label>spider silk</label>
-    <description>Fabric spun from fibers extracted from spiders. Similar to devilstrand, this is very tough, but insulates no better than cloth.</description>
+    <description>Fabric spun from fibers extracted from spiders. Similar to devilstrand, this is very tough, stronger than steel, but insulates no better than cloth.</description>
     <graphicData>
       <texPath>Things/Item/Resource/Wool</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <color>(220,220,220)</color>
     </graphicData>
     <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <MarketValue>10</MarketValue>
+      <MaxHitPoints>150</MaxHitPoints>
+      <MarketValue>12</MarketValue>
       <Mass>0.025</Mass>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>3</DeteriorationRate>
+      <Flammability>2.0</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
     </statBases>
     <stuffProps>
       <categories>
         <li>Fabric</li>
       </categories>
-      <commonality>0.20</commonality>
+      <commonality>0.10</commonality>
       <color>(220,220,220)</color>
       <statOffsets>
         <ArmorRating_Blunt>0.051</ArmorRating_Blunt>
@@ -31,9 +31,9 @@
       </statOffsets>
       <statFactors>
         <WorkToMake>1.5</WorkToMake>
-        <ArmorRating_Blunt>1.4</ArmorRating_Blunt>
-        <ArmorRating_Sharp>1.9</ArmorRating_Sharp>
-        <ArmorRating_Heat>1</ArmorRating_Heat>
+        <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+        <ArmorRating_Sharp>3.0</ArmorRating_Sharp>
+        <ArmorRating_Heat>0.5</ArmorRating_Heat>
         <ArmorRating_Electric>3.1</ArmorRating_Electric>
       </statFactors>
     </stuffProps>
