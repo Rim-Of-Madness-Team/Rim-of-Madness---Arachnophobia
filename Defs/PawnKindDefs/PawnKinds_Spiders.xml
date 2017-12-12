@@ -19,6 +19,7 @@
       <ComfyTemperatureMin>-15</ComfyTemperatureMin>
       <MarketValue>5</MarketValue>
       <LeatherAmount>0</LeatherAmount>
+      <Flammability>3.0</Flammability>
     </statBases>
 	<tools>
 	  <li>
@@ -32,6 +33,11 @@
 	  </li>
 	</tools>
     <comps>
+	  <li Class="CompProperties_Milkable">
+        <milkDef>ROM_SpiderSilk</milkDef>
+        <milkIntervalDays>2</milkIntervalDays>
+        <milkAmount>2</milkAmount>
+      </li>
       <li Class="CompProperties_EggLayer">
         <eggFertilizedDef>ROMA_SpiderEgg</eggFertilizedDef>
         <eggFertilizationCountMax>1</eggFertilizationCountMax>
@@ -168,6 +174,7 @@
       <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
       <LeatherAmount>10</LeatherAmount>
+      <Flammability>3.0</Flammability>
     </statBases>
 	<tools>
 	  <li>
@@ -202,6 +209,11 @@
 	  </li>
 	</tools>
     <comps>
+	  <li Class="CompProperties_Milkable">
+        <milkDef>ROM_SpiderSilk</milkDef>
+        <milkIntervalDays>2</milkIntervalDays>
+        <milkAmount>12</milkAmount>
+      </li>	
       <li Class="CompProperties_EggLayer">
         <eggFertilizedDef>ROMA_SpiderEggGiant</eggFertilizedDef>
         <eggFertilizationCountMax>1</eggFertilizationCountMax>
@@ -384,6 +396,11 @@
 	  </li>
 	</tools>
     <comps>
+	  <li Class="CompProperties_Milkable">
+        <milkDef>ROM_SpiderSilk</milkDef>
+        <milkIntervalDays>2</milkIntervalDays>
+        <milkAmount>36</milkAmount>
+      </li>		
       <li Class="CompProperties_EggLayer">
         <eggLayFemaleOnly>false</eggLayFemaleOnly>
         <eggFertilizedDef>ROMA_SpiderEggGiant</eggFertilizedDef>

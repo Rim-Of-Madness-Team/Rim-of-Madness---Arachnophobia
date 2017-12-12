@@ -61,7 +61,7 @@ namespace Arachnophobia
 
         public void Notify_WebTouched(Pawn toucher)
         {
-            if (web != null && !this.Dead)
+            if (web != null && this.Spawned && !this.Dead && !this.Downed)
             {
                 //Our webspinners will attack prey under a few conditions.
                 var hungryNow = this?.needs?.food?.CurCategory <= HungerCategory.Hungry;
@@ -73,7 +73,7 @@ namespace Arachnophobia
                 {
                     Job spinPrey = new Job(ROMADefOf.ROMA_SpinPrey, toucher);
                     spinPrey.count = 1;
-                    this.jobs.TryTakeOrderedJob(spinPrey, Verse.AI.JobTag.Misc);
+                    this.jobs.StartJob(spinPrey);
                 }
             }
         }

@@ -363,7 +363,10 @@ namespace Arachnophobia
                     HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, 0.3f);
                 }
             }
-            this.innerContainer.TryDropAll(this.PositionHeld, base.Map, ThingPlaceMode.Near);
+            if (this.MapHeld != null)
+            {
+                this.innerContainer.TryDropAll(this.PositionHeld, this.MapHeld, ThingPlaceMode.Near);
+            }
             this.contentsKnown = true;
             if (!this.Destroyed) this.Destroy(DestroyMode.KillFinalize);
         }
