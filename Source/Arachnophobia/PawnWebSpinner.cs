@@ -52,7 +52,7 @@ namespace Arachnophobia
 
         public void MakeWeb()
         {
-            if (web == null && this.Spawned && !this.Dead && CanMakeWeb)
+            if (web == null && this.Spawned && !this.Downed && !this.Dead && CanMakeWeb)
             {
                 var cell = RCellFinder.RandomWanderDestFor(this, this.PositionHeld, 5f, null, Danger.Some);
                 this.jobs.StartJob(new Job(ROMADefOf.ROMA_SpinWeb, cell), JobCondition.InterruptForced);
