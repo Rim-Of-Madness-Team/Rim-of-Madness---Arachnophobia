@@ -9,7 +9,7 @@
   <!-- Leather Amount: 0 -->
   <!-- Use Meat From: Megaspider -->
   <ROMA_SpiderRace_Corpse.label>Труп паука</ROMA_SpiderRace_Corpse.label>
-  <ROMA_SpiderRace_Corpse.description>Мёртвое тело паука.</ROMA_SpiderRace_Corpse.description>
+  <ROMA_SpiderRace_Corpse.description>Труп паука</ROMA_SpiderRace_Corpse.description>
 
 
   <!-- GIANT SPIDERS -->
@@ -25,7 +25,7 @@
   <ROMA_SpiderRaceGiant_Meat.label>Мясо арахнида</ROMA_SpiderRaceGiant_Meat.label>
   <ROMA_SpiderRaceGiant_Meat.description>Мясо арахнида.</ROMA_SpiderRaceGiant_Meat.description>
   <ROMA_SpiderRaceGiant_Corpse.label>Труп гигантского паука</ROMA_SpiderRaceGiant_Corpse.label>
-  <ROMA_SpiderRaceGiant_Corpse.description>Мёртвое тело гигантского паука.</ROMA_SpiderRaceGiant_Corpse.description>
+  <ROMA_SpiderRaceGiant_Corpse.description>Труп гигантского паука</ROMA_SpiderRaceGiant_Corpse.description>
 
 
   <!-- GIANT SPIDER QUEEN -->
