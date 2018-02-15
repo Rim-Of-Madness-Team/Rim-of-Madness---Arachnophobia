@@ -7,7 +7,7 @@
   ==============================================================================
   -->
 
-  <ThingDef ParentName="BaseInsect" Name="ROMA_SpiderRace">
+  <ThingDef ParentName="ROMA_BaseArachnid" Name="ROMA_SpiderRace">
     <defName>ROMA_SpiderRace</defName>
     <label>spider</label>
     <description>This rabbit-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite.</description>
@@ -101,7 +101,7 @@
     </tradeTags>
   </ThingDef>
 
-  <PawnKindDef ParentName="AnimalKindBase">
+  <PawnKindDef ParentName="ROMA_AnimalKindBase">
     <defName>ROMA_SpiderKind</defName>
     <label>spider</label>
     <race>ROMA_SpiderRace</race>
@@ -162,7 +162,7 @@
   ==========================================================
   -->
 
-  <ThingDef ParentName="BaseInsect">
+  <ThingDef ParentName="ROMA_BaseArachnid">
     <defName>ROMA_SpiderRaceGiant</defName>
     <label>giant spider</label>
     <description>This monstrous muffalo-sized genetically-engineered predator features eight legs, a hard shell, and a venomous bite.</description>
@@ -288,7 +288,7 @@
     </tradeTags>
   </ThingDef>
 
-  <PawnKindDef ParentName="AnimalKindBase">
+  <PawnKindDef ParentName="ROMA_AnimalKindBase">
     <defName>ROMA_SpiderKindGiant</defName>
     <label>giant spider</label>
     <race>ROMA_SpiderRaceGiant</race>
@@ -349,7 +349,7 @@
   ==========================================================
   -->
 
-  <ThingDef ParentName="BaseInsect">
+  <ThingDef ParentName="ROMA_BaseArachnid">
     <defName>ROMA_SpiderRaceGiantQueen</defName>
     <label>giant spider queen</label>
     <description>Half the size of a thrumbo, the giant spider queen is a prime example of genetic engineering gone horribly wrong. The queen varieties also have wings capable of flying short distances.</description>
@@ -454,10 +454,11 @@
     </tradeTags>
   </ThingDef>
 
-  <PawnKindDef ParentName="AnimalKindBase">
+  <PawnKindDef ParentName="ROMA_AnimalKindBase">
     <defName>ROMA_SpiderKindGiantQueen</defName>
     <label>giant spider queen</label>
     <race>ROMA_SpiderRaceGiantQueen</race>
+	<canArriveManhunter>false</canArriveManhunter>
     <combatPower>600</combatPower>
     <lifeStages>
       <li>
@@ -784,7 +785,7 @@
       ==========================================================================
       -->
 
-        <ThingDef Abstract="True" Name="ROM_EggFertBase" ParentName="EggBase" >
+        <ThingDef Abstract="True" Name="ROM_EggFertBase" ParentName="ROMA_EggBase" >
           <tickerType>Normal</tickerType>
           <ingestible>
             <preferability>DesperateOnly</preferability>
@@ -793,20 +794,68 @@
             <li>EggsFertilized</li>
           </thingCategories>
         </ThingDef>
+		
+		  <ThingDef Abstract="True" Name="ROMA_EggBase" ParentName="ROMA_OrganicProductBase" >
+    <graphicData>
+      <texPath>Things/Item/Resource/AnimalProductRaw/EggBirdSmall</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <ingestible>
+      <foodType>AnimalProduct</foodType>
+      <nutrition>0.25</nutrition>
+      <ingestEffect>EatMeat</ingestEffect>
+      <ingestSound>RawMeat_Eat</ingestSound>
+      <tasteThought>AteRawFood</tasteThought>
+    </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <Mass>0.15</Mass>
+			<MaxHitPoints>20</MaxHitPoints>
+			<DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>15</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+        <disableIfHatcher>true</disableIfHatcher>
+      </li>
+      <li Class="CompProperties_FoodPoisoningChance">
+        <humanlikeOnly>true</humanlikeOnly>
+      </li>
+    </comps>
+  </ThingDef>
+  
+    <ThingDef Abstract="True" Name="ROMA_OrganicProductBase" ParentName="ROMA_ResourceBase">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>6</DeteriorationRate>
+			<Mass>0.03</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+  </ThingDef>
 
-      <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="BaseInsect">
-        <statBases>
-          <ToxicSensitivity>0</ToxicSensitivity>
-        </statBases>
-        <race>
-          <fleshType>Insectoid</fleshType>
-          <bloodDef>FilthBloodInsect</bloodDef>
-          <meatColor>(160,150,140)</meatColor>
-          <foodType>OmnivoreAnimal, AnimalProduct</foodType>
-          <manhunterOnDamageChance>1</manhunterOnDamageChance>
-          <manhunterOnTameFailChance>0.018</manhunterOnTameFailChance>
-        </race>
-      </ThingDef>
-
-
+    <ThingDef Name="ROMA_ResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>75</stackLimit>
+		<statBases>
+			<Beauty>-4</Beauty>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+		<alwaysHaulable>true</alwaysHaulable>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<rotatable>false</rotatable>
+		<pathCost>15</pathCost>
+	</ThingDef>
+  
 </Defs>

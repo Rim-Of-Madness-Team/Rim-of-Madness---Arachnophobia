@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\mattw\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Arachnophobia.636962984.00" t="ExcludeRecursive" />
+    <e p="D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Assemblies" t="ExcludeRecursive" />
+    <e p="D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source" t="IncludeRecursive">
+      <e p="Arachnophobia" t="Include">
+        <e p="Buiding_Cocoon.cs" t="Include" />
+        <e p="Building_Web.cs" t="Include" />
+        <e p="CompMultiHatcher.cs" t="Include" />
+        <e p="CompProperties_MultiHatcher.cs" t="Include" />
+        <e p="DeathActionWorker_QueenDeath.cs" t="Include" />
+        <e p="HarmonyPatches.cs" t="Include" />
+        <e p="IncidentWorker_GiantSpiders.cs" t="Include" />
+        <e p="JobDriver_ConsumeCocoon.cs" t="Include" />
+        <e p="JobDriver_SpinPrey.cs" t="Include" />
+        <e p="JobDriver_SpinWeb.cs" t="Include" />
+        <e p="JobGiver_GetFoodSpider.cs" t="Include" />
+        <e p="MapComponent_CocoonTracker.cs" t="Include" />
+        <e p="ModInfo.cs" t="Include" />
+        <e p="ModMain.cs" t="Include" />
+        <e p="PawnWebSpinner.cs" t="Include" />
+        <e p="ROMADefOf.cs" t="Include" />
+        <e p="Utility.cs" t="Include" />
+        <e p="WorldComponent_ModSettings.cs" t="Include" />
+      </e>
+      <e p="Arachnophobia.csproj" t="IncludeRecursive" />
+      <e p="Arachnophobia.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
