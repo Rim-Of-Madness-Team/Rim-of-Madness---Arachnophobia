@@ -24,6 +24,14 @@ namespace Arachnophobia
             harmony.Patch(AccessTools.Method(typeof(PawnUtility), "IsFighting"), null, new HarmonyMethod(typeof(HarmonyPatches).GetMethod("IsFighting_PostFix")), null);
             harmony.Patch(AccessTools.Method(typeof(GenHostility), "GetPreyOfMyFaction"), null, new HarmonyMethod(typeof(HarmonyPatches).GetMethod("GetPreyOfMyFaction_PostFix")), null);
             harmony.Patch(AccessTools.Method(typeof(Faction), "Notify_MemberTookDamage"), null, new HarmonyMethod(typeof(HarmonyPatches).GetMethod("Notify_MemberTookDamage_PostFix")), null);
+            harmony.Patch(AccessTools.Method(typeof(Pawn_MindState), "CanStartFleeingBecauseOfPawnAction"), null, new HarmonyMethod(typeof(HarmonyPatches).GetMethod("CanStartFleeingBecauseOfPawnAction")), null);
+        }
+
+        //MindState
+        public static void CanStartFleeingBecauseOfPawnAction(Pawn p, ref bool __result)
+        {
+            if (p.ParentHolder is Building_Cocoon)
+                __result = false;
         }
 
         // RimWorld.Faction

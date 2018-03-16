@@ -9,17 +9,144 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Buiding_Cocoon.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Arachnophobia/Buiding_Cocoon.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+              <folding>
+                <marker date="1512994658617" expanded="false" signature="6:194" ph="..." />
+                <marker date="1512994658617" expanded="true" signature="219:15101" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="272:15099" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="467:924" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="493:871" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="551:818" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1042:1412" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1068:1402" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1169:1357" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1454:1878" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1678:1814" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1729:1800" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="1925:2679" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="2774:4422" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="2800:4412" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="2923:4351" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="3195:4118" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="3274:4070" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="3424:3573" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="3689:4044" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="3836:4014" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="4185:4333" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="4441:4546" ph="/// Finds a new position for a potential neighboring cocoon. ... " />
+                <marker date="1512994658617" expanded="true" signature="4591:5671" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="4741:5594" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="4907:5580" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="5030:5530" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="5288:5472" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="6001:6141" ph="/// Adds this cocoon to the lists in the MapComponent ... " />
+                <marker date="1512994658617" expanded="true" signature="6188:6804" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="6305:6759" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="6412:6572" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="6593:6745" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="6814:6957" ph="/// Removes this cocoon to the lists in the MapComponent ... " />
+                <marker date="1512994658617" expanded="true" signature="7005:7645" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="7122:7580" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="7229:7391" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="7412:7566" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="7721:7829" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="7869:7951" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="8142:9218" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="8168:9208" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="8250:8327" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="8364:8781" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="8439:8711" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="8834:9147" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="9252:9584" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="9278:9574" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="9635:10461" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="9943:10179" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="10615:10949" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="10690:10913" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="10745:10870" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="11029:12728" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="11119:12718" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="11493:12038" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="11712:12020" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="12336:12704" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="12485:12686" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="12841:13809" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="12971:13669" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="13038:13617" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="13201:13436" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="13318:13414" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="13488:13599" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="13856:14705" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="14011:14415" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="14067:14401" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="14453:14583" ph="{...}" />
+                <marker date="1512994658617" expanded="true" signature="14748:15093" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HarmonyPatches.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Arachnophobia/HarmonyPatches.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+              <folding>
+                <marker date="1521165881198" expanded="false" signature="6:189" ph="..." />
+                <marker date="1521165881198" expanded="true" signature="214:5482" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="281:5480" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="319:1928" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="2038:2143" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="2282:2602" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="2399:2592" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="2745:3164" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="2868:3154" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="3015:3140" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="3274:3559" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="3700:4255" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="3748:3834" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="3902:4245" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="4055:4231" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="4381:4952" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="4499:4942" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="4637:4727" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="4834:4928" ph="{...}" />
+                <marker date="1521165881198" expanded="true" signature="5317:5474" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Arachnophobia/HarmonyPatches.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Arachnophobia/Buiding_Cocoon.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Arachnophobia/HarmonyPatches.cs" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="119" />
-    <option name="y" value="75" />
-    <option name="width" value="1400" />
-    <option name="height" value="880" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="243" />
+    <option name="y" value="149" />
+    <option name="width" value="1684" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
@@ -43,6 +170,17 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Arachnophobia (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Arachnophobia (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Arachnophobia" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Arachnophobia (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Arachnophobia" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Arachnophobia" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -95,12 +233,13 @@
       <option name="presentableId" value="Default" />
       <updated>1516980707290</updated>
       <workItem from="1516980708827" duration="1317000" />
-      <workItem from="1518669301161" duration="61000" />
+      <workItem from="1518669301161" duration="1272000" />
+      <workItem from="1521165109538" duration="1251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1378000" />
+    <option name="totallyTimeSpent" value="3840000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -112,22 +251,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="119" y="75" width="1400" height="880" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18098818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -147,5 +286,115 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Arachnophobia/Buiding_Cocoon.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <marker date="1512994658617" expanded="false" signature="6:194" ph="..." />
+            <marker date="1512994658617" expanded="true" signature="219:15101" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="272:15099" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="467:924" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="493:871" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="551:818" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1042:1412" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1068:1402" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1169:1357" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1454:1878" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1678:1814" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1729:1800" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="1925:2679" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="2774:4422" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="2800:4412" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="2923:4351" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="3195:4118" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="3274:4070" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="3424:3573" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="3689:4044" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="3836:4014" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="4185:4333" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="4441:4546" ph="/// Finds a new position for a potential neighboring cocoon. ... " />
+            <marker date="1512994658617" expanded="true" signature="4591:5671" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="4741:5594" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="4907:5580" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="5030:5530" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="5288:5472" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="6001:6141" ph="/// Adds this cocoon to the lists in the MapComponent ... " />
+            <marker date="1512994658617" expanded="true" signature="6188:6804" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="6305:6759" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="6412:6572" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="6593:6745" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="6814:6957" ph="/// Removes this cocoon to the lists in the MapComponent ... " />
+            <marker date="1512994658617" expanded="true" signature="7005:7645" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="7122:7580" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="7229:7391" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="7412:7566" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="7721:7829" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="7869:7951" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="8142:9218" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="8168:9208" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="8250:8327" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="8364:8781" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="8439:8711" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="8834:9147" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="9252:9584" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="9278:9574" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="9635:10461" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="9943:10179" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="10615:10949" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="10690:10913" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="10745:10870" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="11029:12728" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="11119:12718" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="11493:12038" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="11712:12020" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="12336:12704" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="12485:12686" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="12841:13809" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="12971:13669" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="13038:13617" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="13201:13436" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="13318:13414" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="13488:13599" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="13856:14705" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="14011:14415" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="14067:14401" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="14453:14583" ph="{...}" />
+            <marker date="1512994658617" expanded="true" signature="14748:15093" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Arachnophobia/HarmonyPatches.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <marker date="1521165881198" expanded="false" signature="6:189" ph="..." />
+            <marker date="1521165881198" expanded="true" signature="214:5482" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="281:5480" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="319:1928" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="2038:2143" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="2282:2602" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="2399:2592" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="2745:3164" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="2868:3154" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="3015:3140" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="3274:3559" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="3700:4255" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="3748:3834" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="3902:4245" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="4055:4231" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="4381:4952" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="4499:4942" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="4637:4727" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="4834:4928" ph="{...}" />
+            <marker date="1521165881198" expanded="true" signature="5317:5474" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
