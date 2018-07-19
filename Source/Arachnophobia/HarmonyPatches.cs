@@ -63,7 +63,7 @@ namespace Arachnophobia
         // RimWorld.PawnUtility
         public static void IsFighting_PostFix(ref bool __result, Pawn pawn)
         {
-            __result = pawn.CurJob != null && (pawn.CurJob.def == JobDefOf.AttackMelee || pawn.CurJob.def == JobDefOf.AttackStatic || pawn.CurJob.def == JobDefOf.WaitCombat || pawn.CurJob.def == JobDefOf.PredatorHunt || pawn.CurJob.def == ROMADefOf.ROMA_SpinPrey);
+            __result = pawn.CurJob != null && (pawn.CurJob.def == JobDefOf.AttackMelee || pawn.CurJob.def == JobDefOf.AttackStatic || pawn.CurJob.def == JobDefOf.Wait_Combat || pawn.CurJob.def == JobDefOf.PredatorHunt || pawn.CurJob.def == ROMADefOf.ROMA_SpinPrey);
         }
 
 

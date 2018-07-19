@@ -47,14 +47,9 @@ namespace Arachnophobia
                 return null;
             }
             bool flag;
-            if (pawn.RaceProps.Animal)
+            if (!pawn.RaceProps.Animal)
             {
-                flag = true;
-            }
-            else
-            {
-                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.Malnutrition, false);
-                flag = (firstHediffOfDef != null && firstHediffOfDef.Severity > 0.4f);
+                return null;
             }
             var localCocoons = Utility.CocoonsFor(pawn.Map, pawn);
             if (localCocoons != null && localCocoons.Count > 0)
@@ -93,10 +88,9 @@ namespace Arachnophobia
 
 
             bool desperate = pawn.needs.food.CurCategory == HungerCategory.Starving;
-            bool allowCorpse = flag;
             Thing thing;
             ThingDef def;
-            if (!FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out thing, out def, true, true, false, allowCorpse, false))
+            if (!FoodUtility.TryFindBestFoodSourceFor(pawn, pawn, desperate, out thing, out def, true, true, false, true, false))
             {
                 return null;
             }
@@ -129,9 +123,10 @@ namespace Arachnophobia
                 }
                 def = thingDef;
             }
+            float nutrition = FoodUtility.GetNutrition(thing, def);
             return new Job(JobDefOf.Ingest, thing)
             {
-                count = FoodUtility.WillIngestStackCountOf(pawn, def)
+                count = FoodUtility.WillIngestStackCountOf(pawn, def, nutrition)
             };
         }
     }

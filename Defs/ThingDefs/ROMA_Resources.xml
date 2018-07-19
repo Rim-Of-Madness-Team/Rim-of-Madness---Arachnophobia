@@ -27,14 +27,12 @@
         <ArmorRating_Blunt>0.051</ArmorRating_Blunt>
         <ArmorRating_Sharp>0.051</ArmorRating_Sharp>
         <ArmorRating_Heat>0</ArmorRating_Heat>
-        <ArmorRating_Electric>0.051</ArmorRating_Electric>
       </statOffsets>
       <statFactors>
         <WorkToMake>1.5</WorkToMake>
         <ArmorRating_Blunt>1.2</ArmorRating_Blunt>
         <ArmorRating_Sharp>3.0</ArmorRating_Sharp>
         <ArmorRating_Heat>0.5</ArmorRating_Heat>
-        <ArmorRating_Electric>3.1</ArmorRating_Electric>
       </statFactors>
     </stuffProps>
     <thingCategories>

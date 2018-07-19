@@ -105,14 +105,14 @@ namespace Arachnophobia
                 {
                     if (!Victim.Dead)
                     {
-                        FilthMaker.MakeFilth(this.pawn.CurJob.targetA.Cell, this.Map, ThingDefOf.FilthSlime, this.pawn.LabelIndefinite(), 1);
+                        FilthMaker.MakeFilth(this.pawn.CurJob.targetA.Cell, this.Map, ThingDefOf.Filth_Slime, this.pawn.LabelIndefinite(), 1);
                         var damageInt = (int)(2.5f * this.pawn.RaceProps.baseBodySize);
                         var damageToxic = (int)(25f * this.pawn.RaceProps.baseBodySize);
                         for (int i = 0; i < 2; i++)
                         {
                             var randomInternalOrgan = Victim?.health?.hediffSet?.GetNotMissingParts().InRandomOrder().FirstOrDefault(x => x.depth == BodyPartDepth.Inside);
-                            if (!Victim.Destroyed || !Victim.Dead) Victim.TakeDamage(new DamageInfo(DamageDefOf.Burn, Rand.Range(damageInt, damageInt * 2), -1, this.pawn, randomInternalOrgan));
-                            if (!Victim.Destroyed || !Victim.Dead) Victim.TakeDamage(new DamageInfo(ROMADefOf.ToxicBite, Rand.Range(damageToxic, damageToxic * 2), -1, this.pawn, randomInternalOrgan));
+                            if (!Victim.Destroyed || !Victim.Dead) Victim.TakeDamage(new DamageInfo(DamageDefOf.Burn, Rand.Range(damageInt, damageInt * 2), 1f, -1, this.pawn, randomInternalOrgan));
+                            if (!Victim.Destroyed || !Victim.Dead) Victim.TakeDamage(new DamageInfo(ROMADefOf.ToxicBite, Rand.Range(damageToxic, damageToxic * 2), 1f, -1, this.pawn, randomInternalOrgan));
                         }
                     }
                     else

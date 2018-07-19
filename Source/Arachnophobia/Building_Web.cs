@@ -25,7 +25,7 @@ namespace Arachnophobia
                         float num = 20f;
                         float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
                         num *= num2;
-                        p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, -1, this));
+                        p.TakeDamage(new DamageInfo(DamageDefOf.Stun, (int)num, 1f, -1, this));
                         if (!Destroyed)
                         {
                             var leavingsRect = new CellRect(this.OccupiedRect().minX, this.OccupiedRect().minZ, this.OccupiedRect().Width, this.OccupiedRect().Height);

@@ -204,10 +204,10 @@ namespace Arachnophobia
             Notify_Placed(null);
         }
 
-        public override void DeSpawn()
+        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             Notify_Removed(null);
-            base.DeSpawn();
+            base.DeSpawn(mode);
         }
 
         // RimWorld.Building_Grave code repurposed for Cocoons

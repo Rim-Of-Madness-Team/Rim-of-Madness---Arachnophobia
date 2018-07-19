@@ -53,7 +53,7 @@ namespace Arachnophobia
 
                 foreach (PawnKindDef kind in spiderKinds)
                 {
-                    kind.wildSpawn_EcoSystemWeight *= ModInfo.romSpiderFactor;
+                    kind.ecoSystemWeight *= ModInfo.romSpiderFactor;
                 }
             }
         }

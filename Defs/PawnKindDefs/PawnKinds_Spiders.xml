@@ -68,6 +68,7 @@
         <Desert>0.15</Desert>
         <ExtremeDesert>0.005</ExtremeDesert>
         <!-- Cold Biomes -->
+		<ColdBog>0.09</ColdBog>
         <BorealForest>0.09</BorealForest>
         <Tundra>0.065</Tundra>
         <IceSheet>0</IceSheet>
@@ -101,13 +102,13 @@
     </tradeTags>
   </ThingDef>
 
-  <PawnKindDef ParentName="ROMA_AnimalKindBase">
+  <PawnKindDef>
     <defName>ROMA_SpiderKind</defName>
     <label>spider</label>
     <race>ROMA_SpiderRace</race>
     <combatPower>2</combatPower>
-    <wildSpawn_EcoSystemWeight>0.09</wildSpawn_EcoSystemWeight>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
+    <ecoSystemWeight>0.09</ecoSystemWeight>
+     
     <lifeStages>
       <li>
         <label>spiderling</label>
@@ -161,6 +162,28 @@
                         GIANT SPIDERS
   ==========================================================
   -->
+  
+  
+  <ThingDef ParentName="LeatherBase">
+    <defName>ROMA_Leather_SpiderGiant</defName>
+    <label>giant spider chitin</label>
+    <description>Thick carapace covered in lung-burning fuzz. Harvested from a giant spider. This thick skin insulates and protects very well.</description>
+    <graphicData>
+      <color>(120,120,120)</color>
+      <colorTwo>(120,120,120)</colorTwo>
+    </graphicData>
+    <statBases>
+      <MarketValue>3.3</MarketValue>
+      <StuffPower_Armor_Sharp>1.24</StuffPower_Armor_Sharp>
+      <StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>14</StuffPower_Insulation_Heat>
+    </statBases>
+    <stuffProps>
+      <color>(120,120,120)</color>
+      <commonality>0.0015</commonality>
+    </stuffProps>
+  </ThingDef>
+  
 
   <ThingDef ParentName="ROMA_BaseArachnid">
     <defName>ROMA_SpiderRaceGiant</defName>
@@ -185,7 +208,7 @@
 		<power>9</power>
 		<cooldownTime>1.65</cooldownTime>
 		<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-		<commonality>0.33</commonality>
+		<chanceFactor>0.33</chanceFactor>
 	  </li>
 	  <li>
 		<label>front left leg</label>
@@ -233,6 +256,8 @@
       <baseHungerRate>0.85</baseHungerRate>
       <meatLabel>arachnid meat</meatLabel>
       <mateMtbHours>8</mateMtbHours>
+	  <leatherDef>ROMA_Leather_SpiderGiant</leatherDef>
+	  <!--
       <leatherColor>(120,120,120)</leatherColor>
       <leatherInsulation>1</leatherInsulation>
       <leatherCommonalityFactor>0.1</leatherCommonalityFactor>
@@ -241,10 +266,10 @@
       <leatherStatFactors>
         <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
         <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
-        <ArmorRating_Heat>0</ArmorRating_Heat>
-        <ArmorRating_Electric>2.0</ArmorRating_Electric>
+        <ArmorRating_Heat>-2.0</ArmorRating_Heat>
       </leatherStatFactors>
-      <trainableIntelligence>Advanced</trainableIntelligence>
+      -->
+	  <trainability>Advanced</trainability>
       <wildness>0.75</wildness>
       <wildBiomes>
         <!-- Moderate Climates -->
@@ -255,6 +280,7 @@
         <Desert>0.09</Desert>
         <ExtremeDesert>0.02</ExtremeDesert>
         <!-- Cold Biomes -->
+		<ColdBog>0.12</ColdBog>
         <BorealForest>0.05</BorealForest>
         <Tundra>0.027</Tundra>
         <IceSheet>0</IceSheet>
@@ -288,13 +314,11 @@
     </tradeTags>
   </ThingDef>
 
-  <PawnKindDef ParentName="ROMA_AnimalKindBase">
+  <PawnKindDef>
     <defName>ROMA_SpiderKindGiant</defName>
     <label>giant spider</label>
     <race>ROMA_SpiderRaceGiant</race>
     <combatPower>160</combatPower>
-    <wildSpawn_EcoSystemWeight>0.09</wildSpawn_EcoSystemWeight>
-    <wildSpawn_spawnWild>true</wildSpawn_spawnWild>
     <lifeStages>
       <li>
         <label>giant spiderling</label>
@@ -360,7 +384,6 @@
       <MoveSpeed>12.0</MoveSpeed>
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
       <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
-      <ComfyTemperatureMin>0</ComfyTemperatureMin>
       <LeatherAmount>0</LeatherAmount>
     </statBases>
 	<tools>
@@ -372,7 +395,7 @@
 		<power>20</power>
 		<cooldownTime>1.65</cooldownTime>
 		<linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-		<commonality>0.33</commonality>
+		<chanceFactor>0.33</chanceFactor>
 	  </li>
 	  <li>
 		<label>front left leg</label>
@@ -424,7 +447,7 @@
       <baseHungerRate>0.85</baseHungerRate>
       <useMeatFrom>ROMA_SpiderRaceGiant</useMeatFrom>
       <mateMtbHours>8</mateMtbHours>
-      <trainableIntelligence>None</trainableIntelligence>
+      <trainability>Simple</trainability>
       <wildness>0.9</wildness>
       <lifeExpectancy>200</lifeExpectancy>
       <lifeStageAges>
@@ -454,7 +477,7 @@
     </tradeTags>
   </ThingDef>
 
-  <PawnKindDef ParentName="ROMA_AnimalKindBase">
+  <PawnKindDef>
     <defName>ROMA_SpiderKindGiantQueen</defName>
     <label>giant spider queen</label>
     <race>ROMA_SpiderRaceGiantQueen</race>
@@ -545,11 +568,13 @@
                     <depth>Inside</depth>
                   </li>
                   <li>
-                    <def>LeftEye</def>
+                    <def>Eye</def>
+<customLabel>left eye</customLabel>
                     <coverage>0.15</coverage>
                   </li>
                   <li>
-                    <def>RightEye</def>
+                    <def>Eye</def>
+<customLabel>right eye</customLabel>
                     <coverage>0.15</coverage>
                   </li>
                   <li>
@@ -578,7 +603,8 @@
             <height>Bottom</height>
           </li>
           <li>
-            <def>FrontLeftInsectLeg</def>
+            <def>InsectLeg</def>
+<customLabel>front left leg</customLabel>
             <coverage>0.06</coverage>
             <height>Bottom</height>
             <groups>
@@ -586,7 +612,8 @@
             </groups>
           </li>
           <li>
-            <def>FrontRightInsectLeg</def>
+            <def>InsectLeg</def>
+<customLabel>front right leg</customLabel>
             <coverage>0.06</coverage>
             <height>Bottom</height>
             <groups>
@@ -594,12 +621,14 @@
             </groups>
           </li>
           <li>
-            <def>MiddleLeftInsectLeg</def>
+            <def>InsectLeg</def>
+<customLabel>middle left leg</customLabel>
             <coverage>0.06</coverage>
             <height>Bottom</height>
           </li>
           <li>
-            <def>MiddleRightInsectLeg</def>
+            <def>InsectLeg</def>
+<customLabel>middle right leg</customLabel>
             <coverage>0.06</coverage>
             <height>Bottom</height>
           </li>
@@ -614,12 +643,14 @@
             <height>Bottom</height>
           </li>
           <li>
-            <def>RearLeftInsectLeg</def>
+            <def>InsectLeg</def>
+<customLabel>rear left leg</customLabel>
             <coverage>0.06</coverage>
             <height>Bottom</height>
           </li>
           <li>
-            <def>RearRightInsectLeg</def>
+            <def>InsectLeg</def>
+<customLabel>rear right leg</customLabel>
             <coverage>0.06</coverage>
             <height>Bottom</height>
           </li>
@@ -637,7 +668,7 @@
         <defName>ROMA_Cephalothorax</defName>
         <label>caphalothorax</label>
         <hitPoints>20</hitPoints>
-        <oldInjuryBaseChance>0</oldInjuryBaseChance>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
         <tags>
           <li>BreathingPathway</li>
@@ -650,7 +681,7 @@
         <defName>ROMA_LeftPedipalp</defName>
         <label>left pedipalp</label>
         <hitPoints>15</hitPoints>
-        <oldInjuryBaseChance>0</oldInjuryBaseChance>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
         <tags>
           <li>ManipulationLimbCore</li>
@@ -661,7 +692,7 @@
         <defName>ROMA_RightPedipalp</defName>
         <label>right pedipalp</label>
         <hitPoints>15</hitPoints>
-        <oldInjuryBaseChance>0</oldInjuryBaseChance>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
         <tags>
           <li>ManipulationLimbCore</li>
@@ -673,7 +704,7 @@
         <label>second middle left leg</label>
         <hitPoints>20</hitPoints>
         <frostbiteVulnerability>0.1</frostbiteVulnerability>
-        <oldInjuryBaseChance>0</oldInjuryBaseChance>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
         <tags>
           <li>MovingLimbCore</li>
@@ -685,7 +716,7 @@
         <label>second middle right leg</label>
         <hitPoints>20</hitPoints>
         <frostbiteVulnerability>0.1</frostbiteVulnerability>
-        <oldInjuryBaseChance>0</oldInjuryBaseChance>
+        <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
         <skinCovered>false</skinCovered>
         <tags>
           <li>MovingLimbCore</li>
@@ -712,7 +743,7 @@
          =======================================================================
     -->
 
-    <ThingDef ParentName="ROM_EggFertBase">
+    <ThingDef ParentName="EggFertBase">
         <defName>ROMA_SpiderEgg</defName>
         <label>spider egg sack</label>
         <description>An egg sack filled with baby spiders.</description>
@@ -726,8 +757,7 @@
           <MarketValue>0.7</MarketValue>
         </statBases>
         <comps>
-      			<li Class="CompProperties_FoodPoisoningChance">
-      				<humanlikeOnly>true</humanlikeOnly>
+      			<li Class="CompProperties_FoodPoisonable">
       			</li>
       			<li Class="CompProperties_TemperatureRuinable">
       				<minSafeTemperature>-20</minSafeTemperature>
@@ -746,7 +776,7 @@
       </ThingDef>
 
 
-            <ThingDef ParentName="ROM_EggFertBase">
+            <ThingDef ParentName="EggFertBase">
                 <defName>ROMA_SpiderEggGiant</defName>
                 <label>giant spider egg sack</label>
                 <description>An egg sack filled with baby giant spiders.</description>
@@ -760,8 +790,7 @@
                   <MarketValue>0.9</MarketValue>
                 </statBases>
                 <comps>
-              			<li Class="CompProperties_FoodPoisoningChance">
-              				<humanlikeOnly>true</humanlikeOnly>
+              			<li Class="CompProperties_FoodPoisonable">
               			</li>
               			<li Class="CompProperties_TemperatureRuinable">
               				<minSafeTemperature>-20</minSafeTemperature>
@@ -778,84 +807,5 @@
                   </li>
                 </comps>
               </ThingDef>
-
-      <!--
-      ==========================================================================
-                                      BASES
-      ==========================================================================
-      -->
-
-        <ThingDef Abstract="True" Name="ROM_EggFertBase" ParentName="ROMA_EggBase" >
-          <tickerType>Normal</tickerType>
-          <ingestible>
-            <preferability>DesperateOnly</preferability>
-          </ingestible>
-          <thingCategories>
-            <li>EggsFertilized</li>
-          </thingCategories>
-        </ThingDef>
-		
-		  <ThingDef Abstract="True" Name="ROMA_EggBase" ParentName="ROMA_OrganicProductBase" >
-    <graphicData>
-      <texPath>Things/Item/Resource/AnimalProductRaw/EggBirdSmall</texPath>
-      <graphicClass>Graphic_StackCount</graphicClass>
-    </graphicData>
-    <ingestible>
-      <foodType>AnimalProduct</foodType>
-      <nutrition>0.25</nutrition>
-      <ingestEffect>EatMeat</ingestEffect>
-      <ingestSound>RawMeat_Eat</ingestSound>
-      <tasteThought>AteRawFood</tasteThought>
-    </ingestible>
-    <socialPropernessMatters>true</socialPropernessMatters>
-    <statBases>
-      <Mass>0.15</Mass>
-			<MaxHitPoints>20</MaxHitPoints>
-			<DeteriorationRate>2</DeteriorationRate>
-    </statBases>
-    <comps>
-      <li Class="CompProperties_Rottable">
-        <daysToRotStart>15</daysToRotStart>
-        <rotDestroys>true</rotDestroys>
-        <disableIfHatcher>true</disableIfHatcher>
-      </li>
-      <li Class="CompProperties_FoodPoisoningChance">
-        <humanlikeOnly>true</humanlikeOnly>
-      </li>
-    </comps>
-  </ThingDef>
-  
-    <ThingDef Abstract="True" Name="ROMA_OrganicProductBase" ParentName="ROMA_ResourceBase">
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <statBases>
-      <MaxHitPoints>60</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>6</DeteriorationRate>
-			<Mass>0.03</Mass>
-    </statBases>
-    <tickerType>Rare</tickerType>
-  </ThingDef>
-
-    <ThingDef Name="ROMA_ResourceBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <resourceReadoutPriority>Middle</resourceReadoutPriority>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>75</stackLimit>
-		<statBases>
-			<Beauty>-4</Beauty>
-		</statBases>
-		<comps>
-			<li Class="CompProperties_Forbiddable"/>
-		</comps>
-		<alwaysHaulable>true</alwaysHaulable>
-		<drawGUIOverlay>true</drawGUIOverlay>
-		<rotatable>false</rotatable>
-		<pathCost>15</pathCost>
-	</ThingDef>
   
 </Defs>

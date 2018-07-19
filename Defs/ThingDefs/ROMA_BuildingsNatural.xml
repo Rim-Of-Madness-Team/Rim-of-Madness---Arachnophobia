@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef Name="BuildingNaturalBase" Abstract="True">
-    <category>Building</category>
-    <selectable>true</selectable>
-    <drawerType>MapMeshOnly</drawerType>
-    <filthLeaving>RockRubble</filthLeaving>
-		<scatterableOnMapGen>false</scatterableOnMapGen>
-	</ThingDef>
-
-  <ThingDef Name="BuildingCocoonBase" Abstract="True">
-    <category>Building</category>
-    <selectable>true</selectable>
-    <drawerType>RealtimeOnly</drawerType>
-    <filthLeaving>RockRubble</filthLeaving>
-		<scatterableOnMapGen>false</scatterableOnMapGen>
-  </ThingDef>
-
   <!--
   ==============================================================================
                                    WEBS
@@ -26,6 +10,7 @@
   <ThingDef ParentName="BuildingNaturalBase" Name="ROM_BaseWeb">
     <defName>ROMA_Web</defName>
     <label>web</label>
+	<thingCategories/>
     <description>A silk spun web for catching prey.</description>
     <thingClass>Arachnophobia.Building_Web</thingClass>
     <altitudeLayer>Building</altitudeLayer>
@@ -71,6 +56,7 @@
     <defName>ROMA_WebGiant</defName>
     <label>giant web</label>
     <description>A huge silk spun web for catching larger prey.</description>
+	<thingCategories/>
     <size>(3,3)</size>
     <graphicData>
       <texPath>Things/Building/Natural/Web/ROM_SpiderWeb</texPath>
@@ -95,13 +81,14 @@
                                       COCOONS
   ==============================================================================
   -->
-  <ThingDef ParentName="BuildingCocoonBase" Name="ROM_BaseCocoon">
+  <ThingDef ParentName="BuildingNaturalBase" Name="ROM_BaseCocoon">
     <defName>ROMA_Cocoon</defName>
     <label>cocoon</label>
     <description>A silk spun cocoon for holding subdued prey both alive or dead.</description>
     <thingClass>Arachnophobia.Building_Cocoon</thingClass>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
+	<minifiedDef>MinifiedThing</minifiedDef>
     <selectable>true</selectable>
     <fillPercent>0.50</fillPercent>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
@@ -169,6 +156,7 @@
     <label>large cocoon</label>
     <description>A huge silk spun web for holding larger prey.</description>
     <size>(1,1)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
     <building>
       <claimable>false</claimable>
       <isEdifice>False</isEdifice>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\mattw\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Arachnophobia.636962984.00" t="ExcludeRecursive" />
-    <e p="D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Assemblies" t="ExcludeRecursive" />
-    <e p="D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source" t="IncludeRecursive">
+    <e p="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Assemblies" t="ExcludeRecursive" />
+    <e p="C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source" t="IncludeRecursive">
       <e p="Arachnophobia" t="Include">
         <e p="Buiding_Cocoon.cs" t="Include" />
         <e p="Building_Web.cs" t="Include" />
@@ -32,5 +31,6 @@
         <e p="AssemblyInfo.cs" t="Include" />
       </e>
     </e>
+    <e p="C:\Users\mattw\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Arachnophobia.-593763038.00" t="ExcludeRecursive" />
   </component>
 </project>

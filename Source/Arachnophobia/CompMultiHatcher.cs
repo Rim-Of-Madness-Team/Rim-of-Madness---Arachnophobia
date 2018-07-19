@@ -95,7 +95,7 @@ namespace Arachnophobia
                         }
                         if (this.parent.Spawned)
                         {
-                            FilthMaker.MakeFilth(this.parent.Position, this.parent.Map, ThingDefOf.FilthAmnioticFluid, 1);
+                            FilthMaker.MakeFilth(this.parent.Position, this.parent.Map, ThingDefOf.Filth_AmnioticFluid, 1);
                         }
                     }
                     else
