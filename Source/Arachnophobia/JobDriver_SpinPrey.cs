@@ -236,7 +236,7 @@ namespace Arachnophobia
             //yield return Toils_Jump.JumpIf(gotoCorpse, () => this.pawn.needs.food.CurLevelPercentage < 0.9f);
         }
 
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool showResult)
         {
             return true;
         }

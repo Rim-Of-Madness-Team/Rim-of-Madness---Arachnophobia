@@ -21,7 +21,7 @@ namespace Arachnophobia
             }
         }
 
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool showResult)
         {
             return true;
         }

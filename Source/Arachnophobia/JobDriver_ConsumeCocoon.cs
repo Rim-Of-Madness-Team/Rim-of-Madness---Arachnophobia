@@ -260,7 +260,7 @@ namespace Arachnophobia
             return drinkCorpse;
         }
 
-        public override bool TryMakePreToilReservations()
+        public override bool TryMakePreToilReservations(bool showResult)
         {
 			return this.pawn.Reserve(this.Cocoon, this.job, 1, -1, null);
         }
