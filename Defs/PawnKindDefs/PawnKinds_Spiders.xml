@@ -117,10 +117,6 @@
           <drawSize>0.85</drawSize>
           <color>(80,80,80)</color>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>0.2</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
       <li>
         <label>juvenile spider</label>
@@ -129,10 +125,6 @@
           <drawSize>0.9</drawSize>
           <color>(80,80,80)</color>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>0.2</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
@@ -149,10 +141,6 @@
           <texPath>Things/Pawn/Animal/Spider/ROM_Spider</texPath>
           <drawSize>1.15</drawSize>
         </femaleGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>0.2</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>
@@ -327,10 +315,6 @@
           <drawSize>1.3</drawSize>
           <color>(120,120,120)</color>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>1.0</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
       <li>
         <label>juvenile giant spider</label>
@@ -339,10 +323,6 @@
           <drawSize>1.7</drawSize>
           <color>(120,120,120)</color>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>1.5</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
@@ -359,10 +339,6 @@
           <texPath>Things/Pawn/Animal/Spider/ROM_Spider</texPath>
           <drawSize>2.5</drawSize>
         </femaleGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>2.5</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>
@@ -491,10 +467,6 @@
           <drawSize>3.5</drawSize>
           <color>(160,130,130)</color>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>1.0</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
       <li>
         <label>juvenile giant queen spider</label>
@@ -503,10 +475,6 @@
           <drawSize>4.5</drawSize>
           <color>(160,130,130)</color>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>1.5</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
       <li>
         <bodyGraphicData>
@@ -518,10 +486,6 @@
             <offset>(0,0,-0.05)</offset>
           </shadowData>
         </bodyGraphicData>
-        <dessicatedBodyGraphicData>
-          <texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-          <drawSize>2.5</drawSize>
-        </dessicatedBodyGraphicData>
       </li>
     </lifeStages>
   </PawnKindDef>

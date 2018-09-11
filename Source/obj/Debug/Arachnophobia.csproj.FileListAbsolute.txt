@@ -4,6 +4,8 @@ D:\SteamLibrary\steamapps\common\RimWorld\Mods\Rim-of-Madness---Arachnophobia\So
 D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Assemblies\Arachnophobia.dll
 D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.csprojResolveAssemblyReference.cache
 D:\SteamLibrary\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.csprojResolveAssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Assemblies\Arachnophobia.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\ModsWorkspace\Rim-of-Madness---Arachnophobia\Source\obj\Debug\Arachnophobia.csproj.CopyComplete
