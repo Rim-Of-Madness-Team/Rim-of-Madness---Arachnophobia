@@ -50,7 +50,7 @@
       <body>ROMA_SpiderBody</body>
       <foodType>CarnivoreAnimal, Kibble, Fluid</foodType>
       <predator>true</predator>
-      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnDamageChance>0.1</manhunterOnDamageChance>
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
       <baseBodySize>0.3</baseBodySize>
       <maxPreyBodySize>0.4</maxPreyBodySize>
@@ -238,7 +238,7 @@
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
       <foodType>CarnivoreAnimal, Kibble, Fluid</foodType>
       <predator>true</predator>
-      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnDamageChance>0.35</manhunterOnDamageChance>
       <baseBodySize>2.1</baseBodySize>
       <baseHealthScale>1.75</baseHealthScale>
       <baseHungerRate>0.85</baseHungerRate>
@@ -415,7 +415,7 @@
       <thinkTreeMain>ROM_SpiderThinkTree</thinkTreeMain>
       <foodType>CarnivoreAnimal, Kibble, Fluid</foodType>
       <predator>true</predator>
-      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnDamageChance>0.5</manhunterOnDamageChance>
       <deathActionWorkerClass>Arachnophobia.DeathActionWorker_QueenDeath</deathActionWorkerClass>
       <hasGenders>false</hasGenders>
       <baseBodySize>3.1</baseBodySize>
