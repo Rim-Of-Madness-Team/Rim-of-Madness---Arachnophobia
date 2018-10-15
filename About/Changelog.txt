@@ -1,0 +1,4 @@
+1.19.0.4 (10-16-2018)
+========================
+Removes abstracts for ResourceBase and BaseFilth
+
