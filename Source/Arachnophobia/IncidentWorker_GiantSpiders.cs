@@ -14,7 +14,7 @@ namespace Arachnophobia
             bool queenSpawned = false;
             string desc = "ROM_SpidersArrivedNoQueen";
             IntVec3 intVec;
-            if (!RCellFinder.TryFindRandomPawnEntryCell(out intVec, map, CellFinder.EdgeRoadChance_Animal, null))
+            if (!RCellFinder.TryFindRandomPawnEntryCell(out intVec, map, CellFinder.EdgeRoadChance_Animal, false, null))
             {
                 return false;
             }

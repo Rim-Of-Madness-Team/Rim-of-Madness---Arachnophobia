@@ -1,3 +1,11 @@
+1.20.0.1 (10-18-2018)
+========================
+Did not include Manifest.xml in the initial RimWorld 1.0 release.
+
+1.20.0.0 (10-18-2018)
+========================
+Initial release for Arachnophobia for RimWorld 1.0.
+
 1.19.0.4 (10-16-2018)
 ========================
 Removes abstracts for ResourceBase and BaseFilth
