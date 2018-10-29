@@ -95,6 +95,10 @@ namespace Arachnophobia
                 //}
                 MakeWeb();
             }
+            if (Find.TickManager.TicksGame % 1000 == 0)
+            {
+                CthulhuUtility.RemoveSanityLoss(this);
+            }
         }
 
         public override void ExposeData()

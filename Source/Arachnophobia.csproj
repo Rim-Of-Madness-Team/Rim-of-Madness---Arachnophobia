@@ -59,6 +59,7 @@
     <Compile Include="Arachnophobia\Building_Web.cs" />
     <Compile Include="Arachnophobia\CompMultiHatcher.cs" />
     <Compile Include="Arachnophobia\CompProperties_MultiHatcher.cs" />
+    <Compile Include="Arachnophobia\CthulhuUtility.cs" />
     <Compile Include="Arachnophobia\DeathActionWorker_QueenDeath.cs" />
     <Compile Include="Arachnophobia\HarmonyPatches.cs" />
     <Compile Include="Arachnophobia\IncidentWorker_GiantSpiders.cs" />

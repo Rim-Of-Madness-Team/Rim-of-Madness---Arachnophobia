@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- 10 times deadlier -->
+
+
+    <ToolCapacityDef>
+        <defName>ROMA_Sting</defName>
+    </ToolCapacityDef>
+
+
+    <DamageDef ParentName="Bite">
+        <defName>ROMA_Sting</defName>
+        <label>toxic sting</label>
+        <additionalHediffs>
+            <li>
+                <hediff>ToxicBuildup</hediff>
+                <severityPerDamageDealt>0.01</severityPerDamageDealt>
+                <victimSeverityScaling>ToxicSensitivity</victimSeverityScaling>
+            </li>
+        </additionalHediffs>
+    </DamageDef>
+
+
+    <ManeuverDef>
+        <defName>ROMA_Sting</defName>
+        <requiredCapacity>ROMA_Sting</requiredCapacity>
+        <verb>
+            <verbClass>Verb_MeleeAttackDamage</verbClass>
+            <meleeDamageDef>ROMA_Sting</meleeDamageDef>
+        </verb>
+        <logEntryDef>MeleeAttack</logEntryDef>
+        <combatLogRulesHit>Maneuver_Stab_MeleeHit</combatLogRulesHit>
+        <combatLogRulesDeflect>Maneuver_Stab_MeleeDeflect</combatLogRulesDeflect>
+        <combatLogRulesMiss>Maneuver_Stab_MeleeMiss</combatLogRulesMiss>
+        <combatLogRulesDodge>Maneuver_Stab_MeleeDodge</combatLogRulesDodge>
+    </ManeuverDef>
+
+
+</Defs>

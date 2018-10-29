@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="LeatherBase">
+        <defName>ROMA_Leather_SpiderGiant</defName>
+        <label>giant spider chitin</label>
+        <description>Thick carapace covered in lung-burning fuzz. Harvested from a giant spider. This thick skin insulates and protects very well.</description>
+        <graphicData>
+            <color>(120,120,120)</color>
+            <colorTwo>(120,120,120)</colorTwo>
+        </graphicData>
+        <statBases>
+            <MarketValue>3.3</MarketValue>
+            <StuffPower_Armor_Sharp>1.24</StuffPower_Armor_Sharp>
+            <StuffPower_Insulation_Cold>30</StuffPower_Insulation_Cold>
+            <StuffPower_Insulation_Heat>14</StuffPower_Insulation_Heat>
+        </statBases>
+        <stuffProps>
+            <color>(120,120,120)</color>
+            <commonality>0.0015</commonality>
+        </stuffProps>
+    </ThingDef>
+</Defs>

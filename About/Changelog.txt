@@ -1,3 +1,7 @@
+1.20.0.2 (10-30-2018)
+========================
+Rebalanced Giant Spiders. Massive damage addition. Stingers added for extra toxicity. Spider silk is now slightly stronger than Devilstrand, but burns more easily. Friendly spider webs do not trigger on guests anymore. Spiders now have 8 eyes.
+
 1.20.0.1 (10-18-2018)
 ========================
 Did not include Manifest.xml in the initial RimWorld 1.0 release.

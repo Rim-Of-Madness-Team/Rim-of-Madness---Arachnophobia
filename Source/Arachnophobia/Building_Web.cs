@@ -19,8 +19,7 @@ namespace Arachnophobia
             {
                 if (p != null)
                 {
-                    if (Spinner?.Faction == Faction.OfPlayer && (p.Faction.HostileTo(Spinner.Faction) || (p.RaceProps.Animal && p?.Faction != Faction.OfPlayer)) ||
-                        Spinner?.Faction != Faction.OfPlayer)
+                    if (WebShouldAffect(p))
                     {
                         float num = 20f;
                         float num2 = Mathf.Lerp(0.85f, 1.15f, p.thingIDNumber ^ 74374237);
@@ -56,6 +55,14 @@ namespace Arachnophobia
             catch (Exception e) { /* Log.Message(e.ToString()); */ }
 
 
+        }
+
+        private bool WebShouldAffect(Pawn p)
+        {
+            bool isViableAnimal = p?.RaceProps?.Animal == true && p?.Faction != Faction.OfPlayer && p?.HostFaction?.IsPlayer == false;
+            bool isViablePrey = (p?.Faction?.HostileTo(Spinner.Faction) == true || isViableAnimal);
+            bool isPlayerSpinner = Spinner?.Faction == Faction.OfPlayer && isViablePrey;
+            return isPlayerSpinner || Spinner?.Faction != Faction.OfPlayer;
         }
 
         private HashSet<Pawn> touchingPawns = new HashSet<Pawn>();
