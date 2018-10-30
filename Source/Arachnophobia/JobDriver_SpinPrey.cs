@@ -140,6 +140,27 @@ namespace Arachnophobia
                         {
                             toLoad = Prey;
                             newPosition = Prey.Position;
+
+                            //Tend prey's wounds by luck
+                            if (!Prey.health.HasHediffsNeedingTend(false))
+                            {
+                                return;
+                            }
+                            var medicineDef = ThingDefOf.MedicineHerbal;
+                            float quality = 0.5f; //Not a doctor or attentive to human needs
+                            List<Hediff> hediffsToTend = new List<Hediff>();
+                            List<Hediff> hediffs = Prey.health.hediffSet.hediffs;
+                            for (int i = 0; i < hediffs.Count; i++)
+                            {
+                                if (hediffs[i].TendableNow(false))
+                                {
+                                    hediffsToTend.Add(hediffs[i]);
+                                }
+                            }
+                            for (int i = 0; i < hediffsToTend.Count; i++)
+                            {
+                                hediffsToTend[i].Tended(quality, i);
+                            }
                         }
                         if (!toLoad.Spawned) { this.EndJobWith(JobCondition.Incompletable); return; }
 

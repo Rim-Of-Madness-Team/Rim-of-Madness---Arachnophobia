@@ -27,6 +27,8 @@ namespace Arachnophobia
         private Thing web;
         public Thing Web { get { return web; } set { web = value; } }
         private int websMade = 0;
+        private bool firstTick;
+
         public int WebsMade { get { return websMade; } set { websMade = value; } }
         public bool IsBusy
         {
@@ -73,27 +75,55 @@ namespace Arachnophobia
                 {
                     Job spinPrey = new Job(ROMADefOf.ROMA_SpinPrey, toucher);
                     spinPrey.count = 1;
-                    this.jobs.StartJob(spinPrey);
+                    this.jobs.StartJob(spinPrey, JobCondition.InterruptForced);
                 }
             }
         }
 
         #region Overrides
+
         public override void Tick()
         {
             base.Tick();
+            if (Find.TickManager.TicksGame % 60 == 0 && !firstTick)
+            {
+                firstTick = true;
+                //Are we a player animal? Great.
+                if (this.Faction == Faction.OfPlayerSilentFail)
+                    return;
+
+                //Are there more of us? Great.
+                if (this.MapHeld.mapPawns.AllPawnsSpawned.FirstOrDefault(x => x != this && x.def == this.def) != null)
+                    return;
+
+                //Only one? Let's fix that.
+                if (this.def == ROMADefOf.ROMA_SpiderRace)
+                {
+                    if (this.MapHeld.GetComponent<MapComponent_CocoonTracker>() is MapComponent_CocoonTracker tracker && !tracker.isSpiderPair)
+                    {
+                        tracker.isSpiderPair = true;
+                        Pawn newThing = PawnGenerator.GeneratePawn(this.kindDef, this.Faction);
+                        var newSpinner = (PawnWebSpinner)GenSpawn.Spawn((PawnWebSpinner)newThing, this.PositionHeld, this.MapHeld);
+                        newSpinner.gender = (this.gender == Gender.Male) ? Gender.Female : Gender.Male;
+                    }
+                }
+                if (this.def == ROMADefOf.ROMA_SpiderRaceGiant)
+                {
+                    if (this.MapHeld.GetComponent<MapComponent_CocoonTracker>() is MapComponent_CocoonTracker tracker && !tracker.isGiantSpiderPair)
+                    {
+                        tracker.isGiantSpiderPair = true;
+                        Pawn newThing = PawnGenerator.GeneratePawn(this.kindDef, this.Faction);
+                        var newSpinner = (PawnWebSpinner)GenSpawn.Spawn((PawnWebSpinner)newThing, this.PositionHeld, this.MapHeld);
+                        newSpinner.gender = (this.gender == Gender.Male) ? Gender.Female : Gender.Male;
+                    }
+                }
+            }
+
             if (Find.TickManager.TicksGame % WebPeriod == 0)
             {
-                //if (Utility.CocoonsFor(this.Map, this) is List<Thing> localCocoons &&
-                //    !localCocoons.NullOrEmpty() && localCocoons.FirstOrDefault(x => x is Building_Cocoon y && y.Victim != null) is
-                //    Building_Cocoon localCocoon &&
-                //    (this?.needs?.food?.CurLevelPercentage ?? 0) < 0.35)
-                //{
-                //    var newJob = new Job(ROMADefOf.ROMA_ConsumeCocoon, localCocoon);
-                //    newJob.locomotionUrgency = ((float)(localCocoon.Position - this.Position).LengthHorizontalSquared > 10f) ? LocomotionUrgency.Jog : LocomotionUrgency.Walk;
-                //    this.jobs?.TryTakeOrderedJob(newJob);
-                //}
-                MakeWeb();
+                //Have a spinneret? Make some web.
+                if (this?.health?.hediffSet?.GetNotMissingParts()?.FirstOrDefault(x => x.def.defName == "ROMA_Spinneret") != null)
+                    MakeWeb();
             }
             if (Find.TickManager.TicksGame % 1000 == 0)
             {
@@ -105,6 +135,7 @@ namespace Arachnophobia
         {
             base.ExposeData();
             Scribe_References.Look<Thing>(ref this.web, "web");
+            Scribe_Values.Look(ref firstTick, "firstTick", false);
             Scribe_Values.Look<int>(ref this.websMade, "websMade", 0);
         }
         #endregion Overrides

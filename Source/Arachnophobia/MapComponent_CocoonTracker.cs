@@ -9,6 +9,9 @@ namespace Arachnophobia
 {
     public class MapComponent_CocoonTracker : MapComponent
     {
+        public bool isSpiderPair = false;
+        public bool isGiantSpiderPair = false;
+
         private HashSet<Thing> wildCocoons;
         private HashSet<Thing> domesticCocoons;
 
@@ -54,6 +57,13 @@ namespace Arachnophobia
         public MapComponent_CocoonTracker(Map map) : base(map)
         {
 
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref isSpiderPair, "isSpiderPair", false);
+            Scribe_Values.Look(ref isGiantSpiderPair, "isGiantSpiderPair", false);
         }
     }
 }

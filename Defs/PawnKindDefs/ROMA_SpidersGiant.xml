@@ -23,32 +23,13 @@
         </statBases>
         <tools>
             <li>
-                <label>jaws</label>
-                <capacities>
-                    <li>ToxicBite</li>
-                </capacities>
-                <power>22</power>
-                <cooldownTime>1.65</cooldownTime>
-                <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
-                <chanceFactor>0.15</chanceFactor>
-                <surpriseAttack>
-                    <extraMeleeDamages>
-                        <li>
-                            <def>Stun</def>
-                            <amount>18</amount>
-                        </li>
-                    </extraMeleeDamages>
-                </surpriseAttack>
-            </li>
-            <li>
-                <label>stinger</label>
+                <label>fangs</label>
                 <capacities>
                     <li>ROMA_Sting</li>
                 </capacities>
-                <power>33</power>
-                <cooldownTime>2.3</cooldownTime>
-                <linkedBodyPartsGroup>ROMA_StingerGroup</linkedBodyPartsGroup>
-                <chanceFactor>0.33</chanceFactor>
+                <power>20</power>
+                <cooldownTime>1.8</cooldownTime>
+                <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
                 <surpriseAttack>
                     <extraMeleeDamages>
                         <li>
@@ -64,8 +45,9 @@
                     <li>Blunt</li>
                     <li>Poke</li>
                 </capacities>
-                <power>20</power>
+                <power>19</power>
                 <cooldownTime>1.65</cooldownTime>
+                <chanceFactor>0.7</chanceFactor>
                 <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
                 <surpriseAttack>
                     <extraMeleeDamages>
@@ -82,8 +64,9 @@
                     <li>Blunt</li>
                     <li>Poke</li>
                 </capacities>
-                <power>20</power>
+                <power>19</power>
                 <cooldownTime>1.65</cooldownTime>
+                <chanceFactor>0.7</chanceFactor>
                 <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
                 <surpriseAttack>
                     <extraMeleeDamages>

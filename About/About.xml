@@ -3,7 +3,7 @@
   <name>Rim of Madness - Arachnophobia</name>
   <author>Jecrell</author>
   <targetVersion>1.0.2059</targetVersion>
-  <description>1.20.0.2 (10-30-2018)
+  <description>1.20.0.3 (10-30-2018)
 
   Adds spiders to RimWorld.
 
@@ -33,6 +33,10 @@ Maaxar, Shibby Says, TheJagermeister, Cory Bonifay, Kiya Nicoll, Matt Harris, Pa
 ========================
 Changelog
 ========================
+1.20.0.3 (10-30-2018)
+========================
+Spiders have extra damage. All spiders now use special neurotoxin that does not cause carcinomas or dementia but causes fast conscious loss that is easily recoverable after a few days. Spiders also tend victims wounds due to wrapping them in silk.
+
 1.20.0.2 (10-30-2018)
 ========================
 Rebalanced Giant Spiders. Massive damage addition. Stingers added for extra toxicity. Spider silk is now slightly stronger than Devilstrand, but burns more easily. Friendly spider webs do not trigger on guests anymore. Spiders now have 8 eyes.

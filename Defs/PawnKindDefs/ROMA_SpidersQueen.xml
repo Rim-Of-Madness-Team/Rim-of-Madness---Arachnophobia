@@ -10,7 +10,7 @@
     <ThingDef ParentName="ROMA_BaseArachnid">
         <defName>ROMA_SpiderRaceGiantQueen</defName>
         <label>giant spider queen</label>
-        <description>Half the size of a thrumbo, the giant spider queen is a prime example of genetic engineering gone horribly wrong. The queen varieties also have wings capable of flying short distances.</description>
+        <description>Half the size of a thrumbo, the giant spider queen is a prime example of genetic engineering gone horribly wrong. The queen varieties also have wings capable of flying short distances and stingers capable of delivering massive neurotoxin doses.</description>
         <thingClass>Arachnophobia.PawnWebSpinner</thingClass>
         <statBases>
             <ComfyTemperatureMin>-40</ComfyTemperatureMin>
@@ -22,14 +22,40 @@
         </statBases>
         <tools>
             <li>
-                <label>jaws</label>
+                <label>fangs</label>
                 <capacities>
-                    <li>ToxicBite</li>
+                    <li>ROMA_Sting</li>
                 </capacities>
-                <power>20</power>
-                <cooldownTime>1.65</cooldownTime>
+                <power>33</power>
+                <cooldownTime>2.3</cooldownTime>
                 <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
                 <chanceFactor>0.33</chanceFactor>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>22</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
+            </li>
+            <li>
+                <label>stinger</label>
+                <capacities>
+                    <li>ROMA_Sting</li>
+                </capacities>
+                <power>38</power>
+                <cooldownTime>2.3</cooldownTime>
+                <linkedBodyPartsGroup>ROMA_StingerGroup</linkedBodyPartsGroup>
+                <chanceFactor>0.33</chanceFactor>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>22</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
             </li>
             <li>
                 <label>front left leg</label>
@@ -40,6 +66,14 @@
                 <power>20</power>
                 <cooldownTime>1.65</cooldownTime>
                 <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>14</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
             </li>
             <li>
                 <label>front right leg</label>
@@ -50,6 +84,14 @@
                 <power>20</power>
                 <cooldownTime>1.65</cooldownTime>
                 <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+                <surpriseAttack>
+                    <extraMeleeDamages>
+                        <li>
+                            <def>Stun</def>
+                            <amount>14</amount>
+                        </li>
+                    </extraMeleeDamages>
+                </surpriseAttack>
             </li>
         </tools>
         <comps>

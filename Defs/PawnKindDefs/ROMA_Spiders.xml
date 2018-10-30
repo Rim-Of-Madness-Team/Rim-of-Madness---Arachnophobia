@@ -23,13 +23,21 @@
     </statBases>
     <tools>
       <li>
-        <label>jaws</label>
+        <label>fangs</label>
         <capacities>
-          <li>ToxicBite</li>
+          <li>ROMA_Sting</li>
         </capacities>
-        <power>5</power>
+        <power>15</power>
         <cooldownTime>1.65</cooldownTime>
         <linkedBodyPartsGroup>Mouth</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>18</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
       </li>
     </tools>
     <comps>
